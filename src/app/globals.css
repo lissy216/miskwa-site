@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@layer base {
+  html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  body {
+    @apply font-body text-body text-bone bg-night;
+  }
+
+  h1, h2 {
+    @apply font-display uppercase;
+  }
+
+  h3, h4 {
+    @apply font-serif;
+  }
+
+  ::selection {
+    background-color: rgba(212, 168, 83, 0.3);
+    color: #F2EDE4;
+  }
+}
+
+@layer components {
+  /* Page mood backgrounds */
+  .mood-shadow {
+    @apply bg-night text-bone;
+  }
+
+  .mood-shadow h1,
+  .mood-shadow h2 {
+    @apply text-bone;
+  }
+
+  .mood-threshold {
+    @apply bg-ash text-bone;
+  }
+
+  .mood-light {
+    @apply bg-parchment text-charcoal;
+  }
+
+  .mood-light h1,
+  .mood-light h2 {
+    @apply text-charcoal;
+  }
+
+  /* Section containers */
+  .section-container {
+    @apply max-w-content mx-auto px-6 md:px-12 lg:px-20;
+  }
+
+  .section-narrow {
+    @apply max-w-prose mx-auto px-6;
+  }
+
+  /* Typography utilities */
+  .text-accent-warm {
+    @apply text-glow;
+  }
+
+  .text-accent-cool {
+    @apply text-river;
+  }
+
+  /* Subtitle / contemplative lines */
+  .text-contemplative {
+    @apply font-serif italic text-subheading text-bone/60;
+  }
+
+  /* Label style - Cinzel caps, wide tracking */
+  .text-label {
+    @apply font-display text-label uppercase tracking-[0.15em] text-glow/70;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply inline-block px-8 py-3 font-display text-xs tracking-[0.2em] uppercase
+           border border-glow/50 text-glow bg-transparent
+           transition-all duration-300
+           hover:bg-glow/10 hover:border-glow hover:text-glow;
+  }
+
+  .btn-secondary {
+    @apply inline-block px-8 py-3 font-display text-xs tracking-[0.2em] uppercase
+           border border-bone/30 text-bone/70 bg-transparent
+           transition-all duration-300
+           hover:bg-bone/5 hover:border-bone/60 hover:text-bone;
+  }
+
+  .btn-light {
+    @apply inline-block px-8 py-3 font-display text-xs tracking-[0.2em] uppercase
+           border border-charcoal/40 text-charcoal bg-transparent
+           transition-all duration-300
+           hover:bg-charcoal/5 hover:border-charcoal hover:text-charcoal;
+  }
+
+  /* Dividers */
+  .divider-warm {
+    @apply w-20 h-px bg-gradient-to-r from-transparent via-glow/60 to-transparent;
+  }
+
+  .divider-cool {
+    @apply w-20 h-px bg-gradient-to-r from-transparent via-river/40 to-transparent;
+  }
+
+  .divider-bridge {
+    @apply w-full h-px bg-gradient-to-r from-ember/30 via-bridge to-glow/30;
+  }
+
+  /* Pull quote */
+  .pull-quote {
+    @apply font-serif italic text-subheading leading-relaxed text-bone/80;
+  }
+
+  /* Card styles */
+  .card-shadow {
+    @apply bg-charcoal/80 border border-ash/20 rounded-sm overflow-hidden
+           transition-all duration-300 hover:-translate-y-1 hover:border-glow/20;
+  }
+
+  .card-light {
+    @apply bg-parchment/90 border border-bone/30 rounded-sm overflow-hidden
+           transition-all duration-300 hover:-translate-y-1 hover:border-bridge/40;
+  }
+
+  /* Journey stage marker */
+  .journey-stage {
+    @apply flex flex-col items-center gap-2 text-center;
+  }
+
+  .journey-icon {
+    @apply w-10 h-10 rounded-full border border-glow/30 flex items-center justify-center text-glow/60;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2420;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4A853;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay {
+  animation: fadeUp 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+/* Textured background overlay for depth */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(212, 168, 83, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* ============================================
+   Hero atmospheric fields (no imagery, just color + grain)
+   Mirrors the mood board's shadow/light split
+   ============================================ */
+
+.hero-field-shadow {
+  background-color: #0A0A0A;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-field-shadow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 30% 45%, rgba(139, 37, 0, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 75% 80%, rgba(196, 58, 26, 0.18) 0%, transparent 65%),
+    radial-gradient(circle at 50% 20%, rgba(212, 168, 83, 0.07) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-field-shadow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-field-light {
+  background-color: #F5F0E6;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-field-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 75% 55% at 70% 30%, rgba(212, 168, 83, 0.40) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 25% 80%, rgba(90, 138, 143, 0.14) 0%, transparent 65%),
+    radial-gradient(circle at 50% 50%, rgba(184, 134, 78, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-field-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Rumi / large pull quote variant */
+.pull-quote-lg {
+  @apply font-serif italic text-2xl md:text-3xl leading-relaxed;
+}
+
+/* Five-pillar label */
+.pillar-label {
+  @apply font-display text-sm tracking-[0.15em] uppercase font-semibold;
+}
+
+/* Thematic footer strip ornament */
+.strip-divider {
+  color: theme('colors.glow');
+  opacity: 0.6;
+  font-size: 0.75rem;
+}

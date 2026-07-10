@@ -47,24 +47,41 @@ export default function Home() {
         </div>
 
         {/* Light Side — The Signal (new release) atmosphere */}
-        <div className="hero-field-light flex items-center justify-center p-8 md:p-16 lg:p-20 min-h-[50vh] md:min-h-[90vh]">
+        <div className="hero-field-light flex items-center justify-center p-8 md:p-12 lg:p-16 min-h-[50vh] md:min-h-[90vh]">
           <LightArt className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" />
-          <div className="relative z-10 max-w-md text-center md:text-left">
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-6">
-              New Release
-            </p>
-            <h2 className="font-serif text-display-sm md:text-heading text-night mb-4 [text-shadow:0_0_22px_rgba(245,240,230,0.9)]">
-              The Signal
-            </h2>
-            <p className="font-serif italic text-subheading text-night/80 mb-6 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-              Why Life and People Keep Happening to You
-            </p>
-            <p className="font-body text-body text-night/75 mb-8 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-              You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
-            </p>
-            <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
-              Read More
-            </Link>
+          <div className="relative z-10 w-full max-w-md md:max-w-2xl">
+            <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-10 text-center md:text-left">
+              {/* Book cover */}
+              <div className="relative w-40 md:w-52 lg:w-56 flex-shrink-0 aspect-[2/3] bg-black rounded-sm overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/the-signal-cover.png"
+                  alt="The Signal — book cover"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 160px, (max-width: 1024px) 208px, 224px"
+                  priority
+                />
+              </div>
+
+              {/* Text */}
+              <div className="flex-1 min-w-0">
+                <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-4">
+                  New Release
+                </p>
+                <h2 className="font-serif text-display-sm md:text-heading text-night mb-3 leading-tight [text-shadow:0_0_22px_rgba(245,240,230,0.9)]">
+                  The Signal
+                </h2>
+                <p className="font-serif italic text-subheading text-night/80 mb-5 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
+                  Why Life and People Keep Happening to You
+                </p>
+                <p className="font-body text-body text-night/75 mb-7 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
+                  You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
+                </p>
+                <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
+                  Read More
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 

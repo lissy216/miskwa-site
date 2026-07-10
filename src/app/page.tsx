@@ -46,7 +46,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Light Side — Book of Questions atmosphere (sun mandala + rays + river) */}
+        {/* Light Side — The Signal (new release) atmosphere */}
         <div className="hero-field-light flex items-center justify-center p-8 md:p-16 lg:p-20 min-h-[50vh] md:min-h-[90vh]">
           <LightArt className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" />
           <div className="relative z-10 max-w-md text-center md:text-left">
@@ -54,15 +54,15 @@ export default function Home() {
               New Release
             </p>
             <h2 className="font-serif text-display-sm md:text-heading text-night mb-4 [text-shadow:0_0_22px_rgba(245,240,230,0.9)]">
-              The Book of Questions
+              The Signal
             </h2>
             <p className="font-serif italic text-subheading text-night/80 mb-6 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-              The Socratic Year of the Soul
+              Why Life and People Keep Happening to You
             </p>
             <p className="font-body text-body text-night/75 mb-8 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-              365 questions. Twelve months of territory. One full year of learning to trust what is already alive in you.
+              You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
             </p>
-            <Link href="/book-of-questions" className="btn-light backdrop-blur-sm bg-parchment/40">
+            <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
               Read More
             </Link>
           </div>
@@ -181,16 +181,37 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
+            {/* The Signal (newest) */}
+            <Link href="/the-signal" className="group flex flex-col items-center text-center">
+              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
+                <Image
+                  src="/images/the-signal-cover.png"
+                  alt="The Signal: Why Life and People Keep Happening to You - Book Cover"
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 300px"
+                />
+              </div>
+              <h3 className="font-serif text-subheading text-bone mb-2">The Signal</h3>
+              <p className="font-serif italic text-body text-bone/60 mb-4">Why Life and People Keep Happening to You</p>
+              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
+                You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal, and about the life it has been quietly assembling around you.
+              </p>
+              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-glow group-hover:text-sun transition-colors">
+                Read More &rarr;
+              </p>
+            </Link>
+
             {/* Red Rain */}
             <Link href="/red-rain" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-[2/3] w-full max-w-[340px] mb-8 drop-shadow-[0_20px_40px_rgba(196,58,26,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(196,58,26,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/images/red-rain-cover.png"
                   alt="Red Rain: A Soul Shattered - Book Cover"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 340px"
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
               <h3 className="font-serif text-subheading text-bone mb-2">Red Rain</h3>
@@ -205,13 +226,13 @@ export default function Home() {
 
             {/* Book of Questions */}
             <Link href="/book-of-questions" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-[2/3] w-full max-w-[340px] mb-8 drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/images/book-of-questions-cover.png"
                   alt="The Book of Questions: The Socratic Year of the Soul - Book Cover"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 340px"
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
               <h3 className="font-serif text-subheading text-bone mb-2">The Book of Questions</h3>

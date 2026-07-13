@@ -40,12 +40,22 @@ export default function TheSignal() {
             </p>
 
             <div className="flex flex-col gap-3">
-              <span className="btn-primary inline-flex items-center gap-3 w-fit cursor-default opacity-70">
-                Order the Book &mdash; Coming Soon
-              </span>
-              <p className="font-display text-caption text-bone/40 tracking-[0.15em] uppercase">
-                Paperback and Ebook editions arriving soon
-              </p>
+              <a
+                href="https://a.co/d/020dzwrJ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-3 w-fit"
+              >
+                Buy on Amazon &mdash; Paperback and Ebook
+              </a>
+              <a
+                href="https://books.by/miskwa-kimiwan/the-signal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night inline-flex items-center gap-3 w-fit"
+              >
+                Buy on Books.by
+              </a>
             </div>
           </div>
 
@@ -168,14 +178,27 @@ export default function TheSignal() {
             The Signal
           </h2>
           <p className="font-body text-body-lg text-bone/70 mb-10">
-            Paperback and ebook editions arriving soon.
+            Available now in paperback and ebook.
           </p>
-          <div className="flex flex-col items-center gap-4">
-            <span className="btn-primary cursor-default opacity-70">
-              Order the Book &mdash; Coming Soon
-            </span>
-            <p className="font-display text-caption text-bone/50 tracking-[0.15em] uppercase">
-              Purchase links will appear here when available
+          <div className="flex flex-col items-center gap-3">
+            <a
+              href="https://a.co/d/020dzwrJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center gap-3 w-fit"
+            >
+              Buy on Amazon &mdash; Paperback and Ebook
+            </a>
+            <a
+              href="https://books.by/miskwa-kimiwan/the-signal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night inline-flex items-center gap-3 w-fit"
+            >
+              Buy on Books.by
+            </a>
+            <p className="font-display text-caption text-bone/50 tracking-[0.15em] uppercase mt-4">
+              More retailers to come
             </p>
           </div>
         </div>

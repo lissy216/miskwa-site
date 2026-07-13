@@ -92,6 +92,14 @@ export default function Navigation() {
             Programs
           </Link>
           <Link
+            href="/wholesale"
+            className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
+              isActive('/wholesale') ? 'text-glow' : 'text-bone/70 hover:text-bone'
+            }`}
+          >
+            Wholesale
+          </Link>
+          <Link
             href="/contact"
             className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
               isActive('/contact') ? 'text-glow' : 'text-bone/70 hover:text-bone'
@@ -126,6 +134,7 @@ export default function Navigation() {
           <Link href="/red-rain" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Red Rain</Link>
           <Link href="/book-of-questions" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Book of Questions</Link>
           <Link href="/programs" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Programs</Link>
+          <Link href="/wholesale" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Wholesale</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Contact</Link>
         </div>
       </div>

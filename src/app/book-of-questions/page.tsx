@@ -63,6 +63,12 @@ export default function BookOfQuestions() {
               <p className="font-display text-caption text-night/40 tracking-wide">
                 Paperback Edition &mdash; Coming Soon
               </p>
+              <a
+                href="/wholesale"
+                className="font-display text-xs tracking-[0.2em] uppercase text-grass hover:text-glow transition-colors mt-2 inline-block"
+              >
+                Wholesale for 5+ copies &rarr;
+              </a>
             </div>
           </div>
 

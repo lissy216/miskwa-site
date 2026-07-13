@@ -50,6 +50,7 @@ export default function Footer() {
               <Link href="/red-rain" className="text-caption text-bone/70 hover:text-bone transition-colors">Red Rain</Link>
               <Link href="/book-of-questions" className="text-caption text-bone/70 hover:text-bone transition-colors">The Book of Questions</Link>
               <Link href="/programs" className="text-caption text-bone/70 hover:text-bone transition-colors">Programs</Link>
+              <Link href="/wholesale" className="text-caption text-bone/70 hover:text-bone transition-colors">Wholesale for Retailers</Link>
               <Link href="/contact" className="text-caption text-bone/70 hover:text-bone transition-colors">Contact</Link>
             </div>
           </div>

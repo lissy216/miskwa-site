@@ -53,7 +53,7 @@ export default function TheSignal() {
           <div className="order-1 md:order-2 flex justify-center">
             <div className="relative w-64 md:w-72 lg:w-80 aspect-[2/3] bg-black rounded-sm overflow-hidden shadow-2xl">
               <Image
-                src="/images/the-signal-cover.png"
+                src="/images/the-signal-cover.jpg"
                 alt="The Signal: Why Life and People Keep Happening to You - Front Cover"
                 fill
                 className="object-contain"

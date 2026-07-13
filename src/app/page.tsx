@@ -54,7 +54,7 @@ export default function Home() {
               {/* Book cover */}
               <div className="relative w-40 md:w-52 lg:w-56 flex-shrink-0 aspect-[2/3] bg-black rounded-sm overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/the-signal-cover.png"
+                  src="/images/the-signal-cover.jpg"
                   alt="The Signal — book cover"
                   fill
                   className="object-contain"
@@ -203,7 +203,7 @@ export default function Home() {
             <Link href="/the-signal" className="group flex flex-col items-center text-center">
               <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
-                  src="/images/the-signal-cover.png"
+                  src="/images/the-signal-cover.jpg"
                   alt="The Signal: Why Life and People Keep Happening to You - Book Cover"
                   fill
                   className="object-contain"

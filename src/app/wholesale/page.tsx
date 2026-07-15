@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import WholesaleForm from './WholesaleForm'
 
 export const metadata: Metadata = {
   title: 'Wholesale for Retailers',
@@ -15,6 +14,32 @@ const books = [
 ]
 
 const fmt = (n: number) => `$${n.toFixed(2)}`
+
+// Pre-filled mailto template for the wholesale inquiry button. Opens the
+// visitor's default mail client with subject and body ready to fill in.
+const mailtoBody = `Hello Miskwa,
+
+I would like to inquire about wholesale ordering. Please quote me for the following.
+
+Contact name:
+Business or organisation:
+Email:
+Phone (optional):
+
+Books and quantities:
+    The Signal:
+    Red Rain:
+    The Book of Questions:
+
+Shipping address:
+
+Timing (when needed):
+
+Notes:
+
+Thank you.`
+
+const mailtoUrl = `mailto:miskwa@miskwakimiwan.com?subject=${encodeURIComponent('Wholesale inquiry')}&body=${encodeURIComponent(mailtoBody)}`
 
 export default function Wholesale() {
   return (
@@ -116,41 +141,25 @@ export default function Wholesale() {
       </section>
 
       {/* ============================================
-          INQUIRY FORM
+          INQUIRY (mailto — no backend, opens your email app)
           ============================================ */}
       <section className="bg-night py-section-sm md:py-section">
-        <div className="section-narrow">
+        <div className="section-narrow text-center">
           <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-4">
             Request a Quote
           </p>
           <h2 className="font-serif text-heading text-bone mb-4">Send your inquiry</h2>
-          <div className="divider-warm mb-10" />
-          <p className="font-body text-body-lg text-bone/70 leading-relaxed mb-10">
-            Tell us who you are, which books and quantities you need, and where to
-            ship. We reply with a quote including shipping within a few business days.
+          <div className="divider-warm mx-auto mb-10" />
+          <p className="font-body text-body-lg text-bone/70 leading-relaxed mb-10 max-w-xl mx-auto">
+            The button below opens your email app with a message ready to fill in.
+            Add your details and hit send. We reply with a quote including shipping
+            within a few business days.
           </p>
-          <WholesaleForm />
-        </div>
-      </section>
-
-      {/* ============================================
-          OR EMAIL DIRECTLY
-          ============================================ */}
-      <section className="bg-parchment py-16">
-        <div className="section-narrow text-center">
-          <div className="divider-warm mx-auto mb-8" />
-          <p className="font-serif italic text-body-lg text-night/70">
-            Prefer to write directly? Send your inquiry to{' '}
-            <a
-              href="mailto:miskwa@miskwakimiwan.com?subject=Wholesale%20inquiry"
-              className="text-grass hover:text-glow underline decoration-grass/30 underline-offset-4"
-            >
-              miskwa@miskwakimiwan.com
-            </a>
-            .
-          </p>
-          <p className="font-serif italic text-body text-night/55 mt-4">
-            Include which books, quantities, and shipping destination for a quote.
+          <a href={mailtoUrl} className="btn-primary inline-flex items-center gap-3">
+            Email Your Wholesale Inquiry
+          </a>
+          <p className="font-serif italic text-caption text-bone/50 mt-6">
+            Or write to <a href="mailto:miskwa@miskwakimiwan.com?subject=Wholesale%20inquiry" className="text-glow hover:text-sun underline decoration-glow/40 underline-offset-4">miskwa@miskwakimiwan.com</a> directly.
           </p>
         </div>
       </section>

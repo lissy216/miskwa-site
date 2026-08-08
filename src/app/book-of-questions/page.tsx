@@ -61,6 +61,14 @@ export default function BookOfQuestions() {
                 Kindle Edition &mdash; Order on Amazon
               </a>
               <a
+                href="https://www.indigo.ca/products/the-book-of-questions-the-socratic-year-of-the-soul-1?variant=46804502675666"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-light inline-flex items-center gap-3 w-fit"
+              >
+                Paperback &mdash; Order on Chapters Indigo
+              </a>
+              <a
                 href="https://books2read.com/u/mBWDNA"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,9 +76,6 @@ export default function BookOfQuestions() {
               >
                 Ebook at Apple, Kobo, B&amp;N &amp; More
               </a>
-              <p className="font-display text-caption text-night/40 tracking-wide">
-                Paperback Edition &mdash; Coming Soon
-              </p>
               <a
                 href="/wholesale"
                 className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
@@ -240,6 +245,14 @@ export default function BookOfQuestions() {
               Kindle Edition &mdash; Order on Amazon
             </a>
             <a
+              href="https://www.indigo.ca/products/the-book-of-questions-the-socratic-year-of-the-soul-1?variant=46804502675666"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night"
+            >
+              Paperback &mdash; Order on Chapters Indigo
+            </a>
+            <a
               href="https://books2read.com/u/mBWDNA"
               target="_blank"
               rel="noopener noreferrer"
@@ -247,9 +260,6 @@ export default function BookOfQuestions() {
             >
               Ebook at Apple, Kobo, B&amp;N &amp; More
             </a>
-            <p className="font-display text-caption text-bone/50 tracking-wide">
-              Paperback Edition &mdash; Coming Soon
-            </p>
           </div>
         </div>
       </section>

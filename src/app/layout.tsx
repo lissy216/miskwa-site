@@ -4,12 +4,13 @@ import Footer from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.miskwakimiwan.com'),
   title: {
     default: 'Miskwa Kimiwan | Author, Healer, Teacher',
     template: '%s | Miskwa Kimiwan',
   },
-  description: 'Books that walk through darkness with dignity. Healing work that does not bypass the dark. Author of Red Rain: A Soul Shattered and The Book of Questions.',
-  keywords: ['Miskwa Kimiwan', 'Red Rain', 'Book of Questions', 'spiritual healing', 'energy medicine'],
+  description: 'Books that walk through darkness with dignity. Healing work that does not bypass the dark. Author of The Signal, Red Rain: A Soul Shattered, and The Book of Questions.',
+  keywords: ['Miskwa Kimiwan', 'The Signal', 'Red Rain', 'Book of Questions', 'spiritual healing', 'energy medicine', 'Indigenous healing'],
   authors: [{ name: 'Miskwa Kimiwan' }],
   openGraph: {
     type: 'website',
@@ -18,6 +19,24 @@ export const metadata: Metadata = {
     siteName: 'Miskwa Kimiwan',
     title: 'Miskwa Kimiwan | Author, Healer, Teacher',
     description: 'Books that walk through darkness with dignity. Healing work that does not bypass the dark.',
+    images: [
+      {
+        url: '/images/the-signal-cover.jpg',
+        width: 1600,
+        height: 2560,
+        alt: 'The Signal — a new book by Miskwa Kimiwan',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Miskwa Kimiwan | Author, Healer, Teacher',
+    description: 'Books that walk through darkness with dignity. Healing work that does not bypass the dark.',
+    images: ['/images/the-signal-cover.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 

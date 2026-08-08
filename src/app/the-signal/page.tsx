@@ -2,14 +2,67 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'The Signal: Why Life and People Keep Happening to You',
+  title: 'The Signal',
   description:
-    'You are broadcasting something right now. Something underneath the version you bring to dinner parties. A frequency your body has been carrying since before you had a word for it. This book is about that signal, and the life it has been quietly assembling around you.',
+    'You are broadcasting something right now, and it has been quietly assembling your life around you. A new book by Miskwa Kimiwan.',
+  openGraph: {
+    type: 'book',
+    url: 'https://www.miskwakimiwan.com/the-signal',
+    siteName: 'Miskwa Kimiwan',
+    title: 'The Signal: Why Life and People Keep Happening to You',
+    description:
+      'You are broadcasting something right now, and it has been quietly assembling your life around you. A new book by Miskwa Kimiwan.',
+    images: [
+      {
+        url: '/images/the-signal-cover.jpg',
+        width: 1600,
+        height: 2560,
+        alt: 'The Signal — Front Cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Signal: Why Life and People Keep Happening to You',
+    description:
+      'A new book by Miskwa Kimiwan on the frequency the body carries, and the life it assembles.',
+    images: ['/images/the-signal-cover.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.miskwakimiwan.com/the-signal',
+  },
+}
+
+const bookJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'The Signal: Why Life and People Keep Happening to You',
+  author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Press' },
+  inLanguage: 'en-CA',
+  bookFormat: 'https://schema.org/Paperback',
+  image: 'https://www.miskwakimiwan.com/images/the-signal-cover.jpg',
+  description:
+    'You are broadcasting something right now, and it has been quietly assembling your life around you. A new book by Miskwa Kimiwan.',
+  url: 'https://www.miskwakimiwan.com/the-signal',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://a.co/d/020dzwrJ',
+    priceCurrency: 'CAD',
+    price: '22.99',
+    availability: 'https://schema.org/InStock',
+  },
 }
 
 export default function TheSignal() {
   return (
     <>
+      {/* Book schema for rich search results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
+
       {/* ============================================
           HERO - Shadow mood
           ============================================ */}

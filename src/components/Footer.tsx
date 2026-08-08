@@ -47,6 +47,7 @@ export default function Footer() {
             <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-5">Navigate</p>
             <div className="flex flex-col gap-3">
               <Link href="/about" className="text-caption text-bone/70 hover:text-bone transition-colors">About</Link>
+              <Link href="/the-signal" className="text-caption text-bone/70 hover:text-bone transition-colors">The Signal</Link>
               <Link href="/red-rain" className="text-caption text-bone/70 hover:text-bone transition-colors">Red Rain</Link>
               <Link href="/book-of-questions" className="text-caption text-bone/70 hover:text-bone transition-colors">The Book of Questions</Link>
               <Link href="/programs" className="text-caption text-bone/70 hover:text-bone transition-colors">Programs</Link>

@@ -43,7 +43,7 @@ export default function RedRain() {
                 Buy on Amazon
               </a>
               <a
-                href="https://www.indigo.ca/en-ca/red-rain---a-soul-shattered/9781777747800.html"
+                href="https://www.indigo.ca/products/red-rain-a-soul-shattered?variant=46701839024338"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night inline-flex items-center gap-3 w-fit"

@@ -59,6 +59,14 @@ export default function RedRain() {
                 Buy at Singing Pebble Books (Ottawa)
               </a>
               <a
+                href="https://books2read.com/u/b5AEQG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night inline-flex items-center gap-3 w-fit"
+              >
+                Ebook at Apple, Kobo, B&amp;N &amp; More
+              </a>
+              <a
                 href="/wholesale"
                 className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
               >

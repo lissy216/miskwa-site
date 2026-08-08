@@ -60,6 +60,14 @@ export default function BookOfQuestions() {
               >
                 Kindle Edition &mdash; Order on Amazon
               </a>
+              <a
+                href="https://books2read.com/u/mBWDNA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-light inline-flex items-center gap-3 w-fit"
+              >
+                Ebook at Apple, Kobo, B&amp;N &amp; More
+              </a>
               <p className="font-display text-caption text-night/40 tracking-wide">
                 Paperback Edition &mdash; Coming Soon
               </p>
@@ -230,6 +238,14 @@ export default function BookOfQuestions() {
               className="btn-primary"
             >
               Kindle Edition &mdash; Order on Amazon
+            </a>
+            <a
+              href="https://books2read.com/u/mBWDNA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night"
+            >
+              Ebook at Apple, Kobo, B&amp;N &amp; More
             </a>
             <p className="font-display text-caption text-bone/50 tracking-wide">
               Paperback Edition &mdash; Coming Soon

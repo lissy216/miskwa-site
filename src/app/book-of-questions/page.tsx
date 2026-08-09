@@ -76,6 +76,9 @@ export default function BookOfQuestions() {
               >
                 Ebook at Apple, Kobo, B&amp;N &amp; More
               </a>
+              <p className="font-serif italic text-caption text-night/50 mt-3 max-w-md">
+                Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
+              </p>
               <a
                 href="/wholesale"
                 className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
@@ -260,6 +263,9 @@ export default function BookOfQuestions() {
             >
               Ebook at Apple, Kobo, B&amp;N &amp; More
             </a>
+            <p className="font-serif italic text-caption text-bone/50 mt-4 max-w-md">
+              Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
+            </p>
           </div>
         </div>
       </section>

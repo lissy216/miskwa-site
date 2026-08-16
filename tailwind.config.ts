@@ -30,9 +30,13 @@ const config: Config = {
         'deep-teal': '#3A6A70',
       },
       fontFamily: {
-        display: ['Cinzel', 'Trajan Pro', 'serif'],
-        serif: ['Lora', 'Playfair Display', 'Georgia', 'serif'],
-        body: ['Crimson Pro', 'Lora', 'Georgia', 'serif'],
+        // var(--font-*) are injected by next/font in src/app/layout.tsx.
+        // Trajan Pro and Playfair Display are unloaded fallbacks: Trajan is a
+        // commercial face and renders only if locally installed; Playfair sits
+        // after Lora and therefore never renders while Lora is present.
+        display: ['var(--font-cinzel)', 'Trajan Pro', 'serif'],
+        serif: ['var(--font-lora)', 'Playfair Display', 'Georgia', 'serif'],
+        body: ['var(--font-crimson)', 'var(--font-lora)', 'Georgia', 'serif'],
       },
       fontSize: {
         'display': ['4.25rem', { lineHeight: '1.1', letterSpacing: '0.08em' }],

@@ -1,7 +1,33 @@
 import type { Metadata } from 'next'
+import { Cinzel, Lora, Crimson_Pro } from 'next/font/google'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import './globals.css'
+
+// Self-hosted at build time by next/font. No render-blocking request to Google,
+// no layout shift, no visitor IPs sent to Google.
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-cinzel',
+  display: 'swap',
+})
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-lora',
+  display: 'swap',
+})
+
+const crimsonPro = Crimson_Pro({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-crimson',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.miskwakimiwan.com'),
@@ -46,7 +72,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable}`}
+    >
       <body className="min-h-screen flex flex-col">
         <Navigation />
         <main className="flex-1 pt-16 md:pt-20">

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Privacy policy for The Book of Questions app and MiskwaKimiwan.com. Your journal stays on your device — no accounts, no analytics, no tracking, nothing collected.',
 }
 
-const EFFECTIVE_DATE = 'August 9, 2026'
+const EFFECTIVE_DATE = 'August 19, 2026'
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="font-serif text-heading text-night mt-12 mb-4">{children}</h2>
@@ -52,7 +52,7 @@ export default function Privacy() {
 
           <H2>The short version</H2>
           <P>
-            Everything you write in the app is stored on your device and, in your own
+            Everything you write in the app is stored on your device and in your own
             iCloud. The app has no accounts, no analytics, no advertising, and no
             third-party tracking code. We do not receive your journal entries. We
             could not read them if we wanted to, because they never reach us.
@@ -161,15 +161,19 @@ export default function Privacy() {
 
           <H2>Purchases</H2>
           <P>
-            If subscriptions are offered, they are sold and processed by Apple
-            through the App Store, under Apple&apos;s terms. We never see or store your
-            payment details, your card, or your billing address. Apple provides us
-            with sales reports that show totals, not customers. You can view,
-            change, or cancel a subscription in your Apple Account settings — we
-            cannot do it for you, and we cannot see that you have. Before any
-            subscription feature is active in the app, this policy will be updated
-            to describe exactly how subscription status is verified, including any
-            service involved in that verification.
+            Season One of the app is free. The full year is sold as a yearly
+            subscription or a one-time purchase — sold and processed entirely by
+            Apple through the App Store, under Apple&apos;s terms. We never see or
+            store your payment details, your card, or your billing address. Apple
+            provides us with sales reports that show totals, not customers. How
+            your purchase is verified: the app asks Apple&apos;s StoreKit, on your
+            device, whether this Apple Account owns the purchase — no third-party
+            verification service is involved and nothing is sent to us. The answer
+            is remembered as a small flag on your device so the app works offline;
+            that flag stays on your device and is not included in your journal
+            backups. You can view, change, or cancel a subscription in your Apple
+            Account settings — we cannot do it for you, and we cannot see that you
+            have.
           </P>
 
           <H2>When you contact us</H2>

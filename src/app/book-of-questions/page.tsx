@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'The Book of Questions: The Socratic Year of the Soul',
-  description: '365 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. A conversation between you and the part of you that has been waiting to be asked.',
+  description: '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. A conversation between you and the part of you that has been waiting to be asked.',
 }
 
 export default function BookOfQuestions() {
@@ -48,7 +48,7 @@ export default function BookOfQuestions() {
               Most books hand you answers. This one hands you back to yourself.
             </p>
             <p className="font-body text-body text-night/50 leading-relaxed mb-10">
-              365 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. Not a program. Not a curriculum. A conversation between you and the part of you that has been waiting to be asked.
+              372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. Not a program. Not a curriculum. A conversation between you and the part of you that has been waiting to be asked.
             </p>
 
             <div className="flex flex-col gap-3">

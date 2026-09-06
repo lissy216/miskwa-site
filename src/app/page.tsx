@@ -52,7 +52,7 @@ export default function Home() {
           <div className="relative z-10 w-full max-w-md md:max-w-2xl">
             <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-10 text-center md:text-left">
               {/* Book cover */}
-              <div className="relative w-40 md:w-52 lg:w-56 flex-shrink-0 aspect-[2/3] bg-black rounded-sm overflow-hidden shadow-2xl">
+              <div className="relative w-40 md:w-52 lg:w-56 shrink-0 aspect-2/3 bg-black rounded-sm overflow-hidden shadow-2xl">
                 <Image
                   src="/images/the-signal-cover.jpg"
                   alt="The Signal — book cover"
@@ -87,7 +87,7 @@ export default function Home() {
 
         {/* Seam blend layer 1 — soft vertical gradient bridges the two atmospheres */}
         <div
-          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[38%] pointer-events-none z-[2]"
+          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[38%] pointer-events-none z-2"
           aria-hidden
           style={{
             background:
@@ -98,7 +98,7 @@ export default function Home() {
 
         {/* Seam blend layer 2 — central ember/amber glow at the meeting point */}
         <div
-          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[22%] pointer-events-none z-[2]"
+          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[22%] pointer-events-none z-2"
           aria-hidden
           style={{
             background:
@@ -172,7 +172,7 @@ export default function Home() {
               About the Work
             </Link>
           </div>
-          <div className="relative aspect-[3/2] bg-charcoal rounded-sm overflow-hidden">
+          <div className="relative aspect-3/2 bg-charcoal rounded-sm overflow-hidden">
             <Image
               src="/images/author-portrait.jpg"
               alt="Miskwa Kimiwan — a bridge between worlds"
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
             {/* The Signal (newest) */}
             <Link href="/the-signal" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/images/the-signal-cover.jpg"
                   alt="The Signal: Why Life and People Keep Happening to You - Book Cover"
@@ -222,7 +222,7 @@ export default function Home() {
 
             {/* Red Rain */}
             <Link href="/red-rain" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(196,58,26,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(196,58,26,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/images/red-rain-cover.png"
                   alt="Red Rain: A Soul Shattered - Book Cover"
@@ -243,7 +243,7 @@ export default function Home() {
 
             {/* Book of Questions */}
             <Link href="/book-of-questions" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-[2/3] w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
+              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src="/images/book-of-questions-cover.png"
                   alt="The Book of Questions: The Socratic Year of the Soul - Book Cover"

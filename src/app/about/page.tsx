@@ -30,7 +30,7 @@ export default function About() {
               What followed was not a straight line toward healing. It was years of sitting in the dark, learning that the dark is not the enemy. That the body already knows what the mind is still arguing about. That no pre-packaged spiritual path matched what was actually happening, and the only honest option was to build something from the raw material of lived experience.
             </p>
           </div>
-          <div className="relative aspect-[3/2] bg-charcoal rounded-sm overflow-hidden">
+          <div className="relative aspect-3/2 bg-charcoal rounded-sm overflow-hidden">
             <Image
               src="/images/author-portrait.jpg"
               alt="Miskwa Kimiwan — a bridge between worlds"

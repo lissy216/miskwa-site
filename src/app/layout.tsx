@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Cinzel, Lora, Crimson_Pro } from 'next/font/google'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 // Self-hosted at build time by next/font. No render-blocking request to Google,
@@ -82,6 +84,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

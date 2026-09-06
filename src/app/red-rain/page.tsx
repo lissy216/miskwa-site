@@ -80,7 +80,7 @@ export default function RedRain() {
 
           {/* Book Cover */}
           <div className="order-1 md:order-2 flex justify-center">
-            <div className="relative w-72 md:w-80 lg:w-96 aspect-[2/3] rounded-sm overflow-hidden shadow-2xl">
+            <div className="relative w-72 md:w-80 lg:w-96 aspect-2/3 rounded-sm overflow-hidden shadow-2xl">
               <Image
                 src="/images/red-rain-cover.png"
                 alt="Red Rain: A Soul Shattered - Front Cover"

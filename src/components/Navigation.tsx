@@ -118,7 +118,7 @@ export default function Navigation() {
           <div className="w-6 flex flex-col gap-1.5">
             <span className={`block h-px bg-bone transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
             <span className={`block h-px bg-bone transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`} />
-            <span className={`block h-px bg-bone transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+            <span className={`block h-px bg-bone transition-all duration-300 ${isOpen ? '-rotate-45 translate-y-[-7px]' : ''}`} />
           </div>
         </button>
       </div>

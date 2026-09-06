@@ -90,7 +90,7 @@ export default function BookOfQuestions() {
 
           {/* Book Cover */}
           <div className="flex justify-center">
-            <div className="relative w-72 md:w-80 lg:w-96 aspect-[2/3] rounded-sm overflow-hidden shadow-xl">
+            <div className="relative w-72 md:w-80 lg:w-96 aspect-2/3 rounded-sm overflow-hidden shadow-xl">
               <Image
                 src="/images/book-of-questions-cover.png"
                 alt="The Book of Questions: The Socratic Year of the Soul - Front Cover"

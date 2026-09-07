@@ -360,6 +360,77 @@
 }
 
 /* ============================================================
+   LETTERPRESS CHAPBOOK — replacement visual world (design/letterpress-chapbook)
+   Additive: the incumbent tokens above are untouched so existing routes keep
+   rendering while the world is rolled out surface by surface.
+   ============================================================ */
+
+@theme {
+  --color-stock: #d9dbdd;
+  --color-stock-hi: #eceef0;
+  --color-ink: #17161a;
+  --color-ink-soft: #4a4750;
+  --color-madder: #a0301f;
+  --color-prussian: #1e3a5c;
+  --color-forest: #29473a;
+  --color-plum: #4e2438;
+  /* Text on the prussian field is tinted from that hue, never neutral grey. */
+  --color-stock-prussian: #f4f8fd;
+
+  --font-wood: var(--font-big-shoulders), ui-sans-serif, sans-serif;
+  --font-text: var(--font-source-serif), Georgia, serif;
+}
+
+/* Browser surfaces belong to the design system too. */
+::selection {
+  background: var(--color-madder);
+  color: var(--color-stock-hi);
+}
+
+.press {
+  caret-color: var(--color-madder);
+}
+
+/* The document scrollbar hangs off html; declaring it on a nested div does nothing. */
+html:has(.press) {
+  scrollbar-color: var(--color-ink-soft) var(--color-stock);
+}
+
+/* Never currentColor: on a stock button sitting on the madder field that draws
+   the ring in madder, onto madder. The ring gets its own value per ground. */
+.press :focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+.press .bg-madder :focus-visible,
+.press .bg-ink :focus-visible,
+.press .bg-prussian :focus-visible {
+  outline-color: var(--color-stock-hi);
+}
+
+/* Printing furniture: the hairline rules a press leaves behind. */
+@utility rule-press {
+  /* Tint the rule itself. Element opacity would fade every child with it. */
+  border-top: 1px solid color-mix(in oklab, currentColor 32%, transparent);
+}
+
+/* The one authored moment: rules strike in like an impression, once. */
+@keyframes press-strike {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.press-strike {
+  transform-origin: left;
+  animation: press-strike 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ============================================================
    ACCESSIBILITY FLOOR
    ============================================================ */
 
@@ -400,6 +471,7 @@
     scroll-behavior: auto;
   }
 
+  .press-strike,
   .animate-fade-up,
   .animate-fade-up-delay,
   .animate-fade-up-delay-2 {

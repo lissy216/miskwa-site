@@ -97,20 +97,20 @@ export default function Wholesale() {
       <section className="bg-parchment py-section-sm md:py-section">
         <div className="section-narrow">
           <h2 className="font-serif text-heading text-night mb-3">Pricing</h2>
-          <p className="font-serif italic text-body-lg text-night/60 mb-10">
+          <p className="font-serif italic text-body-lg text-night/75 mb-10">
             Per copy, before shipping. All prices in CAD.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b border-night/20">
-                  <th className="text-left py-4 pr-4 font-display text-xs tracking-[0.15em] uppercase text-night/60">
+                  <th className="text-left py-4 pr-4 font-display text-xs tracking-[0.15em] uppercase text-night/75">
                     Title
                   </th>
-                  <th className="text-right py-4 px-4 font-display text-xs tracking-[0.15em] uppercase text-night/60">
+                  <th className="text-right py-4 px-4 font-display text-xs tracking-[0.15em] uppercase text-night/75">
                     Retail
                   </th>
-                  <th className="text-right py-4 pl-4 font-display text-xs tracking-[0.15em] uppercase text-night/60">
+                  <th className="text-right py-4 pl-4 font-display text-xs tracking-[0.15em] uppercase text-night/75">
                     Wholesale
                   </th>
                 </tr>
@@ -120,9 +120,9 @@ export default function Wholesale() {
                   <tr key={b.title} className="border-b border-night/10">
                     <td className="py-5 pr-4">
                       <p className="font-serif text-body-lg text-night">{b.title}</p>
-                      <p className="font-serif italic text-body text-night/60">{b.subtitle}</p>
+                      <p className="font-serif italic text-body text-night/75">{b.subtitle}</p>
                     </td>
-                    <td className="py-5 px-4 text-right font-body text-body text-night/60">
+                    <td className="py-5 px-4 text-right font-body text-body text-night/75">
                       {fmt(b.retail)}
                     </td>
                     <td className="py-5 pl-4 text-right font-body text-body-lg text-night font-semibold">
@@ -133,7 +133,7 @@ export default function Wholesale() {
               </tbody>
             </table>
           </div>
-          <p className="mt-6 font-serif italic text-body text-night/60">
+          <p className="mt-6 font-serif italic text-body text-night/75">
             Prices reflect the standard 55 percent trade discount off retail. Shipping
             and handling are quoted separately per order.
           </p>
@@ -158,7 +158,7 @@ export default function Wholesale() {
           <a href={mailtoUrl} className="btn-primary inline-flex items-center gap-3">
             Email Your Wholesale Inquiry
           </a>
-          <p className="font-serif italic text-caption text-bone/50 mt-6">
+          <p className="font-serif italic text-caption text-bone/70 mt-6">
             Or write to <a href="mailto:miskwa@miskwakimiwan.com?subject=Wholesale%20inquiry" className="text-glow hover:text-sun underline decoration-glow/40 underline-offset-4">miskwa@miskwakimiwan.com</a> directly.
           </p>
         </div>

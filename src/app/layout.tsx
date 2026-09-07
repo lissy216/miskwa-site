@@ -94,6 +94,9 @@ export default function RootLayout({
       className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable} ${bigShoulders.variable} ${sourceSerif.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <a href="#main" className="skip-link font-display text-sm tracking-[0.2em] uppercase">
+          Skip to content
+        </a>
         <SiteNav />
         <SiteMain>{children}</SiteMain>
         <SiteFooter />

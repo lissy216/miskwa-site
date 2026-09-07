@@ -24,5 +24,5 @@ export function SiteMain({ children }: { children: React.ReactNode }) {
   // so dark ink never composites against the incumbent near-black body colour.
   const redesigned = REDESIGNED.has(usePathname())
   const cls = redesigned ? 'flex-1 bg-stock' : 'flex-1 pt-16 md:pt-20'
-  return <main className={cls}>{children}</main>
+  return <main id="main" className={cls}>{children}</main>
 }

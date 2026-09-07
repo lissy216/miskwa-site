@@ -69,13 +69,13 @@ export default function TheReMembering() {
               one. A life that runs well and feels slightly far away. Being loved by
               people who seem to be describing somebody else.
             </p>
-            <p className="font-body text-body text-bone/50 leading-relaxed mb-10">
+            <p className="font-body text-body text-bone/70 leading-relaxed mb-10">
               Most of what gets offered to that part of you is a system. Steps. Practices.
               A better morning. <em>The Re-Membering</em> is not one.
             </p>
 
             <div className="flex flex-col gap-3">
-              <p className="font-serif italic text-caption text-bone/50 max-w-md">
+              <p className="font-serif italic text-caption text-bone/70 max-w-md">
                 Not yet released. This page will carry the buying links the day it is
                 available.
               </p>
@@ -119,7 +119,7 @@ export default function TheReMembering() {
           <ol className="flex flex-col gap-5">
             {places.map((place, i) => (
               <li key={place} className="flex items-baseline gap-5">
-                <span className="font-display text-caption text-glow/60 shrink-0">
+                <span className="font-display text-caption text-glow/85 shrink-0">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="font-serif text-subheading text-bone/80">{place}</span>
@@ -149,7 +149,7 @@ export default function TheReMembering() {
             an unfinished bridge on a farm, the night shift beside their mother&rsquo;s bed.
             Never from above you.
           </p>
-          <p className="font-body text-body text-night/60 leading-relaxed mb-10">
+          <p className="font-body text-body text-night/75 leading-relaxed mb-10">
             Nothing here asks to be believed. Check it against your own breath.
           </p>
           <Link

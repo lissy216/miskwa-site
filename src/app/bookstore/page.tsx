@@ -138,7 +138,7 @@ export default function Bookstore() {
               {/* Details */}
               <div className="text-center md:text-left">
                 {book.comingSoon && (
-                  <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 mb-3">
+                  <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
                     Coming Soon
                   </p>
                 )}
@@ -155,7 +155,7 @@ export default function Bookstore() {
                 </p>
 
                 {book.comingSoon ? (
-                  <p className="font-serif italic text-caption text-bone/50">
+                  <p className="font-serif italic text-caption text-bone/70">
                     Not yet released. The buying links will appear here the day it is
                     available.
                   </p>

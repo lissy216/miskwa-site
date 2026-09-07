@@ -37,17 +37,17 @@ export default function BookOfQuestions() {
             <h1 className="font-serif text-display-sm md:text-display text-night mb-2">
               The Book of Questions
             </h1>
-            <p className="font-serif italic text-subheading text-night/60 mb-2">
+            <p className="font-serif italic text-subheading text-night/75 mb-2">
               The Socratic Year of the Soul
             </p>
-            <p className="font-serif italic text-body-lg text-night/50 mb-8">
+            <p className="font-serif italic text-body-lg text-night/70 mb-8">
               A Year-Long Journey Into You
             </p>
             <div className="divider-cool mb-8" />
-            <p className="font-body text-body-lg text-night/60 leading-relaxed mb-6">
+            <p className="font-body text-body-lg text-night/75 leading-relaxed mb-6">
               Most books hand you answers. This one hands you back to yourself.
             </p>
-            <p className="font-body text-body text-night/50 leading-relaxed mb-10">
+            <p className="font-body text-body text-night/70 leading-relaxed mb-10">
               372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. Not a program. Not a curriculum. A conversation between you and the part of you that has been waiting to be asked.
             </p>
 
@@ -76,12 +76,12 @@ export default function BookOfQuestions() {
               >
                 Ebook at Apple, Kobo, B&amp;N &amp; More
               </a>
-              <p className="font-serif italic text-caption text-night/50 mt-3 max-w-md">
+              <p className="font-serif italic text-caption text-night/70 mt-3 max-w-md">
                 Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
               </p>
               <a
                 href="/wholesale"
-                className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
+                className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 hover:text-glow transition-colors mt-2 inline-block"
               >
                 Wholesale for 5+ copies &rarr;
               </a>
@@ -183,7 +183,7 @@ export default function BookOfQuestions() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {months.map((month) => (
               <div key={month.number} className="border border-bridge/50 rounded-sm p-6 hover:border-glow/30 transition-colors">
-                <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-2">
+                <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-2">
                   Month {month.number}
                 </p>
                 <p className="font-serif text-body-lg text-bone">
@@ -203,10 +203,10 @@ export default function BookOfQuestions() {
           <h2 className="font-serif text-heading text-night mb-4">
             Who This Is For
           </h2>
-          <p className="font-serif italic text-body-lg text-night/60 mb-10">
+          <p className="font-serif italic text-body-lg text-night/75 mb-10">
             You do not have to be broken to need this. You only have to be honest.
           </p>
-          <div className="space-y-5 font-body text-body text-night/50 leading-relaxed">
+          <div className="space-y-5 font-body text-body text-night/70 leading-relaxed">
             <p>
               This book was written for people who have grown tired of being told what their healing is supposed to look like.
             </p>
@@ -263,7 +263,7 @@ export default function BookOfQuestions() {
             >
               Ebook at Apple, Kobo, B&amp;N &amp; More
             </a>
-            <p className="font-serif italic text-caption text-bone/50 mt-4 max-w-md">
+            <p className="font-serif italic text-caption text-bone/70 mt-4 max-w-md">
               Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
             </p>
           </div>

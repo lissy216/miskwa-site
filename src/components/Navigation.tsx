@@ -63,6 +63,15 @@ export default function Navigation() {
               onMouseLeave={() => setBooksOpen(false)}
             >
               <Link
+                href="/the-re-membering"
+                className="block px-5 py-3 text-sm tracking-[0.18em] uppercase font-display text-bone/70 hover:text-glow hover:bg-night/40 transition-colors"
+              >
+                The Re-Membering
+                <span className="block mt-1 text-[0.625rem] tracking-[0.15em] text-glow/50">
+                  Coming Soon
+                </span>
+              </Link>
+              <Link
                 href="/the-signal"
                 className="block px-5 py-3 text-sm tracking-[0.18em] uppercase font-display text-bone/70 hover:text-glow hover:bg-night/40 transition-colors"
               >
@@ -130,6 +139,7 @@ export default function Navigation() {
         <div className="section-container py-6 flex flex-col gap-5">
           <Link href="/" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Home</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">About</Link>
+          <Link href="/the-re-membering" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Re-Membering <span className="text-[0.625rem] tracking-[0.15em] text-glow/50">Coming Soon</span></Link>
           <Link href="/the-signal" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Signal</Link>
           <Link href="/red-rain" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Red Rain</Link>
           <Link href="/book-of-questions" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Book of Questions</Link>

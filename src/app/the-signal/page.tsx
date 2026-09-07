@@ -78,7 +78,7 @@ export default function TheSignal() {
             <p className="font-serif italic text-subheading text-bone/70 mb-2">
               Why Life and People Keep Happening to You
             </p>
-            <p className="font-display text-caption text-bone/50 mb-8 tracking-[0.15em] uppercase">
+            <p className="font-display text-caption text-bone/70 mb-8 tracking-[0.15em] uppercase">
               A book by Miskwa Kimiwan
             </p>
             <div className="divider-warm mb-8" />
@@ -117,12 +117,12 @@ export default function TheSignal() {
               >
                 Ebook at Apple, Kobo, B&amp;N &amp; More
               </a>
-              <p className="font-serif italic text-caption text-bone/50 mt-3 max-w-md">
+              <p className="font-serif italic text-caption text-bone/70 mt-3 max-w-md">
                 Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
               </p>
               <a
                 href="/wholesale"
-                className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
+                className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 hover:text-glow transition-colors mt-2 inline-block"
               >
                 Wholesale for 5+ copies &rarr;
               </a>
@@ -182,7 +182,7 @@ export default function TheSignal() {
           <p className="pull-quote text-bone/90 max-w-2xl mx-auto">
             &ldquo;You are broadcasting something right now. This book is about the life it has been quietly assembling around you.&rdquo;
           </p>
-          <p className="font-display text-caption text-glow/70 mt-6 tracking-[0.2em] uppercase">
+          <p className="font-display text-caption text-glow/85 mt-6 tracking-[0.2em] uppercase">
             &mdash; from <em>The Signal</em>
           </p>
         </div>
@@ -221,10 +221,10 @@ export default function TheSignal() {
           <h2 className="font-serif text-heading text-night mb-4">
             Who This Is For
           </h2>
-          <p className="font-serif italic text-body-lg text-night/60 mb-10">
+          <p className="font-serif italic text-body-lg text-night/75 mb-10">
             For the reader whose patterns have refused to be left behind.
           </p>
-          <div className="space-y-5 font-body text-body text-night/60 leading-relaxed">
+          <div className="space-y-5 font-body text-body text-night/75 leading-relaxed">
             <p>
               For the reader who has done years of inner work and knows something has still not been named.
             </p>
@@ -275,7 +275,7 @@ export default function TheSignal() {
             >
               Ebook at Apple, Kobo, B&amp;N &amp; More
             </a>
-            <p className="font-serif italic text-caption text-bone/50 mt-4 max-w-md">
+            <p className="font-serif italic text-caption text-bone/70 mt-4 max-w-md">
               Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
             </p>
           </div>

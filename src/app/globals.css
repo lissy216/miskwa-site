@@ -294,7 +294,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 30% 45%, rgba(139, 37, 0, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 55% at 30% 45%, rgba(139, 37, 0, 0.22) 0%, transparent 60%),
     radial-gradient(ellipse 55% 45% at 75% 80%, rgba(196, 58, 26, 0.18) 0%, transparent 65%),
     radial-gradient(circle at 50% 20%, rgba(212, 168, 83, 0.07) 0%, transparent 55%);
   pointer-events: none;
@@ -324,7 +324,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 75% 55% at 70% 30%, rgba(212, 168, 83, 0.40) 0%, transparent 60%),
+    radial-gradient(ellipse 75% 55% at 70% 30%, rgba(212, 168, 83, 0.16) 0%, transparent 60%),
     radial-gradient(ellipse 55% 45% at 25% 80%, rgba(90, 138, 143, 0.14) 0%, transparent 65%),
     radial-gradient(circle at 50% 50%, rgba(184, 134, 78, 0.08) 0%, transparent 70%);
   pointer-events: none;
@@ -357,4 +357,62 @@
   color: var(--color-glow);
   opacity: 0.6;
   font-size: 0.75rem;
+}
+
+/* ============================================================
+   ACCESSIBILITY FLOOR
+   ============================================================ */
+
+/* The site shipped with zero :focus-visible rules across 790. */
+:focus-visible {
+  outline: 2px solid var(--color-glow);
+  outline-offset: 3px;
+}
+
+.mood-light :focus-visible,
+.bg-parchment :focus-visible,
+.bg-mist :focus-visible {
+  outline-color: var(--color-ash);
+}
+
+/* Skip link: visible only once focused. */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-night);
+  color: var(--color-glow);
+  border: 1px solid var(--color-glow);
+  transition: top 150ms ease-out;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* 45 animated elements and an unconditional smooth scroll shipped with no
+   reduced-motion guard. The fade-up classes start at opacity 0, so they must
+   be forced visible here rather than merely having their animation removed. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-fade-up,
+  .animate-fade-up-delay,
+  .animate-fade-up-delay-2 {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

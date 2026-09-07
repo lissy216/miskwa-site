@@ -71,10 +71,14 @@ it.
   Peter Bernard. Tagline: "Writing for the Soul's Journey."
 - Voice: plain, unhurried, unsentimental about pain. Filters rather than sells.
 - **No cultural iconography.** Binding, confirmed 2026-09-06. The site carries
-  no symbolic or ceremonial imagery. The current triquetra, Eye of Providence,
-  spiral, mandala and lotus-posture figure are to be removed rather than
-  replaced with more culturally accurate symbols. Refusing to decorate is the
-  position, and it is consistent with refusing the guru posture.
+  no symbolic or ceremonial imagery of its own. The current triquetra, Eye of
+  Providence, spiral, mandala and lotus-posture figure are to be removed rather
+  than replaced with more culturally accurate symbols. Refusing to decorate is
+  the position, and it is consistent with refusing the guru posture.
+- **Published cover art is exempt from the above.** Confirmed 2026-09-07. The
+  four jackets are the books as published and appear unaltered wherever a book
+  is shown, including The Signal's radiant figure. The rule governs imagery the
+  site invents for itself, not the artwork the titles already ship with.
 - Brand silo: this is the Miskwa Kimiwan author platform. The 8th Fire
   (the8thfire.com) is a separate brand and its voice must not bleed in.
 

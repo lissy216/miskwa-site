@@ -13,11 +13,11 @@ function H2({ children }: { children: React.ReactNode }) {
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="font-body text-body text-night/60 leading-relaxed mb-4">{children}</p>
+  return <p className="font-body text-body text-night/75 leading-relaxed mb-4">{children}</p>
 }
 
 function LI({ children }: { children: React.ReactNode }) {
-  return <li className="font-body text-body text-night/60 leading-relaxed mb-3">{children}</li>
+  return <li className="font-body text-body text-night/75 leading-relaxed mb-3">{children}</li>
 }
 
 export default function Privacy() {

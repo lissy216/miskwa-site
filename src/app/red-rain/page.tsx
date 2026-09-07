@@ -25,10 +25,10 @@ export default function RedRain() {
             <p className="font-body text-body-lg text-bone/70 leading-relaxed mb-6">
               A boy survives the traumas that should have broken him: a hospital bed lit like a furnace, skin splitting like bark. A family history heavy with silence. Nights visited by dreams that feel like warnings. He grows up in the shadow of intergenerational trauma and the aching questions it leaves behind.
             </p>
-            <p className="font-body text-body text-bone/50 leading-relaxed mb-6">
+            <p className="font-body text-body text-bone/70 leading-relaxed mb-6">
               What is real? Where does pain go when no one will hold it? Who do we become when the world forgets to see us?
             </p>
-            <p className="font-body text-body text-bone/50 leading-relaxed mb-10">
+            <p className="font-body text-body text-bone/70 leading-relaxed mb-10">
               From the long corridors of missing memory, he learns the fiercest medicine he has: presence. The courage to stay with what hurts long enough to let it change.
             </p>
 
@@ -66,12 +66,12 @@ export default function RedRain() {
               >
                 Ebook at Apple, Kobo, B&amp;N &amp; More
               </a>
-              <p className="font-serif italic text-caption text-bone/50 mt-3 max-w-md">
+              <p className="font-serif italic text-caption text-bone/70 mt-3 max-w-md">
                 Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
               </p>
               <a
                 href="/wholesale"
-                className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 hover:text-glow transition-colors mt-2 inline-block"
+                className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 hover:text-glow transition-colors mt-2 inline-block"
               >
                 Wholesale for 5+ copies &rarr;
               </a>
@@ -109,7 +109,7 @@ export default function RedRain() {
             <p>
               If you have ever felt unseen, scattered by forces larger than you, this book offers a hand on your shoulder and a path through the forest. Not to erase the past, but to alchemize it into choice, compassion, and a fire that finally ignites your name.
             </p>
-            <p className="text-bone/50">
+            <p className="text-bone/70">
               <em>Red Rain: A Soul Shattered</em> is not a tale of easy redemption. It is a field guide for walking through darkness with dignity.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function RedRain() {
           <p className="pull-quote text-bone max-w-2xl mx-auto">
             &ldquo;Healing is not about escaping the thing that is hurting you. It is about becoming conscious of it.&rdquo;
           </p>
-          <p className="font-display text-caption text-bone/40 mt-6 tracking-wide">
+          <p className="font-display text-caption text-bone/70 mt-6 tracking-wide">
             &mdash; from <em>Red Rain: A Soul Shattered</em>
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function RedRain() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
                 &ldquo;At first, this book appears to be a story about a boy&rsquo;s life events as he grows into a man. What you don&rsquo;t initially realize is that the story is quietly accessing different parts of you. Some chapters are difficult to read, not only because of their content, but because they are surfacing your own unresolved wounds. By the end, you realize you have been re-patterned, changed, and healed. This book doesn&rsquo;t simply illustrate the power of interconnectedness and collective consciousness; it actively uses that power to heal you.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 C.V.D.Z.
               </footer>
             </blockquote>
@@ -154,7 +154,7 @@ export default function RedRain() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
                 &ldquo;I have never wanted to simply hold an author so tightly and just tell them everything is going to be ok. It broke me, it healed me, and I want to live and love with all that I am.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 B.T.S.
               </footer>
             </blockquote>
@@ -163,7 +163,7 @@ export default function RedRain() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
                 &ldquo;This book changed me. I felt it happening with each page I read. There&rsquo;s a medicine woven into it: the medicine of meaning. Heart breaking, raw, honest, with a poetic elegance, it gave me hope and inspiration, a guidance. A truly remarkable read. It&rsquo;s a very grounded approach to the spiritual alchemy required to save a life by giving meaning to all the pain and suffering we experience here.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 C.R.D.
               </footer>
             </blockquote>
@@ -176,7 +176,7 @@ export default function RedRain() {
           ============================================ */}
       <section className="mood-shadow py-16 border-t border-ash/20">
         <div className="section-narrow text-center">
-          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/60 mb-4">
+          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/85 mb-4">
             About the Author
           </p>
           <p className="font-body text-body text-bone/60 leading-relaxed max-w-xl mx-auto">

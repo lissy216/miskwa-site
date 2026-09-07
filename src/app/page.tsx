@@ -18,9 +18,9 @@ export default function Home() {
       {/* ============================================
           HERO: Split Panel — Shadow / Light, with per-book SVG atmospheres and a soft seam blend
           ============================================ */}
-      <section className="relative min-h-[90vh] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+      <section className="relative min-h-[90vh] grid grid-cols-1 xl:grid-cols-2 overflow-hidden">
         {/* Shadow Side — Red Rain atmosphere (meditating figure + ember heart + ancestral silhouettes) */}
-        <div className="hero-field-shadow flex items-center justify-center p-8 md:p-16 lg:p-20 min-h-[60vh] md:min-h-[90vh]">
+        <div className="hero-field-shadow flex items-center justify-center p-8 md:p-12 xl:p-20 min-h-[60vh] xl:min-h-[90vh]">
           <ShadowArt className="absolute inset-0 w-full h-full opacity-55 pointer-events-none" />
           <div className="relative z-10 max-w-md">
             <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-glow mb-3">
@@ -29,7 +29,7 @@ export default function Home() {
             <p className="font-display text-xs md:text-sm tracking-[0.22em] uppercase text-glow/90 mb-10">
               Writing for the Soul&rsquo;s Journey
             </p>
-            <h1 className="font-serif text-display-sm md:text-display text-bone mb-6 leading-tight [text-shadow:0_0_28px_rgba(10,5,2,0.85)]">
+            <h1 className="font-serif text-display-sm xl:text-display text-bone mb-6 leading-tight [text-shadow:0_0_28px_rgba(10,5,2,0.85)]">
               A house for work that holds shadow and light together.
             </h1>
             <p className="font-body text-body-lg text-bone/80 mb-10 leading-relaxed [text-shadow:0_0_22px_rgba(10,5,2,0.8)]">
@@ -47,18 +47,18 @@ export default function Home() {
         </div>
 
         {/* Light Side — The Signal (new release) atmosphere */}
-        <div className="hero-field-light flex items-center justify-center p-8 md:p-12 lg:p-16 min-h-[50vh] md:min-h-[90vh]">
+        <div className="hero-field-light flex items-center justify-center p-8 md:p-10 xl:p-16 min-h-[50vh] xl:min-h-[90vh]">
           <LightArt className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" />
-          <div className="relative z-10 w-full max-w-md md:max-w-2xl">
-            <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-10 text-center md:text-left">
+          <div className="relative z-10 w-full max-w-md min-[1440px]:max-w-2xl">
+            <div className="flex flex-col min-[1440px]:flex-row items-center gap-8 min-[1440px]:gap-10 text-center min-[1440px]:text-left">
               {/* Book cover */}
-              <div className="relative w-40 md:w-52 lg:w-56 shrink-0 aspect-2/3 bg-black rounded-sm overflow-hidden shadow-2xl">
+              <div className="relative w-40 md:w-48 min-[1440px]:w-56 shrink-0 aspect-2/3 bg-black rounded-sm overflow-hidden shadow-2xl">
                 <Image
                   src="/images/the-signal-cover.jpg"
                   alt="The Signal — book cover"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 160px, (max-width: 1024px) 208px, 224px"
+                  sizes="(max-width: 768px) 160px, (max-width: 1440px) 192px, 224px"
                   priority
                 />
               </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
         {/* Seam blend layer 1 — soft vertical gradient bridges the two atmospheres */}
         <div
-          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[38%] pointer-events-none z-2"
+          className="hidden xl:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[38%] pointer-events-none z-2"
           aria-hidden
           style={{
             background:
@@ -98,7 +98,7 @@ export default function Home() {
 
         {/* Seam blend layer 2 — central ember/amber glow at the meeting point */}
         <div
-          className="hidden md:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[22%] pointer-events-none z-2"
+          className="hidden xl:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[22%] pointer-events-none z-2"
           aria-hidden
           style={{
             background:
@@ -168,7 +168,7 @@ export default function Home() {
             <p className="font-body text-body text-night/50 mb-8">
               Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory and medicine whose work bridges trauma, presence, and the unseen world. The work is simple in its demand and difficult in its honesty: sit with what you carry, feel it in the body, and discover that you are more than what happened to you.
             </p>
-            <Link href="/about" className="btn-secondary">
+            <Link href="/about" className="btn-light">
               About the Work
             </Link>
           </div>

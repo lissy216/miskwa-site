@@ -13,14 +13,31 @@ export default function Contact() {
     subject: '',
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [website, setWebsite] = useState('') // honeypot
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // TODO: Connect to form handler (Formspree, Netlify Forms, or custom API route)
-    // For now, this is a placeholder
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
+    setStatus('sending')
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, website }),
+      })
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        setError(data.error ?? 'Your message could not be sent.')
+        setStatus('error')
+        return
+      }
+      setStatus('sent')
+    } catch {
+      setError('Your message could not be sent. Please check your connection.')
+      setStatus('error')
+    }
   }
 
   return (
@@ -42,7 +59,7 @@ export default function Contact() {
               Whether you have a question about the work, the books, or the programs, or you are ready to begin, this is the place to start.
             </p>
 
-            {submitted ? (
+            {status === 'sent' ? (
               <div className="bg-white/30 border border-glow/30 rounded-sm p-8">
                 <p className="font-serif text-subheading text-night mb-2">
                   Thank you.
@@ -64,7 +81,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 bg-night border border-bridge rounded-sm text-bone
-                             focus:outline-none focus:border-glow transition-colors
+                             focus:border-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-glow transition-colors
                              font-body text-body placeholder-night/40"
                     placeholder=" "
                   />
@@ -81,7 +98,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full px-4 py-3 bg-night border border-bridge rounded-sm text-bone
-                             focus:outline-none focus:border-glow transition-colors
+                             focus:border-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-glow transition-colors
                              font-body text-body placeholder-night/40"
                     placeholder=" "
                   />
@@ -96,7 +113,7 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full px-4 py-3 bg-night border border-bridge rounded-sm text-bone
-                             focus:outline-none focus:border-glow transition-colors
+                             focus:border-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-glow transition-colors
                              font-body text-body"
                   >
                     <option value="">Select a topic</option>
@@ -119,14 +136,40 @@ export default function Contact() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 bg-night border border-bridge rounded-sm text-bone
-                             focus:outline-none focus:border-glow transition-colors
+                             focus:border-glow focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-glow transition-colors
                              font-body text-body resize-none placeholder-night/40"
                     placeholder=" "
                   />
                 </div>
 
-                <button type="submit" className="btn-light">
-                  Send Message
+                <div className="hidden" aria-hidden>
+                  <label htmlFor="website">Leave this field empty</label>
+                  <input
+                    type="text"
+                    id="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+
+                {status === 'error' && (
+                  <p role="alert" className="font-body text-body text-ember">
+                    {error} You can also write directly to{' '}
+                    <a href="mailto:miskwa@miskwakimiwan.com" className="underline">
+                      miskwa@miskwakimiwan.com
+                    </a>
+                    .
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="btn-light disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending…' : 'Send Message'}
                 </button>
               </form>
             )}

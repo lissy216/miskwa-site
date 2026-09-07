@@ -15,7 +15,7 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-night/95 backdrop-blur-sm border-b border-ash/20">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         {/* Logo / Wordmark with Subtitle */}
-        <div>
+        <div className="shrink-0">
           <Link href="/" className="font-serif text-xl md:text-2xl text-bone tracking-wide block leading-tight">
             Miskwa Kimiwan
           </Link>
@@ -25,7 +25,7 @@ export default function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-4 2xl:gap-7">
           <Link
             href="/"
             className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
@@ -93,6 +93,15 @@ export default function Navigation() {
           </div>
 
           <Link
+            href="/bookstore"
+            className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
+              isActive('/bookstore') ? 'text-glow' : 'text-bone/70 hover:text-bone'
+            }`}
+          >
+            Bookstore
+          </Link>
+
+          <Link
             href="/programs"
             className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
               isActive('/programs') ? 'text-glow' : 'text-bone/70 hover:text-bone'
@@ -120,7 +129,7 @@ export default function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-bone p-2"
+          className="xl:hidden text-bone p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -133,8 +142,8 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-night border-t border-ash/20 transition-all duration-300 overflow-hidden ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      <div className={`xl:hidden bg-night border-t border-ash/20 transition-all duration-300 ${
+        isOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 overflow-hidden opacity-0'
       }`}>
         <div className="section-container py-6 flex flex-col gap-5">
           <Link href="/" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Home</Link>
@@ -143,6 +152,8 @@ export default function Navigation() {
           <Link href="/the-signal" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Signal</Link>
           <Link href="/red-rain" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Red Rain</Link>
           <Link href="/book-of-questions" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Book of Questions</Link>
+          <Link href="/bookstore" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Bookstore</Link>
+
           <Link href="/programs" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Programs</Link>
           <Link href="/wholesale" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Wholesale</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Contact</Link>

@@ -7,7 +7,13 @@ import Footer from './Footer'
 // The letterpress world is rolling out surface by surface. The homepage carries
 // its own masthead and colophon in the new vocabulary, so the incumbent chrome
 // steps aside there and keeps serving every route still in the old world.
-const REDESIGNED = new Set(['/'])
+const REDESIGNED = new Set([
+  '/',
+  '/the-signal',
+  '/red-rain',
+  '/book-of-questions',
+  '/the-re-membering',
+])
 
 export function SiteNav() {
   return REDESIGNED.has(usePathname()) ? null : <Navigation />

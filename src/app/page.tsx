@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Masthead from '@/components/press/Masthead'
+import Colophon from '@/components/press/Colophon'
 
 // Every fact on this page is carried over from the book pages and the bookstore.
 // Nothing here is invented: no press, no awards, no sales figures, no testimonials.
@@ -41,27 +43,7 @@ const titles = [
 export default function Home() {
   return (
     <div className="press min-h-screen bg-stock text-ink font-text">
-      {/* Masthead — the series line at the head of the sheet */}
-      <header className="bg-madder text-stock-hi">
-        <div className="mx-auto max-w-5xl px-6 py-5 flex items-baseline justify-between gap-6">
-          <h1 className="font-wood text-2xl font-bold uppercase tracking-tight leading-none">
-            <Link href="/" className="inline-block py-2">
-              Miskwa Kimiwan
-            </Link>
-          </h1>
-          <nav className="flex items-baseline gap-6 font-wood text-sm font-semibold uppercase tracking-wide">
-            <Link href="/bookstore" className="inline-block py-3 hover:underline underline-offset-4">
-              Books
-            </Link>
-            <Link href="/about" className="inline-block py-3 hover:underline underline-offset-4">
-              About
-            </Link>
-            <Link href="/contact" className="inline-block py-3 hover:underline underline-offset-4">
-              Contact
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Masthead as="h1" />
 
       {/* First viewport — the reader begins reading here, not below the fold */}
       <section className="bg-madder text-stock-hi">
@@ -169,47 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Colophon — a real chapbook says what it was made of */}
-      <footer className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-        <div className="rule-press pt-10 grid gap-10 md:grid-cols-[1fr_auto] md:items-start">
-          <div className="max-w-[46ch]">
-            <h2 className="font-wood text-3xl font-bold uppercase tracking-tight leading-none">
-              The Rainfall Newsletter
-            </h2>
-            <p className="mt-4 font-text text-[1.0625rem] leading-[1.65]">
-              Writing on redemption, the body, and the practice of becoming more
-              than what happened.
-            </p>
-            <a
-              href="https://substack.com/@miskwakimiwan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-6 font-wood text-base font-bold uppercase tracking-wide bg-ink text-stock px-6 py-3 hover:bg-madder transition-colors"
-            >
-              Subscribe on Substack
-            </a>
-          </div>
-
-          <div className="font-text text-[0.9375rem] leading-[1.7] text-ink-soft md:text-right md:max-w-[26ch]">
-            <p>
-              Set in Big Shoulders and Source Serif. Miskwa Kimiwan is the pen name
-              of Peter Bernard.
-            </p>
-            <p className="mt-4 flex flex-col md:items-end">
-              <Link href="/bookstore" className="inline-block py-2 underline underline-offset-4">
-                Booksellers and wholesale
-              </Link>
-              <Link href="/privacy" className="inline-block py-2 underline underline-offset-4">
-                Privacy
-              </Link>
-              <a href="mailto:miskwa@miskwakimiwan.com" className="inline-block py-2 underline underline-offset-4">
-                miskwa@miskwakimiwan.com
-              </a>
-            </p>
-            <p className="mt-4">© {new Date().getFullYear()} Miskwa Kimiwan</p>
-          </div>
-        </div>
-      </footer>
+      <Colophon />
     </div>
   )
 }

@@ -17,11 +17,11 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center">
             {themes.map((t, i) => (
               <span key={t} className="flex items-center gap-x-6">
-                <span className="font-display text-[11px] tracking-[0.3em] uppercase text-glow/75">
+                <span className="font-display text-[11px] tracking-[0.3em] uppercase text-glow/85">
                   {t}
                 </span>
                 {i < themes.length - 1 && (
-                  <span className="text-glow/40 text-xs select-none" aria-hidden>
+                  <span className="text-glow/85 text-xs select-none" aria-hidden>
                     &#10022;
                   </span>
                 )}
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-5">Navigate</p>
+            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">Navigate</p>
             <div className="flex flex-col gap-3">
               <Link href="/about" className="text-caption text-bone/70 hover:text-bone transition-colors">About</Link>
               <Link href="/the-signal" className="text-caption text-bone/70 hover:text-bone transition-colors">The Signal</Link>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Connect */}
           <div>
-            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-5">Connect</p>
+            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">Connect</p>
             <div className="flex flex-col gap-3">
               <a
                 href="https://www.facebook.com/MiskwaKimiwan"
@@ -90,10 +90,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-ash/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-bone/50">
+          <p className="text-xs text-bone/70">
             &copy; 2025&ndash;2026 Miskwa Kimiwan &middot; Red Rain Press &middot; All Rights Reserved
           </p>
-          <p className="text-xs text-bone/50">
+          <p className="text-xs text-bone/70">
             We all live in glass houses.
           </p>
         </div>

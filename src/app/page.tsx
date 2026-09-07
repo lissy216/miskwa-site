@@ -21,7 +21,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] grid grid-cols-1 xl:grid-cols-2 overflow-hidden">
         {/* Shadow Side — Red Rain atmosphere (meditating figure + ember heart + ancestral silhouettes) */}
         <div className="hero-field-shadow flex items-center justify-center p-8 md:p-12 xl:p-20 min-h-[60vh] xl:min-h-[90vh]">
-          <ShadowArt className="absolute inset-0 w-full h-full opacity-55 pointer-events-none" />
+          <ShadowArt className="absolute inset-0 w-full h-full opacity-35 pointer-events-none" />
           <div className="relative z-10 max-w-md">
             <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-glow mb-3">
               Miskwa Kimiwan
@@ -29,10 +29,10 @@ export default function Home() {
             <p className="font-display text-xs md:text-sm tracking-[0.22em] uppercase text-glow/90 mb-10">
               Writing for the Soul&rsquo;s Journey
             </p>
-            <h1 className="font-serif text-display-sm xl:text-display text-bone mb-6 leading-tight [text-shadow:0_0_28px_rgba(10,5,2,0.85)]">
+            <h1 className="font-serif text-[2.25rem] md:text-[2.75rem] xl:text-[3rem] leading-[1.15] text-bone mb-6">
               A house for work that holds shadow and light together.
             </h1>
-            <p className="font-body text-body-lg text-bone/80 mb-10 leading-relaxed [text-shadow:0_0_22px_rgba(10,5,2,0.8)]">
+            <p className="font-body text-body-lg text-bone/80 mb-10 leading-relaxed">
               Books that walk through darkness with dignity. Healing work that sits with what hurts long enough to let it change.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -48,7 +48,7 @@ export default function Home() {
 
         {/* Light Side — The Signal (new release) atmosphere */}
         <div className="hero-field-light flex items-center justify-center p-8 md:p-10 xl:p-16 min-h-[50vh] xl:min-h-[90vh]">
-          <LightArt className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" />
+          <LightArt className="absolute inset-0 w-full h-full opacity-40 pointer-events-none" />
           <div className="relative z-10 w-full max-w-md min-[1440px]:max-w-2xl">
             <div className="flex flex-col min-[1440px]:flex-row items-center gap-8 min-[1440px]:gap-10 text-center min-[1440px]:text-left">
               {/* Book cover */}
@@ -65,17 +65,17 @@ export default function Home() {
 
               {/* Text */}
               <div className="flex-1 min-w-0">
-                <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-4">
-                  New Release
-                </p>
-                <h2 className="font-serif text-display-sm md:text-heading text-night mb-3 leading-tight [text-shadow:0_0_22px_rgba(245,240,230,0.9)]">
+                <h2 className="font-serif text-display-sm md:text-heading text-night mb-3 leading-tight">
                   The Signal
                 </h2>
-                <p className="font-serif italic text-subheading text-night/80 mb-5 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
+                <p className="font-serif italic text-subheading text-night/80 mb-5">
                   Why Life and People Keep Happening to You
                 </p>
-                <p className="font-body text-body text-night/75 mb-7 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
+                <p className="font-body text-body text-night/75 mb-7">
                   You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
+                </p>
+                <p className="font-body text-caption text-ash mb-7">
+                  New release, out now.
                 </p>
                 <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
                   Read More
@@ -117,7 +117,7 @@ export default function Home() {
           <p className="pull-quote text-bone/90 max-w-2xl mx-auto">
             &ldquo;Healing is not about escaping the thing that is hurting you. It is about becoming conscious of it.&rdquo;
           </p>
-          <p className="font-display text-caption text-glow/70 mt-6 tracking-[0.2em] uppercase">
+          <p className="font-display text-caption text-glow/85 mt-6 tracking-[0.2em] uppercase">
             &mdash; from <em>Red Rain: A Soul Shattered</em>
           </p>
         </div>
@@ -156,16 +156,13 @@ export default function Home() {
       <section className="bg-parchment py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-6">
-              The Work
-            </p>
             <h2 className="font-serif text-heading text-night mb-6">
               No masters here. No pedestals. No gurus.
             </h2>
-            <p className="font-body text-body-lg text-night/60 mb-6 leading-relaxed">
+            <p className="font-body text-body-lg text-night/75 mb-6 leading-relaxed">
               There is a space between spiritual bypassing and clinical distance where the real work lives. That is where you will find this practice. Grounded in the body. Honest about the dark. Built by someone who has been where you are and does not pretend otherwise.
             </p>
-            <p className="font-body text-body text-night/50 mb-8">
+            <p className="font-body text-body text-night/70 mb-8">
               Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory and medicine whose work bridges trauma, presence, and the unseen world. The work is simple in its demand and difficult in its honesty: sit with what you carry, feel it in the body, and discover that you are more than what happened to you.
             </p>
             <Link href="/about" className="btn-light">
@@ -190,11 +187,8 @@ export default function Home() {
       <section id="books" className="bg-night py-section-sm md:py-section">
         <div className="section-container">
           <div className="text-center mb-16">
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-glow mb-4">
-              Published and Forthcoming
-            </p>
             <h2 className="font-serif text-heading text-bone">
-              Books
+              Books, published and forthcoming
             </h2>
           </div>
 
@@ -210,7 +204,7 @@ export default function Home() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
                 />
               </div>
-              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 mb-3">
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
                 Coming Soon
               </p>
               <h3 className="font-serif text-subheading text-bone mb-2">The Re-Membering</h3>
@@ -296,16 +290,13 @@ export default function Home() {
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
-                Programs
-              </p>
               <h2 className="font-serif text-heading text-bone mb-6">
                 Living The Light Sacred Alchemy Training
               </h2>
               <p className="font-body text-body-lg text-bone/70 mb-4 leading-relaxed">
                 A two-year program for anyone who has felt the pull toward healing work but did not know where to begin. Or for the practitioner who has trained elsewhere and senses that something essential was left out.
               </p>
-              <p className="font-body text-body text-bone/50 mb-8">
+              <p className="font-body text-body text-bone/70 mb-8">
                 Eight modules. Over 320 hours of medicine work. Energy healing, journey work, ceremony, readings, space healings, and the inner discipline required to hold space for another human being. You will learn by doing. You will heal as you train.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -336,11 +327,8 @@ export default function Home() {
       <section className="bg-parchment py-section-sm md:py-section">
         <div className="section-container">
           <div className="text-center mb-16">
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-4">
-              Readers Reflections
-            </p>
             <h2 className="font-serif text-heading text-night">
-              What the work leaves behind
+              What readers say the work leaves behind
             </h2>
           </div>
 
@@ -349,7 +337,7 @@ export default function Home() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
                 &ldquo;This book doesn&rsquo;t simply illustrate the power of interconnectedness and collective consciousness; it actively uses that power to heal you.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 C.V.D.Z.
               </footer>
             </blockquote>
@@ -358,7 +346,7 @@ export default function Home() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
                 &ldquo;It broke me, it healed me, and I want to live and love with all that I am.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 B.T.S.
               </footer>
             </blockquote>
@@ -367,7 +355,7 @@ export default function Home() {
               <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
                 &ldquo;There&rsquo;s a medicine woven into it. The medicine of meaning. A truly remarkable read. My new favourite author.&rdquo;
               </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
+              <footer className="font-display text-caption text-night/75 tracking-wide">
                 C.R.D.
               </footer>
             </blockquote>
@@ -380,14 +368,11 @@ export default function Home() {
           ============================================ */}
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-narrow text-center">
-          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
-            The Rainfall Newsletter
-          </p>
           <h2 className="font-serif text-heading text-bone mb-4">
             Walk with me through the forest
           </h2>
           <p className="font-body text-body text-bone/60 mb-10 max-w-lg mx-auto">
-            Writing on redemption, the body, and the practice of becoming more than what happened. Published on Substack.
+            Writing on redemption, the body, and the practice of becoming more than what happened. Published on Substack as The Rainfall Newsletter.
           </p>
           <a
             href="https://substack.com/@miskwakimiwan"

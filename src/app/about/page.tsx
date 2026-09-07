@@ -23,10 +23,10 @@ export default function About() {
               The guide has bled too.
             </h1>
             <div className="divider-cool mb-8" />
-            <p className="font-body text-body-lg text-night/60 leading-relaxed mb-6">
+            <p className="font-body text-body-lg text-night/75 leading-relaxed mb-6">
               Something shattered early. A hospital bed lit like a furnace. Skin splitting like bark. A family history heavy with silence and the kind of wounds that travel through bloodlines without anyone naming them.
             </p>
-            <p className="font-body text-body text-night/50 leading-relaxed">
+            <p className="font-body text-body text-night/70 leading-relaxed">
               What followed was not a straight line toward healing. It was years of sitting in the dark, learning that the dark is not the enemy. That the body already knows what the mind is still arguing about. That no pre-packaged spiritual path matched what was actually happening, and the only honest option was to build something from the raw material of lived experience.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function About() {
           <p className="pull-quote-lg text-bone/85">
             &ldquo;The wound is where the light enters you.&rdquo;
           </p>
-          <p className="font-display text-caption text-glow/70 mt-6 tracking-[0.2em] uppercase">
+          <p className="font-display text-caption text-glow/85 mt-6 tracking-[0.2em] uppercase">
             &mdash; Rumi
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function About() {
             <p>
               This work operates on a different premise. The guide has done the work, is still doing the work, and does not claim a finished position. No one else is required for the work of coming home to yourself. What is offered here is a space honest enough and safe enough for you to stop performing, face what you have been carrying, feel it in the body, and discover that you are more than what happened to you.
             </p>
-            <p className="text-bone/50">
+            <p className="text-bone/70">
               Redemption is not a single event. It is a daily practice of choosing to become more than what happened. Everything written, taught, and offered here exists to hold space for that truth.
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function About() {
           <h2 className="font-serif text-heading text-night mb-10">
             Who finds this work
           </h2>
-          <div className="space-y-6 font-body text-body-lg text-night/60 leading-relaxed">
+          <div className="space-y-6 font-body text-body-lg text-night/75 leading-relaxed">
             <p>
               People who carry weight nobody sees. Who have been hurt and have hurt others. Who are done pretending and ready for a space where the work is real, redemption is possible, and the guide has bled too.
             </p>

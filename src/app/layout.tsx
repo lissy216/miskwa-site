@@ -79,8 +79,11 @@ export default function RootLayout({
       className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <a href="#main" className="skip-link font-display text-sm tracking-[0.2em] uppercase">
+          Skip to content
+        </a>
         <Navigation />
-        <main className="flex-1 pt-16 md:pt-20">
+        <main id="main" className="flex-1 pt-16 md:pt-20">
           {children}
         </main>
         <Footer />

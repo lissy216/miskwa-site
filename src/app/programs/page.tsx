@@ -27,9 +27,6 @@ export default function Programs() {
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
-              Training Program
-            </p>
             <h1 className="font-serif text-display-sm md:text-display text-bone mb-4">
               Living The Light
             </h1>
@@ -40,7 +37,7 @@ export default function Programs() {
             <p className="font-body text-body-lg text-bone/70 leading-relaxed mb-6">
               You have felt the pull toward healing work. Toward something deeper than what the surface offers. Maybe you have tried other trainings and sensed that something essential was missing. Or maybe you have never trained at all, but the call will not leave you alone.
             </p>
-            <p className="font-body text-body text-bone/50 leading-relaxed">
+            <p className="font-body text-body text-bone/70 leading-relaxed">
               Living The Light is a two-year, eight-module program that teaches spiritual healing, energy medicine, and the ceremonies to heal your life and dream your world into being. It does not require prior experience. It requires honesty.
             </p>
           </div>
@@ -88,7 +85,7 @@ export default function Programs() {
           <h2 className="font-serif text-heading text-night mb-10">
             How it works
           </h2>
-          <div className="space-y-6 font-body text-body text-night/60 leading-relaxed">
+          <div className="space-y-6 font-body text-body text-night/75 leading-relaxed">
             <p>
               The program is interactive and built for your learning. Each topic is introduced with teaching and notes, followed by a live demonstration. Then live questions and answers, so that when you go into a student exchange to practice, you feel grounded in what you are doing. After that, you practice with other students in class. Between weekends, you work on yourself and practice with others.
             </p>
@@ -113,13 +110,13 @@ export default function Programs() {
               <h2 className="font-serif text-heading text-bone mb-10">
                 Program Dates
               </h2>
-              <p className="text-caption text-bone/40 mb-6">
+              <p className="text-caption text-bone/70 mb-6">
                 16 weekends over 2 years &middot; Fridays 5&ndash;9 PM &middot; Saturdays &amp; Sundays 9 AM&ndash;6 PM
               </p>
               <div className="space-y-4">
                 {modules.map((m) => (
                   <div key={m.module} className="border border-bridge/50 rounded-sm p-5">
-                    <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-2">
+                    <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-2">
                       Module {m.module}
                     </p>
                     <p className="font-body text-caption text-bone/60">
@@ -148,17 +145,17 @@ export default function Programs() {
                     Prepay &amp; Save
                   </p>
                   <p className="font-serif text-display-sm text-bone mb-2">$7,693</p>
-                  <p className="font-body text-caption text-bone/50">
+                  <p className="font-body text-caption text-bone/70">
                     Save $1,099. Includes one module free. Regular price $8,792.
                   </p>
                 </div>
 
                 <div className="border border-bridge/30 rounded-sm p-8">
-                  <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/60 mb-3">
+                  <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
                     Monthly Payment Plan
                   </p>
-                  <p className="font-serif text-display-sm text-bone mb-2">$389.63<span className="font-body text-body text-bone/40">/month</span></p>
-                  <p className="font-body text-caption text-bone/50">
+                  <p className="font-serif text-display-sm text-bone mb-2">$389.63<span className="font-body text-body text-bone/70">/month</span></p>
+                  <p className="font-body text-caption text-bone/70">
                     24 equal monthly payments. 5.99% finance charge. Taxes extra.
                   </p>
                 </div>
@@ -168,7 +165,7 @@ export default function Programs() {
                 <Link href="/contact" className="btn-primary">
                   Register Now
                 </Link>
-                <p className="font-body text-caption text-bone/30 mt-4">
+                <p className="font-body text-caption text-bone/70 mt-4">
                   Registration opens a conversation. We will be in touch to walk through next steps.
                 </p>
               </div>
@@ -183,13 +180,10 @@ export default function Programs() {
       <section id="sessions" className="bg-parchment py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-6">
-              One-on-One
-            </p>
             <h2 className="font-serif text-heading text-night mb-8">
               Private Healing Sessions
             </h2>
-            <div className="space-y-6 font-body text-body-lg text-night/60 leading-relaxed">
+            <div className="space-y-6 font-body text-body-lg text-night/75 leading-relaxed">
               <p>
                 Spiritual alchemy is a way of life. It is the practice of transforming what is into what it needs to become. Taking hurt, pain, trauma, the feeling of being stuck, the limiting beliefs you carry about yourself, and shifting them into something that makes you stronger, more awake, and more alive than before.
               </p>

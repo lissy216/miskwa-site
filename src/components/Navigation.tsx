@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -11,8 +11,19 @@ export default function Navigation() {
 
   const isActive = (path: string) => pathname === path
 
+  // The dropdown was hover-only: no onClick, no aria, so at >=1280px the four
+  // book pages were unreachable by keyboard and by touch.
+  useEffect(() => {
+    if (!booksOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setBooksOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [booksOpen])
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-night/95 backdrop-blur-sm border-b border-ash/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-night border-b border-ash/20">
       <div className="section-container flex items-center justify-between h-16 md:h-20">
         {/* Logo / Wordmark with Subtitle */}
         <div className="shrink-0">
@@ -46,7 +57,11 @@ export default function Navigation() {
           {/* Books Dropdown */}
           <div className="relative group">
             <button
-              className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone transition-colors flex items-center gap-1"
+              type="button"
+              className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone transition-colors flex items-center gap-1 py-3"
+              aria-haspopup="true"
+              aria-expanded={booksOpen}
+              onClick={() => setBooksOpen((v) => !v)}
               onMouseEnter={() => setBooksOpen(true)}
               onMouseLeave={() => setBooksOpen(false)}
             >
@@ -56,9 +71,8 @@ export default function Navigation() {
               </svg>
             </button>
             <div
-              className={`absolute top-full left-0 mt-2 w-56 bg-charcoal border border-ash/30 rounded-sm shadow-xl transition-all duration-200 ${
-                booksOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-              }`}
+              hidden={!booksOpen}
+              className="absolute top-full left-0 mt-2 w-56 bg-charcoal border border-ash/30 rounded-sm shadow-xl"
               onMouseEnter={() => setBooksOpen(true)}
               onMouseLeave={() => setBooksOpen(false)}
             >
@@ -67,7 +81,7 @@ export default function Navigation() {
                 className="block px-5 py-3 text-sm tracking-[0.18em] uppercase font-display text-bone/70 hover:text-glow hover:bg-night/40 transition-colors"
               >
                 The Re-Membering
-                <span className="block mt-1 text-[0.625rem] tracking-[0.15em] text-glow/50">
+                <span className="block mt-1 text-[0.625rem] tracking-[0.15em] text-glow/85">
                   Coming Soon
                 </span>
               </Link>
@@ -121,9 +135,10 @@ export default function Navigation() {
 
         {/* Mobile Toggle */}
         <button
-          className="xl:hidden text-bone p-2"
+          className="xl:hidden text-bone p-3 -mr-1"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           <div className="w-6 flex flex-col gap-1.5">
             <span className={`block h-px bg-bone transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
@@ -134,13 +149,17 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`xl:hidden bg-night border-t border-ash/20 transition-all duration-300 ${
-        isOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 overflow-hidden opacity-0'
-      }`}>
+      <div
+        inert={!isOpen}
+        aria-hidden={!isOpen}
+        className={`xl:hidden bg-night border-t border-ash/20 transition-all duration-300 ${
+          isOpen ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 overflow-hidden opacity-0'
+        }`}
+      >
         <div className="section-container py-6 flex flex-col gap-5">
           <Link href="/" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Home</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">About</Link>
-          <Link href="/the-re-membering" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Re-Membering <span className="text-[0.625rem] tracking-[0.15em] text-glow/50">Coming Soon</span></Link>
+          <Link href="/the-re-membering" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Re-Membering <span className="text-[0.625rem] tracking-[0.15em] text-glow/85">Coming Soon</span></Link>
           <Link href="/the-signal" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Signal</Link>
           <Link href="/red-rain" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Red Rain</Link>
           <Link href="/book-of-questions" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Book of Questions</Link>

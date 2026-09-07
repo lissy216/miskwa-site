@@ -55,7 +55,7 @@ export default function Contact() {
             <h1 className="font-serif text-display-sm text-night mb-4">
               Contact
             </h1>
-            <p className="font-body text-body text-night/60 mb-10">
+            <p className="font-body text-body text-night/75 mb-10">
               Whether you have a question about the work, the books, or the programs, or you are ready to begin, this is the place to start.
             </p>
 
@@ -64,14 +64,14 @@ export default function Contact() {
                 <p className="font-serif text-subheading text-night mb-2">
                   Thank you.
                 </p>
-                <p className="font-body text-body text-night/60">
+                <p className="font-body text-body text-night/75">
                   Your message has been received. We will be in touch.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block font-display text-xs tracking-[0.15em] uppercase text-night/60 mb-2">
+                  <label htmlFor="name" className="block font-display text-xs tracking-[0.15em] uppercase text-night/75 mb-2">
                     Name
                   </label>
                   <input
@@ -88,7 +88,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block font-display text-xs tracking-[0.15em] uppercase text-night/60 mb-2">
+                  <label htmlFor="email" className="block font-display text-xs tracking-[0.15em] uppercase text-night/75 mb-2">
                     Email
                   </label>
                   <input
@@ -105,7 +105,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block font-display text-xs tracking-[0.15em] uppercase text-night/60 mb-2">
+                  <label htmlFor="subject" className="block font-display text-xs tracking-[0.15em] uppercase text-night/75 mb-2">
                     Subject
                   </label>
                   <select
@@ -126,7 +126,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block font-display text-xs tracking-[0.15em] uppercase text-night/60 mb-2">
+                  <label htmlFor="message" className="block font-display text-xs tracking-[0.15em] uppercase text-night/75 mb-2">
                     Message
                   </label>
                   <textarea
@@ -185,7 +185,7 @@ export default function Contact() {
               <h3 className="font-serif text-subheading text-bone mb-4">
                 Walk with me through the forest
               </h3>
-              <p className="font-body text-caption text-bone/50 mb-6">
+              <p className="font-body text-caption text-bone/70 mb-6">
                 Writing on redemption, the body, and the practice of becoming more than what happened.
               </p>
               <a
@@ -206,7 +206,7 @@ export default function Contact() {
               <h3 className="font-serif text-subheading text-night mb-4">
                 Book a healing session
               </h3>
-              <p className="font-body text-caption text-night/60 mb-6">
+              <p className="font-body text-caption text-night/75 mb-6">
                 One-on-one, present, and honest. The work meets you wherever you are.
               </p>
               <a
@@ -221,7 +221,7 @@ export default function Contact() {
 
             {/* Social */}
             <div className="bg-white/10 border border-bridge rounded-sm p-8">
-              <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/60 mb-4">
+              <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/85 mb-4">
                 Connect
               </p>
               <div className="flex flex-col gap-3">
@@ -229,7 +229,7 @@ export default function Contact() {
                   href="https://www.facebook.com/MiskwaKimiwan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-body text-night/60 hover:text-night transition-colors"
+                  className="font-body text-body text-night/75 hover:text-night transition-colors"
                 >
                   Facebook
                 </a>
@@ -237,7 +237,7 @@ export default function Contact() {
                   href="https://www.instagram.com/miskwakimiwan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-body text-body text-night/60 hover:text-night transition-colors"
+                  className="font-body text-body text-night/75 hover:text-night transition-colors"
                 >
                   Instagram
                 </a>

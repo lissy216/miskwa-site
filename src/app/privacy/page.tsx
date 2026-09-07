@@ -61,7 +61,7 @@ export default function Privacy() {
           <H2>What the app stores, and where</H2>
           <P>
             Your journal entries, Mirror reflections, reminder preferences, App Lock
-            setting, start date, and writing streak are saved in the app&apos;s private
+            setting, start date, and writing streak are saved in the app’s private
             storage on your device. Mirror reflections and season reviews are
             generated entirely on your device from your own words — no network call,
             no analysis service, no AI.
@@ -83,7 +83,7 @@ export default function Privacy() {
           <P>
             We do not sell personal information and we do not share it with third
             parties for marketing. Your writing is never used to train or improve any
-            artificial intelligence system, ours or anyone else&apos;s — and it could not
+            artificial intelligence system, ours or anyone else’s — and it could not
             be, because it never leaves your device and your own iCloud.
           </P>
           <P>
@@ -100,18 +100,18 @@ export default function Privacy() {
               storage — the space attached to your Apple Account. That copy lives in
               your Apple Account, not on any server of ours. We hold no keys to it
               and no way to reach it. If you prefer no iCloud copy at all, you can
-              turn off the app&apos;s iCloud access in iOS Settings (your name → iCloud).
+              turn off the app’s iCloud access in iOS Settings (your name → iCloud).
             </LI>
             <LI>
-              <strong className="text-night/80">Your iPhone&apos;s own backup.</strong>{' '}
-              Like most apps, the journal&apos;s on-device storage is also included in
+              <strong className="text-night/80">Your iPhone’s own backup.</strong>{' '}
+              Like most apps, the journal’s on-device storage is also included in
               your normal iPhone backup, under your own Apple Account.
             </LI>
           </ul>
           <P>
-            Worth knowing, because most apps will not tell you: under Apple&apos;s
+            Worth knowing, because most apps will not tell you: under Apple’s
             Standard Data Protection (the default on every Apple Account), iCloud
-            data is encrypted in transit and on Apple&apos;s servers, but Apple holds the
+            data is encrypted in transit and on Apple’s servers, but Apple holds the
             keys. If you want your journal end-to-end encrypted so that only your
             trusted devices can read it, turn on Advanced Data Protection in your
             iCloud settings. We do not benefit either way — you should simply know
@@ -125,7 +125,7 @@ export default function Privacy() {
 
           <H2>How your journal is protected on the device</H2>
           <P>
-            On iOS, files inside an app&apos;s private storage are encrypted at rest by
+            On iOS, files inside an app’s private storage are encrypted at rest by
             the operating system, tied to your device passcode. That protection is
             real, and it is doing most of the work here. The honest caveat: it
             depends on you having a passcode set. An iPhone with no passcode, or one
@@ -136,7 +136,7 @@ export default function Privacy() {
           <H2>App Lock</H2>
           <P>
             You can require Face ID, Touch ID, or your device passcode to open the
-            app. That check is performed by your device&apos;s operating system. The app
+            app. That check is performed by your device’s operating system. The app
             never sees, stores, or transmits your biometric data or your passcode.
             App Lock is a gate on the screen. It is not what encrypts your journal —
             deliberately, so a failed Face ID, a broken sensor, or a forgotten
@@ -154,7 +154,7 @@ export default function Privacy() {
           <H2>Export and sharing</H2>
           <P>
             Export creates a text file, a PDF, or a backup file of your entries on
-            your device, then opens your phone&apos;s own share sheet. Whether an
+            your device, then opens your phone’s own share sheet. Whether an
             exported file goes anywhere is your choice. The app sends nothing on its
             own.
           </P>
@@ -163,10 +163,10 @@ export default function Privacy() {
           <P>
             Season One of the app is free. The full year is sold as a yearly
             subscription or a one-time purchase — sold and processed entirely by
-            Apple through the App Store, under Apple&apos;s terms. We never see or
+            Apple through the App Store, under Apple’s terms. We never see or
             store your payment details, your card, or your billing address. Apple
             provides us with sales reports that show totals, not customers. How
-            your purchase is verified: the app asks Apple&apos;s StoreKit, on your
+            your purchase is verified: the app asks Apple’s StoreKit, on your
             device, whether this Apple Account owns the purchase — no third-party
             verification service is involved and nothing is sent to us. The answer
             is remembered as a small flag on your device so the app works offline;
@@ -217,8 +217,8 @@ export default function Privacy() {
           <H2>Your rights</H2>
           <P>
             Privacy laws give you rights to access, correct, delete, and export the
-            personal information an organization holds about you. Canada&apos;s PIPEDA,
-            Quebec&apos;s Law 25, the EU and UK GDPR, and California&apos;s CCPA/CPRA all
+            personal information an organization holds about you. Canada’s PIPEDA,
+            Quebec’s Law 25, the EU and UK GDPR, and California’s CCPA/CPRA all
             work along those lines. For the app, every one of those rights is
             already in your hands: your journal is on your device, export gives you
             a complete copy on demand, and deletion is yours alone to perform —
@@ -227,8 +227,8 @@ export default function Privacy() {
             Quebec, Miskwa Kimiwan is the person in charge of the protection of
             personal information. If you are in Canada and unsatisfied with how we
             handled a request, you may complain to the Office of the Privacy
-            Commissioner of Canada; in Quebec, to the Commission d&apos;accès à
-            l&apos;information.
+            Commissioner of Canada; in Quebec, to the Commission d’accès à
+            l’information.
           </P>
 
           <H2>Third parties</H2>
@@ -244,7 +244,7 @@ export default function Privacy() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Apple&apos;s privacy policy
+                Apple’s privacy policy
               </a>
               .
             </LI>
@@ -255,7 +255,7 @@ export default function Privacy() {
           </ul>
           <P>
             Tapping the link to the printed book opens your browser to a
-            bookseller&apos;s site, which operates under its own privacy policy from
+            bookseller’s site, which operates under its own privacy policy from
             that point. We receive no referral fee and no data back from that link.
             It is there because the book exists. No analytics provider, advertising
             network, or data broker is involved in the app.

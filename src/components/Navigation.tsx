@@ -25,7 +25,7 @@ export default function Navigation() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden xl:flex items-center gap-4 2xl:gap-7">
+        <div className="hidden xl:flex items-center gap-5 2xl:gap-7">
           <Link
             href="/"
             className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
@@ -110,14 +110,6 @@ export default function Navigation() {
             Programs
           </Link>
           <Link
-            href="/wholesale"
-            className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
-              isActive('/wholesale') ? 'text-glow' : 'text-bone/70 hover:text-bone'
-            }`}
-          >
-            Wholesale
-          </Link>
-          <Link
             href="/contact"
             className={`font-display text-sm tracking-[0.2em] uppercase transition-colors ${
               isActive('/contact') ? 'text-glow' : 'text-bone/70 hover:text-bone'
@@ -155,7 +147,6 @@ export default function Navigation() {
           <Link href="/bookstore" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Bookstore</Link>
 
           <Link href="/programs" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Programs</Link>
-          <Link href="/wholesale" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Wholesale</Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Contact</Link>
         </div>
       </div>

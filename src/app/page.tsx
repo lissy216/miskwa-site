@@ -191,14 +191,38 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-16">
             <p className="font-display text-xs tracking-[0.25em] uppercase text-glow mb-4">
-              Published Works
+              Published and Forthcoming
             </p>
             <h2 className="font-serif text-heading text-bone">
               Books
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 max-w-7xl mx-auto">
+            {/* The Re-Membering (forthcoming) */}
+            <Link href="/the-re-membering" className="group flex flex-col items-center text-center">
+              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
+                <Image
+                  src="/images/the-re-membering-cover.jpg"
+                  alt="The Re-Membering: Six Turns Back to the Part of You That Never Forgot - Book Cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                />
+              </div>
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 mb-3">
+                Coming Soon
+              </p>
+              <h3 className="font-serif text-subheading text-bone mb-2">The Re-Membering</h3>
+              <p className="font-serif italic text-body text-bone/60 mb-4">Six Turns Back to the Part of You That Never Forgot</p>
+              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
+                This book was written for the part of you that suspects it used to know something, and cannot find it now. Most of what gets offered to that part of you is a system. The Re-Membering is not one.
+              </p>
+              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
+                Read More &rarr;
+              </p>
+            </Link>
+
             {/* The Signal (newest) */}
             <Link href="/the-signal" className="group flex flex-col items-center text-center">
               <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">

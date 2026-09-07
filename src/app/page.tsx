@@ -1,404 +1,212 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Glyph from '@/components/Glyph'
-import ShadowArt from '@/components/hero-art/ShadowArt'
-import LightArt from '@/components/hero-art/LightArt'
 
-const pillars = [
-  { glyph: 'branch', label: 'Trauma & Shadow', tagline: 'Honoring the wounds' },
-  { glyph: 'eye', label: 'The Question', tagline: 'Opening to wisdom' },
-  { glyph: 'spiral', label: 'Transformation', tagline: 'The alchemy within' },
-  { glyph: 'sun', label: 'Wisdom & Clarity', tagline: 'Walking with the soul' },
-  { glyph: 'wholeness', label: 'Wholeness', tagline: 'Living the answer' },
-] as const
+// Every fact on this page is carried over from the book pages and the bookstore.
+// Nothing here is invented: no press, no awards, no sales figures, no testimonials.
+const titles = [
+  {
+    slug: '/the-signal',
+    title: 'The Signal',
+    subtitle: 'Why Life and People Keep Happening to You',
+    line: 'You are broadcasting something right now, and it has been quietly assembling your life around you.',
+    ink: 'text-madder',
+    state: 'Out now',
+  },
+  {
+    slug: '/red-rain',
+    title: 'Red Rain',
+    subtitle: 'A Soul Shattered',
+    line: 'A boy survives the traumas that should have broken him. A field guide for walking through darkness with dignity.',
+    ink: 'text-plum',
+    state: 'Out now',
+  },
+  {
+    slug: '/book-of-questions',
+    title: 'The Book of Questions',
+    subtitle: 'The Socratic Year of the Soul',
+    line: 'Most books hand you answers. This one hands you back to yourself. 365 questions across twelve months of soul territory.',
+    ink: 'text-prussian',
+    state: 'Out now',
+  },
+  {
+    slug: '/the-re-membering',
+    title: 'The Re-Membering',
+    subtitle: 'Six Turns Back to the Part of You That Never Forgot',
+    line: 'For the part of you that suspects it used to know something, and cannot find it now.',
+    ink: 'text-forest',
+    state: 'Forthcoming',
+  },
+]
 
 export default function Home() {
   return (
-    <>
-      {/* ============================================
-          HERO: Split Panel — Shadow / Light, with per-book SVG atmospheres and a soft seam blend
-          ============================================ */}
-      <section className="relative min-h-[90vh] grid grid-cols-1 xl:grid-cols-2 overflow-hidden">
-        {/* Shadow Side — Red Rain atmosphere (meditating figure + ember heart + ancestral silhouettes) */}
-        <div className="hero-field-shadow flex items-center justify-center p-8 md:p-12 xl:p-20 min-h-[60vh] xl:min-h-[90vh]">
-          <ShadowArt className="absolute inset-0 w-full h-full opacity-55 pointer-events-none" />
-          <div className="relative z-10 max-w-md">
-            <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-glow mb-3">
+    <div className="press min-h-screen bg-stock text-ink font-text">
+      {/* Masthead — the series line at the head of the sheet */}
+      <header className="bg-madder text-stock-hi">
+        <div className="mx-auto max-w-5xl px-6 py-5 flex items-baseline justify-between gap-6">
+          <h1 className="font-wood text-2xl font-bold uppercase tracking-tight leading-none">
+            <Link href="/" className="inline-block py-2">
               Miskwa Kimiwan
-            </p>
-            <p className="font-display text-xs md:text-sm tracking-[0.22em] uppercase text-glow/90 mb-10">
-              Writing for the Soul&rsquo;s Journey
-            </p>
-            <h1 className="font-serif text-display-sm xl:text-display text-bone mb-6 leading-tight [text-shadow:0_0_28px_rgba(10,5,2,0.85)]">
-              A house for work that holds shadow and light together.
-            </h1>
-            <p className="font-body text-body-lg text-bone/80 mb-10 leading-relaxed [text-shadow:0_0_22px_rgba(10,5,2,0.8)]">
-              Books that walk through darkness with dignity. Healing work that sits with what hurts long enough to let it change.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="#books" className="btn-primary backdrop-blur-sm bg-night/30">
-                Explore
-              </Link>
-              <Link href="/about" className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night backdrop-blur-sm bg-night/30">
-                Begin Here
-              </Link>
-            </div>
-          </div>
+            </Link>
+          </h1>
+          <nav className="flex items-baseline gap-6 font-wood text-sm font-semibold uppercase tracking-wide">
+            <Link href="/bookstore" className="inline-block py-3 hover:underline underline-offset-4">
+              Books
+            </Link>
+            <Link href="/about" className="inline-block py-3 hover:underline underline-offset-4">
+              About
+            </Link>
+            <Link href="/contact" className="inline-block py-3 hover:underline underline-offset-4">
+              Contact
+            </Link>
+          </nav>
         </div>
+      </header>
 
-        {/* Light Side — The Signal (new release) atmosphere */}
-        <div className="hero-field-light flex items-center justify-center p-8 md:p-10 xl:p-16 min-h-[50vh] xl:min-h-[90vh]">
-          <LightArt className="absolute inset-0 w-full h-full opacity-65 pointer-events-none" />
-          <div className="relative z-10 w-full max-w-md min-[1440px]:max-w-2xl">
-            <div className="flex flex-col min-[1440px]:flex-row items-center gap-8 min-[1440px]:gap-10 text-center min-[1440px]:text-left">
-              {/* Book cover */}
-              <div className="relative w-40 md:w-48 min-[1440px]:w-56 shrink-0 aspect-2/3 bg-black rounded-sm overflow-hidden shadow-2xl">
+      {/* First viewport — the reader begins reading here, not below the fold */}
+      <section className="bg-madder text-stock-hi">
+        <div className="mx-auto max-w-5xl px-6 pb-16 md:pb-24">
+          <div className="press-strike h-px bg-stock-hi/40 mb-12" />
+          <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+            <div className="max-w-[34rem]">
+              <p className="font-text text-xl md:text-2xl leading-[1.7]">
+                You are broadcasting something right now. A frequency your body has
+                been carrying since before you had a word for it. This book is about
+                that signal.
+              </p>
+              <p className="mt-6 font-wood text-base font-semibold tracking-wide text-stock-hi">
+                From The Signal — Miskwa Kimiwan
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/the-signal"
+                  className="font-wood text-base font-bold uppercase tracking-wide bg-stock-hi text-madder px-6 py-3 hover:bg-stock transition-colors"
+                >
+                  Keep reading
+                </Link>
+                <Link
+                  href="/bookstore"
+                  className="font-wood text-base font-bold uppercase tracking-wide border border-stock-hi px-6 py-3 hover:bg-stock-hi hover:text-madder transition-colors"
+                >
+                  All four books
+                </Link>
+              </div>
+            </div>
+
+            <div className="w-36 md:w-40 shrink-0">
+              <div className="relative aspect-2/3 bg-ink">
                 <Image
                   src="/images/the-signal-cover.jpg"
-                  alt="The Signal — book cover"
+                  alt="The Signal, by Miskwa Kimiwan — book cover"
                   fill
                   className="object-contain"
-                  sizes="(max-width: 768px) 160px, (max-width: 1440px) 192px, 224px"
+                  sizes="160px"
                   priority
                 />
               </div>
-
-              {/* Text */}
-              <div className="flex-1 min-w-0">
-                <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-4">
-                  New Release
-                </p>
-                <h2 className="font-serif text-display-sm md:text-heading text-night mb-3 leading-tight [text-shadow:0_0_22px_rgba(245,240,230,0.9)]">
-                  The Signal
-                </h2>
-                <p className="font-serif italic text-subheading text-night/80 mb-5 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-                  Why Life and People Keep Happening to You
-                </p>
-                <p className="font-body text-body text-night/75 mb-7 [text-shadow:0_0_18px_rgba(245,240,230,0.9)]">
-                  You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
-                </p>
-                <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
-                  Read More
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Seam blend layer 1 — soft vertical gradient bridges the two atmospheres */}
-        <div
-          className="hidden xl:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[38%] pointer-events-none z-2"
-          aria-hidden
-          style={{
-            background:
-              'linear-gradient(to right, transparent 0%, rgba(139, 37, 0, 0.18) 22%, rgba(196, 58, 26, 0.22) 42%, rgba(212, 168, 83, 0.28) 58%, rgba(184, 134, 78, 0.20) 78%, transparent 100%)',
-            mixBlendMode: 'screen',
-          }}
-        />
-
-        {/* Seam blend layer 2 — central ember/amber glow at the meeting point */}
-        <div
-          className="hidden xl:block absolute inset-y-0 left-1/2 -translate-x-1/2 w-[22%] pointer-events-none z-2"
-          aria-hidden
-          style={{
-            background:
-              'radial-gradient(ellipse 60% 75% at center, rgba(245, 214, 107, 0.18) 0%, rgba(196, 58, 26, 0.15) 40%, transparent 85%)',
-            mixBlendMode: 'screen',
-          }}
-        />
-      </section>
-
-      {/* ============================================
-          PHILOSOPHY STRIP
-          ============================================ */}
-      <section className="mood-threshold py-16 md:py-20">
-        <div className="section-narrow text-center">
-          <div className="divider-warm mx-auto mb-8" />
-          <p className="pull-quote text-bone/90 max-w-2xl mx-auto">
-            &ldquo;Healing is not about escaping the thing that is hurting you. It is about becoming conscious of it.&rdquo;
-          </p>
-          <p className="font-display text-caption text-glow/70 mt-6 tracking-[0.2em] uppercase">
-            &mdash; from <em>Red Rain: A Soul Shattered</em>
-          </p>
-        </div>
-      </section>
-
-      {/* ============================================
-          THE JOURNEY — Five Pillars (icon glyphs per mood board)
-          ============================================ */}
-      <section className="bg-night relative py-section-sm md:py-section overflow-hidden">
-        <div className="section-container relative">
-          <div className="text-center mb-14">
-            <p className="font-display text-sm md:text-base tracking-[0.3em] uppercase text-bridge font-semibold mb-4">
-              The Territory
-            </p>
-            <h2 className="font-serif text-display-sm md:text-heading text-bone">Five Thresholds</h2>
-            <div className="divider-bridge max-w-sm mx-auto mt-8 opacity-70" />
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12 md:gap-6 max-w-6xl mx-auto">
-            {pillars.map((p) => (
-              <div key={p.label} className="flex flex-col items-center text-center px-2">
-                <div className="w-20 h-20 rounded-full border border-glow/40 flex items-center justify-center text-glow mb-6 transition-colors hover:border-glow hover:text-sun">
-                  <Glyph name={p.glyph} className="w-10 h-10" />
-                </div>
-                <p className="pillar-label text-bone mb-3">{p.label}</p>
-                <p className="font-serif italic text-body text-bone/75">{p.tagline}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          ABOUT PREVIEW
-          ============================================ */}
-      <section className="bg-parchment py-section-sm md:py-section">
-        <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div>
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-6">
-              The Work
-            </p>
-            <h2 className="font-serif text-heading text-night mb-6">
-              No masters here. No pedestals. No gurus.
-            </h2>
-            <p className="font-body text-body-lg text-night/60 mb-6 leading-relaxed">
-              There is a space between spiritual bypassing and clinical distance where the real work lives. That is where you will find this practice. Grounded in the body. Honest about the dark. Built by someone who has been where you are and does not pretend otherwise.
-            </p>
-            <p className="font-body text-body text-night/50 mb-8">
-              Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory and medicine whose work bridges trauma, presence, and the unseen world. The work is simple in its demand and difficult in its honesty: sit with what you carry, feel it in the body, and discover that you are more than what happened to you.
-            </p>
-            <Link href="/about" className="btn-light">
-              About the Work
-            </Link>
-          </div>
-          <div className="relative aspect-3/2 bg-charcoal rounded-sm overflow-hidden">
-            <Image
-              src="/images/author-portrait.jpg"
-              alt="Miskwa Kimiwan — a bridge between worlds"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          BOOKS
-          ============================================ */}
-      <section id="books" className="bg-night py-section-sm md:py-section">
-        <div className="section-container">
-          <div className="text-center mb-16">
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-glow mb-4">
-              Published and Forthcoming
-            </p>
-            <h2 className="font-serif text-heading text-bone">
-              Books
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 max-w-7xl mx-auto">
-            {/* The Re-Membering (forthcoming) */}
-            <Link href="/the-re-membering" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
-                <Image
-                  src="/images/the-re-membering-cover.jpg"
-                  alt="The Re-Membering: Six Turns Back to the Part of You That Never Forgot - Book Cover"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
-                />
-              </div>
-              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/70 mb-3">
-                Coming Soon
-              </p>
-              <h3 className="font-serif text-subheading text-bone mb-2">The Re-Membering</h3>
-              <p className="font-serif italic text-body text-bone/60 mb-4">Six Turns Back to the Part of You That Never Forgot</p>
-              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
-                This book was written for the part of you that suspects it used to know something, and cannot find it now. Most of what gets offered to that part of you is a system. The Re-Membering is not one.
-              </p>
-              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
-                Read More &rarr;
-              </p>
-            </Link>
-
-            {/* The Signal (newest) */}
-            <Link href="/the-signal" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 bg-black rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
-                <Image
-                  src="/images/the-signal-cover.jpg"
-                  alt="The Signal: Why Life and People Keep Happening to You - Book Cover"
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 300px"
-                />
-              </div>
-              <h3 className="font-serif text-subheading text-bone mb-2">The Signal</h3>
-              <p className="font-serif italic text-body text-bone/60 mb-4">Why Life and People Keep Happening to You</p>
-              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
-                You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal, and about the life it has been quietly assembling around you.
-              </p>
-              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-glow group-hover:text-sun transition-colors">
-                Read More &rarr;
-              </p>
-            </Link>
-
-            {/* Red Rain */}
-            <Link href="/red-rain" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(196,58,26,0.25)] transition-transform duration-500 group-hover:-translate-y-1">
-                <Image
-                  src="/images/red-rain-cover.png"
-                  alt="Red Rain: A Soul Shattered - Book Cover"
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 300px"
-                />
-              </div>
-              <h3 className="font-serif text-subheading text-bone mb-2">Red Rain</h3>
-              <p className="font-serif italic text-body text-bone/60 mb-4">A Soul Shattered</p>
-              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
-                A story of a fall from grace, the shattering to pieces of a young soul, and the journey to find humanity in the dark places. Not a tale of easy redemption. A field guide for walking through darkness with dignity.
-              </p>
-              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-glow group-hover:text-sun transition-colors">
-                Read More &rarr;
-              </p>
-            </Link>
-
-            {/* Book of Questions */}
-            <Link href="/book-of-questions" className="group flex flex-col items-center text-center">
-              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
-                <Image
-                  src="/images/book-of-questions-cover.png"
-                  alt="The Book of Questions: The Socratic Year of the Soul - Book Cover"
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 768px) 100vw, 300px"
-                />
-              </div>
-              <h3 className="font-serif text-subheading text-bone mb-2">The Book of Questions</h3>
-              <p className="font-serif italic text-body text-bone/60 mb-4">The Socratic Year of the Soul</p>
-              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
-                Most books hand you answers. This one hands you back to yourself. 365 questions across twelve months of soul territory. A conversation between you and the part of you that has been waiting to be asked.
-              </p>
-              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
-                Read More &rarr;
-              </p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
-          PROGRAMS PREVIEW
-          ============================================ */}
-      <section className="mood-shadow py-section-sm md:py-section">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
-                Programs
-              </p>
-              <h2 className="font-serif text-heading text-bone mb-6">
-                Living The Light Sacred Alchemy Training
-              </h2>
-              <p className="font-body text-body-lg text-bone/70 mb-4 leading-relaxed">
-                A two-year program for anyone who has felt the pull toward healing work but did not know where to begin. Or for the practitioner who has trained elsewhere and senses that something essential was left out.
-              </p>
-              <p className="font-body text-body text-bone/50 mb-8">
-                Eight modules. Over 320 hours of medicine work. Energy healing, journey work, ceremony, readings, space healings, and the inner discipline required to hold space for another human being. You will learn by doing. You will heal as you train.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/programs" className="btn-primary">
-                  Learn More
-                </Link>
-                <Link href="/programs#sessions" className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night">
-                  Private Sessions
-                </Link>
-              </div>
-            </div>
-            <div className="relative aspect-square bg-charcoal/50 rounded-sm overflow-hidden">
-              <Image
-                src="/images/all-healed.png"
-                alt="Healing light and ancestral presence"
-                fill
-                className="object-cover opacity-80"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ============================================
-          TESTIMONIALS
-          ============================================ */}
-      <section className="bg-parchment py-section-sm md:py-section">
-        <div className="section-container">
-          <div className="text-center mb-16">
-            <p className="font-display text-xs tracking-[0.25em] uppercase text-bridge mb-4">
-              Readers Reflections
-            </p>
-            <h2 className="font-serif text-heading text-night">
-              What the work leaves behind
-            </h2>
-          </div>
+      {/* Contents — a table of contents, not a card grid */}
+      <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+        <h2 className="font-wood text-5xl md:text-7xl font-extrabold uppercase leading-[0.9] tracking-tight">
+          Four books
+        </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <blockquote className="bg-white/40 p-8 rounded-sm">
-              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
-                &ldquo;This book doesn&rsquo;t simply illustrate the power of interconnectedness and collective consciousness; it actively uses that power to heal you.&rdquo;
-              </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
-                C.V.D.Z.
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-white/40 p-8 rounded-sm">
-              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
-                &ldquo;It broke me, it healed me, and I want to live and love with all that I am.&rdquo;
-              </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
-                B.T.S.
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-white/40 p-8 rounded-sm">
-              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-6">
-                &ldquo;There&rsquo;s a medicine woven into it. The medicine of meaning. A truly remarkable read. My new favourite author.&rdquo;
-              </p>
-              <footer className="font-display text-caption text-night/60 tracking-wide">
-                C.R.D.
-              </footer>
-            </blockquote>
-          </div>
-        </div>
+        <ol className="mt-12">
+          {titles.map((b, i) => (
+            <li key={b.slug} className="rule-press">
+              <Link
+                href={b.slug}
+                className="group grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-6 gap-y-2 items-baseline py-7"
+              >
+                <span className="font-wood text-sm font-semibold text-ink-soft tabular-nums">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span>
+                  <span
+                    className={`font-wood text-3xl md:text-4xl font-bold uppercase leading-none tracking-tight ${b.ink} group-hover:underline underline-offset-[6px] decoration-2`}
+                  >
+                    {b.title}
+                  </span>
+                  <span className="block mt-2 font-text italic text-lg text-ink-soft">
+                    {b.subtitle}
+                  </span>
+                  <span className="block mt-3 font-text text-[1.0625rem] leading-[1.65] max-w-[52ch]">
+                    {b.line}
+                  </span>
+                </span>
+                <span className="hidden md:block font-wood text-sm font-semibold uppercase tracking-wide text-ink-soft self-start pt-2">
+                  {b.state}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
       </section>
 
-      {/* ============================================
-          NEWSLETTER
-          ============================================ */}
-      <section className="mood-shadow py-section-sm md:py-section">
-        <div className="section-narrow text-center">
-          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
-            The Rainfall Newsletter
+      {/* The position, stated plainly on its own ground */}
+      <section className="bg-ink text-stock">
+        <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
+          <p className="font-wood text-4xl md:text-6xl font-extrabold leading-[0.95] tracking-tight max-w-[22ch]">
+            No masters here. No pedestals. No gurus.
           </p>
-          <h2 className="font-serif text-heading text-bone mb-4">
-            Walk with me through the forest
-          </h2>
-          <p className="font-body text-body text-bone/60 mb-10 max-w-lg mx-auto">
-            Writing on redemption, the body, and the practice of becoming more than what happened. Published on Substack.
+          <p className="mt-8 font-text text-xl leading-[1.7] max-w-[54ch] text-stock/90">
+            The guide has bled too. If you are looking for a quick fix, this is not
+            the place. The work sits with what hurts long enough to let it change.
           </p>
-          <a
-            href="https://substack.com/@miskwakimiwan"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-10 py-4 font-display text-sm md:text-base tracking-[0.25em] uppercase border border-glow text-glow transition-colors duration-300 hover:bg-glow/10 hover:text-sun"
+          <Link
+            href="/about"
+            className="inline-block mt-9 font-wood text-base font-bold uppercase tracking-wide border border-stock px-6 py-3 hover:bg-stock hover:text-ink transition-colors"
           >
-            Subscribe on Substack
-          </a>
+            About the work
+          </Link>
         </div>
       </section>
-    </>
+
+      {/* Colophon — a real chapbook says what it was made of */}
+      <footer className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+        <div className="rule-press pt-10 grid gap-10 md:grid-cols-[1fr_auto] md:items-start">
+          <div className="max-w-[46ch]">
+            <h2 className="font-wood text-3xl font-bold uppercase tracking-tight leading-none">
+              The Rainfall Newsletter
+            </h2>
+            <p className="mt-4 font-text text-[1.0625rem] leading-[1.65]">
+              Writing on redemption, the body, and the practice of becoming more
+              than what happened.
+            </p>
+            <a
+              href="https://substack.com/@miskwakimiwan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 font-wood text-base font-bold uppercase tracking-wide bg-ink text-stock px-6 py-3 hover:bg-madder transition-colors"
+            >
+              Subscribe on Substack
+            </a>
+          </div>
+
+          <div className="font-text text-[0.9375rem] leading-[1.7] text-ink-soft md:text-right md:max-w-[26ch]">
+            <p>
+              Set in Big Shoulders and Source Serif. Miskwa Kimiwan is the pen name
+              of Peter Bernard.
+            </p>
+            <p className="mt-4 flex flex-col md:items-end">
+              <Link href="/bookstore" className="inline-block py-2 underline underline-offset-4">
+                Booksellers and wholesale
+              </Link>
+              <Link href="/privacy" className="inline-block py-2 underline underline-offset-4">
+                Privacy
+              </Link>
+              <a href="mailto:miskwa@miskwakimiwan.com" className="inline-block py-2 underline underline-offset-4">
+                miskwa@miskwakimiwan.com
+              </a>
+            </p>
+            <p className="mt-4">© {new Date().getFullYear()} Miskwa Kimiwan</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   )
 }

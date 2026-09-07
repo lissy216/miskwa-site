@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { Cinzel, Lora, Crimson_Pro } from 'next/font/google'
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import { Cinzel, Lora, Crimson_Pro, Big_Shoulders, Source_Serif_4 } from 'next/font/google'
+import { SiteNav, SiteFooter, SiteMain } from '@/components/SiteChrome'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -28,6 +27,22 @@ const crimsonPro = Crimson_Pro({
   weight: ['300', '400', '500', '600'],
   style: ['normal', 'italic'],
   variable: '--font-crimson',
+  display: 'swap',
+})
+
+// Letterpress chapbook world: wood-type condensed display against a text serif.
+const bigShoulders = Big_Shoulders({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '800'],
+  variable: '--font-big-shoulders',
+  display: 'swap',
+})
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-source-serif',
   display: 'swap',
 })
 
@@ -76,14 +91,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable}`}
+      className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable} ${bigShoulders.variable} ${sourceSerif.variable}`}
     >
       <body className="min-h-screen flex flex-col">
-        <Navigation />
-        <main className="flex-1 pt-16 md:pt-20">
-          {children}
-        </main>
-        <Footer />
+        <SiteNav />
+        <SiteMain>{children}</SiteMain>
+        <SiteFooter />
         <Analytics />
         <SpeedInsights />
       </body>

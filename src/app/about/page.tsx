@@ -130,10 +130,10 @@ export default function About() {
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-4">
-            <Link href="/red-rain" className="btn-secondary">
+            <Link href="/red-rain" className="btn-light">
               Start with Red Rain
             </Link>
-            <Link href="/programs" className="btn-secondary">
+            <Link href="/programs" className="btn-light">
               Explore Programs
             </Link>
           </div>

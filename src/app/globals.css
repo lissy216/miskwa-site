@@ -366,16 +366,18 @@
    ============================================================ */
 
 @theme {
-  --color-stock: #dedcd5;
-  --color-stock-hi: #efeee9;
+  --color-stock: #d9dbdd;
+  --color-stock-hi: #eceef0;
   --color-ink: #17161a;
   --color-ink-soft: #4a4750;
   --color-madder: #a0301f;
   --color-prussian: #1e3a5c;
   --color-forest: #29473a;
   --color-plum: #4e2438;
+  /* Text on the prussian field is tinted from that hue, never neutral grey. */
+  --color-stock-prussian: #f4f8fd;
 
-  --font-wood: var(--font-big-shoulders), 'Arial Narrow', ui-sans-serif, sans-serif;
+  --font-wood: var(--font-big-shoulders), ui-sans-serif, sans-serif;
   --font-text: var(--font-source-serif), Georgia, serif;
 }
 
@@ -387,12 +389,24 @@
 
 .press {
   caret-color: var(--color-madder);
+}
+
+/* The document scrollbar hangs off html; declaring it on a nested div does nothing. */
+html:has(.press) {
   scrollbar-color: var(--color-ink-soft) var(--color-stock);
 }
 
+/* Never currentColor: on a stock button sitting on the madder field that draws
+   the ring in madder, onto madder. The ring gets its own value per ground. */
 .press :focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--color-ink);
   outline-offset: 3px;
+}
+
+.press .bg-madder :focus-visible,
+.press .bg-ink :focus-visible,
+.press .bg-prussian :focus-visible {
+  outline-color: var(--color-stock-hi);
 }
 
 /* Printing furniture: the hairline rules a press leaves behind. */

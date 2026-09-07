@@ -115,16 +115,15 @@ export default function Home() {
           Four books
         </h2>
 
-        <ol className="mt-12">
-          {titles.map((b, i) => (
+        {/* Unordered on purpose: these four carry no reading or publication
+            sequence, so numbering them would assert one that does not exist. */}
+        <ul className="mt-12">
+          {titles.map((b) => (
             <li key={b.slug} className="rule-press">
               <Link
                 href={b.slug}
-                className="group grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-6 gap-y-2 items-baseline py-7"
+                className="group grid md:grid-cols-[1fr_auto] gap-x-6 gap-y-2 items-baseline py-7"
               >
-                <span className="font-wood text-sm font-semibold text-ink-soft tabular-nums">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 <span>
                   <span
                     className={`font-wood text-3xl md:text-4xl font-bold uppercase leading-none tracking-tight ${b.ink} group-hover:underline underline-offset-[6px] decoration-2`}
@@ -137,6 +136,10 @@ export default function Home() {
                   <span className="block mt-3 font-text text-[1.0625rem] leading-[1.65] max-w-[52ch]">
                     {b.line}
                   </span>
+                  {/* Phone readers need the publication state too. */}
+                  <span className="md:hidden block mt-3 font-wood text-sm font-semibold uppercase tracking-wide text-ink-soft">
+                    {b.state}
+                  </span>
                 </span>
                 <span className="hidden md:block font-wood text-sm font-semibold uppercase tracking-wide text-ink-soft self-start pt-2">
                   {b.state}
@@ -144,22 +147,22 @@ export default function Home() {
               </Link>
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       {/* The position, stated plainly on its own ground */}
-      <section className="bg-ink text-stock">
+      <section className="bg-prussian text-stock-prussian">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-24">
           <p className="font-wood text-4xl md:text-6xl font-extrabold leading-[0.95] tracking-tight max-w-[22ch]">
             No masters here. No pedestals. No gurus.
           </p>
-          <p className="mt-8 font-text text-xl leading-[1.7] max-w-[54ch] text-stock/90">
+          <p className="mt-8 font-text text-xl leading-[1.7] max-w-[54ch]">
             The guide has bled too. If you are looking for a quick fix, this is not
             the place. The work sits with what hurts long enough to let it change.
           </p>
           <Link
             href="/about"
-            className="inline-block mt-9 font-wood text-base font-bold uppercase tracking-wide border border-stock px-6 py-3 hover:bg-stock hover:text-ink transition-colors"
+            className="inline-block mt-9 font-wood text-base font-bold uppercase tracking-wide border border-stock-prussian px-6 py-3 hover:bg-stock-prussian hover:text-prussian transition-colors"
           >
             About the work
           </Link>

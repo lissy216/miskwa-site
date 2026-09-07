@@ -13,19 +13,20 @@ page alike; the reader begins reading in the first screen instead of being
 told about reading.
 
 OWN-WORLD: Letterpress small press. Cool grey stock (never cream), near-black
-ink, and one saturated spot ink per title — madder, prussian, forest, plum —
-each carrying a whole field rather than an accent. Wood-type condensed display
-against a text serif. Printing furniture only: rules, folios, running heads,
-crop and registration marks. No symbolic or ceremonial imagery of any kind.
+ink, and four saturated spot inks — madder, plum, prussian, forest. Madder and
+prussian carry whole fields; plum and forest index their titles at headline
+scale. Wood-type condensed display against a text serif. Printing furniture
+only: rules and running heads, no numbering that asserts a sequence the books
+do not have. No symbolic or ceremonial imagery of any kind.
 
 STORY: The visitor understands this is a working writer with four books,
 believes he has been where he writes from because the writing is in front of
 them unmediated, and either opens a book or subscribes.
 
-FIRST VIEWPORT: Madder field. Series masthead and folio top-left. The opening
-paragraph of one book set at reading size on stock, occupying the centre
-measure, with the primary action beside it — inside the first screen, not
-below it. Cover thumbnail small and subordinate; the words lead.
+FIRST VIEWPORT: Madder field. Series masthead top-left above a struck rule.
+The opening paragraph of one book set at reading size on stock, occupying the
+centre measure, with the primary action beside it — inside the first screen,
+not below it. Cover thumbnail small and subordinate; the words lead.
 
 FORM: Small-press letterpress chapbook. Position 1 of the ordered grounded
 list, taken over the roll's assignment at the user's explicit direction.

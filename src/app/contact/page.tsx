@@ -56,7 +56,7 @@ export default function Contact() {
               Contact
             </h1>
             <p className="font-body text-body text-night/75 mb-10">
-              Whether you have a question about the work, the books, or the programs, or you are ready to begin, this is the place to start.
+              Whether you have a question about the work or the books, or you are ready to begin, this is the place to start.
             </p>
 
             {status === 'sent' ? (
@@ -119,7 +119,6 @@ export default function Contact() {
                     <option value="">Select a topic</option>
                     <option value="general">General Inquiry</option>
                     <option value="books">About the Books</option>
-                    <option value="ltl">Living The Light Program</option>
                     <option value="sessions">Private Healing Sessions</option>
                     <option value="media">Media / Speaking</option>
                   </select>

@@ -57,9 +57,6 @@ export default function About() {
             <p>
               The published work began with <em>Red Rain: A Soul Shattered</em>, a memoir that readers describe not as something they read but as something that reads them. <em>The Book of Questions: The Socratic Year of the Soul</em> followed, 365 questions organized across twelve months of soul territory. Both books operate on the same principle: that the person holding the book already carries what they need. The work is never to install something new. The work is to sit with what is already there long enough for it to be heard.
             </p>
-            <p>
-              The teaching side offers structured programs in spiritual healing, energy medicine, and ceremony for practitioners who are grounded, honest, and capable of holding what walks through the door. Living The Light Sacred Alchemy is a two-year training program. The Quiet Fire is an ICBCH-aligned hypnosis certification. Private healing sessions are available for those who need to do the work one-on-one.
-            </p>
           </div>
         </div>
       </section>
@@ -133,8 +130,8 @@ export default function About() {
             <Link href="/red-rain" className="btn-light">
               Start with Red Rain
             </Link>
-            <Link href="/programs" className="btn-light">
-              Explore Programs
+            <Link href="/bookstore" className="btn-light">
+              Browse the Bookstore
             </Link>
           </div>
         </div>

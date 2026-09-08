@@ -284,44 +284,6 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          PROGRAMS PREVIEW
-          ============================================ */}
-      <section className="mood-shadow py-section-sm md:py-section">
-        <div className="section-container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="font-serif text-heading text-bone mb-6">
-                Living The Light Sacred Alchemy Training
-              </h2>
-              <p className="font-body text-body-lg text-bone/70 mb-4 leading-relaxed">
-                A two-year program for anyone who has felt the pull toward healing work but did not know where to begin. Or for the practitioner who has trained elsewhere and senses that something essential was left out.
-              </p>
-              <p className="font-body text-body text-bone/70 mb-8">
-                Eight modules. Over 320 hours of medicine work. Energy healing, journey work, ceremony, readings, space healings, and the inner discipline required to hold space for another human being. You will learn by doing. You will heal as you train.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/programs" className="btn-primary">
-                  Learn More
-                </Link>
-                <Link href="/programs#sessions" className="btn-primary border-bone/30 hover:border-bone hover:bg-bone hover:text-night">
-                  Private Sessions
-                </Link>
-              </div>
-            </div>
-            <div className="relative aspect-square bg-charcoal/50 rounded-sm overflow-hidden">
-              <Image
-                src="/images/all-healed.png"
-                alt="Healing light and ancestral presence"
-                fill
-                className="object-cover opacity-80"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ============================================
           TESTIMONIALS
           ============================================ */}
       <section className="bg-parchment py-section-sm md:py-section">

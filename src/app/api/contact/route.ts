@@ -13,7 +13,6 @@ type Body = {
 const SUBJECTS: Record<string, string> = {
   general: 'General Inquiry',
   books: 'About the Books',
-  ltl: 'Living The Light Program',
   sessions: 'Private Healing Sessions',
   media: 'Media / Speaking',
 }

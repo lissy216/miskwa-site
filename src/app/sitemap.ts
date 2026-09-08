@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/red-rain`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/book-of-questions`,  lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/wholesale`,          lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/programs`,           lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/about`,              lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`,            lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
   ]

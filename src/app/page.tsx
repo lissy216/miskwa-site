@@ -192,7 +192,9 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10 max-w-7xl mx-auto">
+          {/* Flex rather than grid so an incomplete last row sits centred instead of hanging left.
+              Widths are the column share minus that share of the 2.5rem gap. */}
+          <div className="flex flex-wrap justify-center gap-10 max-w-6xl mx-auto *:w-full sm:*:w-[calc(50%-1.25rem)] lg:*:w-[calc(33.333%-1.667rem)]">
             {/* The Re-Membering (forthcoming) */}
             <Link href="/the-re-membering" className="group flex flex-col items-center text-center">
               <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
@@ -205,12 +207,37 @@ export default function Home() {
                 />
               </div>
               <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
-                Coming Soon
+                Autumn Equinox &middot; <span className="whitespace-nowrap">September 22, 2026</span>
               </p>
-              <h3 className="font-serif text-subheading text-bone mb-2">The Re-Membering</h3>
+              {/* The hyphen is the point of the title and must never become a line break. */}
+              <h3 className="font-serif text-subheading text-bone mb-2">The <span className="whitespace-nowrap">Re-Membering</span></h3>
               <p className="font-serif italic text-body text-bone/60 mb-4">Six Turns Back to the Part of You That Never Forgot</p>
               <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
                 This book was written for the part of you that suspects it used to know something, and cannot find it now. Most of what gets offered to that part of you is a system. The Re-Membering is not one.
+              </p>
+              <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
+                Read More &rarr;
+              </p>
+            </Link>
+
+            {/* Forgiveness as Freedom (forthcoming) */}
+            <Link href="/forgiveness-as-freedom" className="group flex flex-col items-center text-center">
+              <div className="relative aspect-2/3 w-full max-w-[300px] mb-8 rounded-sm overflow-hidden drop-shadow-[0_20px_40px_rgba(212,168,83,0.2)] transition-transform duration-500 group-hover:-translate-y-1">
+                <Image
+                  src="/images/forgiveness-as-freedom-cover.jpg"
+                  alt="Forgiveness as Freedom: A Self Process for Release, Boundary, and Return - Book Cover"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 300px"
+                />
+              </div>
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
+                Winter Solstice &middot; <span className="whitespace-nowrap">December 21, 2026</span>
+              </p>
+              <h3 className="font-serif text-subheading text-bone mb-2">Forgiveness as Freedom</h3>
+              <p className="font-serif italic text-body text-bone/60 mb-4">A Self Process for Release, Boundary, and Return</p>
+              <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
+                You are tired. Not the kind sleep fixes. Telling the truth about what happened. Drawing the line. Setting down the rope. Coming back to your own life.
               </p>
               <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
                 Read More &rarr;

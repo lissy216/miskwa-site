@@ -51,8 +51,12 @@ it.
 ## Capabilities and Constraints
 
 - Next.js 16 (App Router), React 19, Tailwind 4, TypeScript, deployed on Vercel.
-- Four titles: The Re-Membering (forthcoming), The Signal, Red Rain: A Soul
-  Shattered, The Book of Questions. Book sales are external retailer links.
+- Five titles. Forthcoming: The Re-Membering, releasing on the Autumn Equinox,
+  September 22, 2026; Forgiveness as Freedom: A Self Process for Release,
+  Boundary, and Return, releasing on the Winter Solstice, December 21, 2026.
+  Published: The Signal, Red Rain: A Soul Shattered, The Book of Questions.
+  Book sales are external retailer links. A forthcoming book shows its date
+  and no buying links until the day it is out.
 - Contact form delivers via the Resend HTTPS API through `/api/contact`.
   Vercel cannot do outbound SMTP.
 - **Programs migrate to the8thfire.com.** Living The Light and the teaching

@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/`,                   lastModified: now, changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/bookstore`,          lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/the-re-membering`,   lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/forgiveness-as-freedom`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/the-signal`,         lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/red-rain`,           lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/book-of-questions`,  lastModified: now, changeFrequency: 'monthly', priority: 0.8 },

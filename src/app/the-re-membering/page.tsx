@@ -5,14 +5,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'The Re-Membering',
   description:
-    'Six turns back to the part of you that never forgot. A forthcoming book by Miskwa Kimiwan.',
+    'Six turns back to the part of you that never forgot. Forthcoming from Miskwa Kimiwan on the Autumn Equinox, September 22, 2026.',
   openGraph: {
     type: 'book',
     url: 'https://www.miskwakimiwan.com/the-re-membering',
     siteName: 'Miskwa Kimiwan',
     title: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
     description:
-      'Six turns back to the part of you that never forgot. A forthcoming book by Miskwa Kimiwan.',
+      'Six turns back to the part of you that never forgot. Forthcoming from Miskwa Kimiwan on the Autumn Equinox, September 22, 2026.',
     images: [
       {
         url: '/images/the-re-membering-cover.jpg',
@@ -42,7 +42,7 @@ export default function TheReMembering() {
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 md:order-1">
-            <p className="text-label mb-4">Coming Soon</p>
+            <p className="text-label mb-4">Autumn Equinox &middot; <span className="whitespace-nowrap">September 22, 2026</span></p>
             {/* The hyphen is the point of the title, so it must not become a line
                 break. Re-Membering is held on one line and "The" wraps instead.
 

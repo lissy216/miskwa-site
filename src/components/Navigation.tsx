@@ -82,7 +82,16 @@ export default function Navigation() {
               >
                 The Re-Membering
                 <span className="block mt-1 text-[0.625rem] tracking-[0.15em] text-glow/85">
-                  Coming Soon
+                  September 22
+                </span>
+              </Link>
+              <Link
+                href="/forgiveness-as-freedom"
+                className="block px-5 py-3 text-sm tracking-[0.18em] uppercase font-display text-bone/70 hover:text-glow hover:bg-night/40 transition-colors"
+              >
+                Forgiveness as Freedom
+                <span className="block mt-1 text-[0.625rem] tracking-[0.15em] text-glow/85">
+                  December 21
                 </span>
               </Link>
               <Link
@@ -151,7 +160,8 @@ export default function Navigation() {
         <div className="section-container py-6 flex flex-col gap-5">
           <Link href="/" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Home</Link>
           <Link href="/about" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">About</Link>
-          <Link href="/the-re-membering" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Re-Membering <span className="text-[0.625rem] tracking-[0.15em] text-glow/85">Coming Soon</span></Link>
+          <Link href="/the-re-membering" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Re-Membering <span className="text-[0.625rem] tracking-[0.15em] text-glow/85">September 22</span></Link>
+          <Link href="/forgiveness-as-freedom" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Forgiveness as Freedom <span className="text-[0.625rem] tracking-[0.15em] text-glow/85">December 21</span></Link>
           <Link href="/the-signal" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Signal</Link>
           <Link href="/red-rain" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">Red Rain</Link>
           <Link href="/book-of-questions" onClick={() => setIsOpen(false)} className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone">The Book of Questions</Link>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 export const metadata: Metadata = {
   title: 'Bookstore',
@@ -26,6 +27,8 @@ type Book = {
   blurb: string
   retailers: Retailer[]
   comingSoon?: boolean
+  // Shown in place of the buying links until the book is out.
+  release?: string
 }
 
 // Every link here is carried over from the individual book pages. If a retailer
@@ -40,6 +43,18 @@ const books: Book[] = [
       'For the part of you that suspects it used to know something, and cannot find it now. Six turns through the places where the Forgetting lives.',
     retailers: [],
     comingSoon: true,
+    release: 'Autumn Equinox · September 22, 2026',
+  },
+  {
+    slug: '/forgiveness-as-freedom',
+    title: 'Forgiveness as Freedom',
+    subtitle: 'A Self Process for Release, Boundary, and Return',
+    cover: '/images/forgiveness-as-freedom-cover.jpg',
+    blurb:
+      'Telling the truth about what happened. Drawing the line. Setting down the rope. Coming back to your own life. None of it needs them.',
+    retailers: [],
+    comingSoon: true,
+    release: 'Winter Solstice · December 21, 2026',
   },
   {
     slug: '/the-signal',
@@ -92,6 +107,21 @@ const books: Book[] = [
   },
 ]
 
+// A hyphen in a title is deliberate (The Re-Membering). Never let the browser
+// break a line on it: hold each hyphenated word together and let the spaces wrap.
+function BookTitle({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(' ').map((word, i) => (
+        <Fragment key={i}>
+          {i > 0 && ' '}
+          {word.includes('-') ? <span className="whitespace-nowrap">{word}</span> : word}
+        </Fragment>
+      ))}
+    </>
+  )
+}
+
 export default function Bookstore() {
   return (
     <>
@@ -101,7 +131,7 @@ export default function Bookstore() {
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-narrow">
           <p className="text-label mb-4">Where to Buy</p>
-          <h1 className="font-serif text-display-sm md:text-display text-bone mb-6">
+          <h1 className="font-serif text-[2.25rem] sm:text-display-sm md:text-display text-bone mb-6">
             Bookstore
           </h1>
           <div className="divider-warm mb-8" />
@@ -139,12 +169,19 @@ export default function Bookstore() {
               <div className="text-center md:text-left">
                 {book.comingSoon && (
                   <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
-                    Coming Soon
+                    {book.release
+                      ? book.release.split(' · ').map((part, i) => (
+                          <Fragment key={i}>
+                            {i > 0 && ' · '}
+                            <span className="whitespace-nowrap">{part}</span>
+                          </Fragment>
+                        ))
+                      : 'Coming Soon'}
                   </p>
                 )}
-                <h2 className="font-serif text-heading text-bone mb-2">
+                <h2 className="font-serif text-[1.875rem] md:text-heading text-bone mb-2">
                   <Link href={book.slug} className="hover:text-glow transition-colors">
-                    {book.title}
+                    <BookTitle text={book.title} />
                   </Link>
                 </h2>
                 <p className="font-serif italic text-body-lg text-bone/60 mb-5">

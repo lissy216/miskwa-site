@@ -41,9 +41,9 @@ const books: Book[] = [
     cover: '/images/the-re-membering-cover.jpg',
     blurb:
       'For the part of you that suspects it used to know something, and cannot find it now. Six turns through the places where the Forgetting lives.',
-    retailers: [],
-    comingSoon: true,
-    release: 'Autumn Equinox · September 22, 2026',
+    retailers: [
+      { label: 'Amazon, paperback and ebook', href: 'https://www.amazon.ca/dp/1777747872', primary: true },
+    ],
   },
   {
     slug: '/forgiveness-as-freedom',

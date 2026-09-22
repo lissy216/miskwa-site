@@ -5,14 +5,14 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'The Re-Membering',
   description:
-    'Six turns back to the part of you that never forgot. Forthcoming from Miskwa Kimiwan on the Autumn Equinox, September 22, 2026.',
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot. A new book by Miskwa Kimiwan.',
   openGraph: {
     type: 'book',
     url: 'https://www.miskwakimiwan.com/the-re-membering',
     siteName: 'Miskwa Kimiwan',
     title: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
     description:
-      'Six turns back to the part of you that never forgot. Forthcoming from Miskwa Kimiwan on the Autumn Equinox, September 22, 2026.',
+      'You have not been broken. You have been living. Six turns back to the part of you that never forgot. A new book by Miskwa Kimiwan.',
     images: [
       {
         url: '/images/the-re-membering-cover.jpg',
@@ -21,6 +21,36 @@ export const metadata: Metadata = {
         alt: 'The Re-Membering — Front Cover',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+    description:
+      'You have not been broken. You have been living. A new book by Miskwa Kimiwan.',
+    images: ['/images/the-re-membering-cover.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.miskwakimiwan.com/the-re-membering',
+  },
+}
+
+const bookJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+  author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Press' },
+  inLanguage: 'en-CA',
+  bookFormat: 'https://schema.org/Paperback',
+  image: 'https://www.miskwakimiwan.com/images/the-re-membering-cover.jpg',
+  description:
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot.',
+  url: 'https://www.miskwakimiwan.com/the-re-membering',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://www.amazon.ca/dp/1777747872',
+    priceCurrency: 'CAD',
+    availability: 'https://schema.org/InStock',
   },
 }
 
@@ -36,13 +66,19 @@ const places = [
 export default function TheReMembering() {
   return (
     <>
+      {/* Book schema for rich search results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
+
       {/* ============================================
           HERO - Shadow mood
           ============================================ */}
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 md:order-1">
-            <p className="text-label mb-4">Autumn Equinox &middot; <span className="whitespace-nowrap">September 22, 2026</span></p>
+            <p className="text-label mb-4">Now Available in Paperback and Ebook</p>
             {/* The hyphen is the point of the title, so it must not become a line
                 break. Re-Membering is held on one line and "The" wraps instead.
 
@@ -75,16 +111,23 @@ export default function TheReMembering() {
             </p>
 
             <div className="flex flex-col gap-3">
-              <p className="font-serif italic text-caption text-bone/70 max-w-md">
-                Not yet released. This page will carry the buying links the day it is
-                available.
-              </p>
-              <Link
-                href="/contact"
-                className="btn-primary inline-flex items-center gap-3 w-fit mt-2"
+              <a
+                href="https://www.amazon.ca/dp/1777747872"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-3 w-fit"
               >
-                Ask to be told when it lands
-              </Link>
+                Buy on Amazon &mdash; Paperback and Ebook
+              </a>
+              <p className="font-serif italic text-caption text-bone/70 mt-3 max-w-md">
+                Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
+              </p>
+              <a
+                href="/wholesale"
+                className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 hover:text-glow transition-colors mt-2 inline-block"
+              >
+                Wholesale for 5+ copies &rarr;
+              </a>
             </div>
           </div>
 

@@ -46,38 +46,40 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Light Side — The Signal (new release) atmosphere */}
+        {/* Light Side — The Re-Membering (new release) atmosphere */}
         <div className="hero-field-light flex items-center justify-center p-8 md:p-10 xl:p-16 min-h-[50vh] xl:min-h-[90vh]">
           <LightArt className="absolute inset-0 w-full h-full opacity-40 pointer-events-none" />
           <div className="relative z-10 w-full max-w-md min-[1440px]:max-w-2xl">
             <div className="flex flex-col min-[1440px]:flex-row items-center gap-8 min-[1440px]:gap-10 text-center min-[1440px]:text-left">
               {/* Book cover */}
-              <div className="relative w-40 md:w-48 min-[1440px]:w-56 shrink-0 aspect-2/3 bg-black rounded-sm overflow-hidden shadow-2xl">
+              <div className="relative w-40 md:w-48 min-[1440px]:w-56 shrink-0 aspect-2/3 rounded-sm overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/the-signal-cover.jpg"
-                  alt="The Signal — book cover"
+                  src="/images/the-re-membering-cover.jpg"
+                  alt="The Re-Membering — book cover"
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   sizes="(max-width: 768px) 160px, (max-width: 1440px) 192px, 224px"
                   priority
                 />
               </div>
 
-              {/* Text */}
+              {/* Text. The hyphen in Re-Membering is the point of the title and must
+                  not break, so the word is held together and 'The' wraps instead. The
+                  title is longer than Signal, so it steps down from display-sm on md. */}
               <div className="flex-1 min-w-0">
-                <h2 className="font-serif text-display-sm md:text-heading text-night mb-3 leading-tight">
-                  The Signal
+                <h2 className="font-serif text-[2rem] md:text-[1.875rem] lg:text-[2.25rem] xl:text-display-sm text-night mb-3 leading-tight">
+                  The <span className="whitespace-nowrap">Re-Membering</span>
                 </h2>
                 <p className="font-serif italic text-subheading text-night/80 mb-5">
-                  Why Life and People Keep Happening to You
+                  Six Turns Back to the Part of You That Never Forgot
                 </p>
                 <p className="font-body text-body text-night/75 mb-7">
-                  You are broadcasting something right now. A frequency your body has been carrying since before you had a word for it. This book is about that signal.
+                  You have not been broken. You have been living. For the part of you that suspects it used to know something, and cannot find it now.
                 </p>
                 <p className="font-body text-caption text-ash mb-7">
                   New release, out now.
                 </p>
-                <Link href="/the-signal" className="btn-light backdrop-blur-sm bg-parchment/40">
+                <Link href="/the-re-membering" className="btn-light backdrop-blur-sm bg-parchment/40">
                   Read More
                 </Link>
               </div>

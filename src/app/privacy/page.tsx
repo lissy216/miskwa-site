@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Privacy policy for The Book of Questions app and MiskwaKimiwan.com. Your journal stays on your device — no accounts, no analytics, no tracking, nothing collected.',
 }
 
-const EFFECTIVE_DATE = 'August 19, 2026'
+const EFFECTIVE_DATE = 'September 25, 2026'
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="font-serif text-heading text-night mt-12 mb-4">{children}</h2>
@@ -36,7 +36,8 @@ export default function Privacy() {
           </p>
           <p className="font-body text-body text-night/40">
             Covers: The Book of Questions — The Socratic Year of the Soul (iOS app)
-            and this website. Published by Miskwa Kimiwan, operating from Ontario, Canada.
+            and this website. Published by The 8th Fire, Inc., an Ontario, Canada
+            corporation. Written by Miskwa Kimiwan.
           </p>
           <div className="divider-cool my-8" />
 
@@ -224,8 +225,8 @@ export default function Privacy() {
             a complete copy on demand, and deletion is yours alone to perform —
             there is nothing on our side to request deletion of. For email
             correspondence, the rights are ordinary ones and we honour them. In
-            Quebec, Miskwa Kimiwan is the person in charge of the protection of
-            personal information. If you are in Canada and unsatisfied with how we
+            Quebec, the CEO of The 8th Fire, Inc. is the person in charge of the
+            protection of personal information. If you are in Canada and unsatisfied with how we
             handled a request, you may complain to the Office of the Privacy
             Commissioner of Canada; in Quebec, to the Commission d’accès à
             l’information.

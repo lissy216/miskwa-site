@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'The Book of Questions: The Socratic Year of the Soul',
-  description: '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. A conversation between you and the part of you that has been waiting to be asked.',
+  description: '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. In paperback, ebook, and now as an iPhone app — Season One is free.',
 }
 
 export default function BookOfQuestions() {
@@ -53,6 +53,14 @@ export default function BookOfQuestions() {
 
             <div className="flex flex-col gap-3">
               <a
+                href="https://apps.apple.com/app/the-book-of-questions/id6799315120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-light inline-flex items-center gap-3 w-fit"
+              >
+                The App for iPhone &mdash; Season One Free
+              </a>
+              <a
                 href="https://a.co/d/04ofbHp4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -100,6 +108,44 @@ export default function BookOfQuestions() {
                 sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          THE APP
+          ============================================ */}
+      <section className="mood-shadow py-section-sm md:py-section">
+        <div className="section-narrow">
+          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-4">
+            Now on iPhone
+          </p>
+          <h2 className="font-serif text-heading text-bone mb-10">
+            The Year, In Your Pocket
+          </h2>
+          <div className="space-y-6 font-body text-body-lg text-bone/70 leading-relaxed">
+            <p>
+              The full year now lives as an app. Each dawn, the day&rsquo;s question is waiting &mdash; on your home screen, on your lock screen, before you open anything else. Read it in the morning. Let it walk with you. In the evening, write. Even one honest sentence counts, and it saves by itself.
+            </p>
+            <p>
+              When a season closes, the Mirror reflects your own words back to you. No AI reads your journal. No summary is written by a machine. Everything you write lives on your phone and in your own iCloud &mdash; never on a server of ours, because we don&rsquo;t have any. No accounts, no analytics, no ads.
+            </p>
+            <p>
+              Season One &mdash; thirty-one days and your first Mirror &mdash; is free. No card, no clock. The paperback and the app are two doors into the same year.
+            </p>
+          </div>
+          <div className="mt-10">
+            <a
+              href="https://apps.apple.com/app/the-book-of-questions/id6799315120"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Download on the App Store
+            </a>
+            <p className="font-serif italic text-caption text-bone/60 mt-4">
+              Free to begin &middot; For iPhone
+            </p>
           </div>
         </div>
       </section>

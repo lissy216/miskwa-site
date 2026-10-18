@@ -38,7 +38,7 @@ const bookJsonLd = {
   '@type': 'Book',
   name: 'The Signal: Why Life and People Keep Happening to You',
   author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
-  publisher: { '@type': 'Organization', name: 'Red Rain Press' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
   inLanguage: 'en-CA',
   bookFormat: 'https://schema.org/Paperback',
   image: 'https://www.miskwakimiwan.com/images/the-signal-cover.jpg',

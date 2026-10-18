@@ -43,6 +43,7 @@ const books: Book[] = [
       'For the part of you that suspects it used to know something, and cannot find it now. Six turns through the places where the Forgetting lives.',
     retailers: [
       { label: 'Amazon, paperback and ebook', href: 'https://www.amazon.ca/dp/1777747872', primary: true },
+      { label: 'Audible, audiobook', href: 'https://www.audible.ca/pd/B0HNC297KK' },
     ],
   },
   {

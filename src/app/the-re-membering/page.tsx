@@ -5,7 +5,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'The Re-Membering',
   description:
-    'You have not been broken. You have been living. Six turns back to the part of you that never forgot. A new book by Miskwa Kimiwan.',
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot. In paperback, ebook, and audiobook narrated by Omar Abou.',
   openGraph: {
     type: 'book',
     url: 'https://www.miskwakimiwan.com/the-re-membering',
@@ -39,7 +39,7 @@ const bookJsonLd = {
   '@type': 'Book',
   name: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
   author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
-  publisher: { '@type': 'Organization', name: 'Red Rain Press' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
   inLanguage: 'en-CA',
   bookFormat: 'https://schema.org/Paperback',
   image: 'https://www.miskwakimiwan.com/images/the-re-membering-cover.jpg',
@@ -49,6 +49,28 @@ const bookJsonLd = {
   offers: {
     '@type': 'Offer',
     url: 'https://www.amazon.ca/dp/1777747872',
+    priceCurrency: 'CAD',
+    availability: 'https://schema.org/InStock',
+  },
+}
+
+const audiobookJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Audiobook',
+  name: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+  author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
+  readBy: { '@type': 'Person', name: 'Omar Abou' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
+  inLanguage: 'en-CA',
+  isbn: '978-1-7777478-8-6',
+  duration: 'PT2H30M',
+  image: 'https://www.miskwakimiwan.com/images/the-re-membering-audiobook-cover.jpg',
+  description:
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot.',
+  url: 'https://www.miskwakimiwan.com/the-re-membering',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://www.audible.ca/pd/B0HNC297KK',
     priceCurrency: 'CAD',
     availability: 'https://schema.org/InStock',
   },
@@ -72,13 +94,19 @@ export default function TheReMembering() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
       />
 
+      {/* Audiobook schema, narrated by Omar Abou */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(audiobookJsonLd) }}
+      />
+
       {/* ============================================
           HERO - Shadow mood
           ============================================ */}
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 md:order-1">
-            <p className="text-label mb-4">Now Available in Paperback and Ebook</p>
+            <p className="text-label mb-4">Now Available in Paperback, Ebook and Audiobook</p>
             {/* The hyphen is the point of the title, so it must not become a line
                 break. Re-Membering is held on one line and "The" wraps instead.
 
@@ -119,6 +147,17 @@ export default function TheReMembering() {
               >
                 Buy on Amazon &mdash; Paperback and Ebook
               </a>
+              <a
+                href="https://www.audible.ca/pd/B0HNC297KK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center gap-3 w-fit"
+              >
+                Listen on Audible &mdash; Audiobook
+              </a>
+              <p className="font-serif italic text-caption text-bone/70 max-w-md">
+                Narrated by Omar Abou. Two hours and thirty minutes, unabridged.
+              </p>
               <p className="font-serif italic text-caption text-bone/70 mt-3 max-w-md">
                 Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
               </p>

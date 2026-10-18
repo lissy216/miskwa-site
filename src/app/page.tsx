@@ -77,7 +77,7 @@ export default function Home() {
                   You have not been broken. You have been living. For the part of you that suspects it used to know something, and cannot find it now.
                 </p>
                 <p className="font-body text-caption text-ash mb-7">
-                  New release, out now.
+                  New release. Paperback, ebook, and audiobook.
                 </p>
                 <Link href="/the-re-membering" className="btn-light backdrop-blur-sm bg-parchment/40">
                   Read More

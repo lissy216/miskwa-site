@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-ash/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-bone/70">
-            &copy; 2025&ndash;2026 Miskwa Kimiwan &middot; Red Rain Press &middot; All Rights Reserved
+            &copy; 2025&ndash;2026 Miskwa Kimiwan &middot; Red Rain Publishing &middot; All Rights Reserved
           </p>
           <p className="text-xs text-bone/70">
             We all live in glass houses.

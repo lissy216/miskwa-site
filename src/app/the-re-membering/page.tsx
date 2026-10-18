@@ -62,7 +62,6 @@ const audiobookJsonLd = {
   readBy: { '@type': 'Person', name: 'Omar Abou' },
   publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
   inLanguage: 'en-CA',
-  isbn: '978-1-7777478-8-6',
   duration: 'PT2H30M',
   image: 'https://www.miskwakimiwan.com/images/the-re-membering-audiobook-cover.jpg',
   description:

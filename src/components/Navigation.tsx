@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -8,6 +8,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [booksOpen, setBooksOpen] = useState(false)
   const pathname = usePathname()
+  const booksRef = useRef<HTMLDivElement>(null)
 
   const isActive = (path: string) => pathname === path
 
@@ -18,9 +19,24 @@ export default function Navigation() {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setBooksOpen(false)
     }
+    // A click or tap anywhere outside the menu closes it.
+    const onPointer = (e: PointerEvent) => {
+      if (booksRef.current && !booksRef.current.contains(e.target as Node)) {
+        setBooksOpen(false)
+      }
+    }
     document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointer)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointer)
+    }
   }, [booksOpen])
+
+  // Choosing a book closes the menu.
+  useEffect(() => {
+    setBooksOpen(false)
+  }, [pathname])
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-night border-b border-ash/20">
@@ -55,27 +71,32 @@ export default function Navigation() {
           </Link>
 
           {/* Books Dropdown */}
-          <div className="relative group">
+          {/* Hover belongs to the whole wrapper, button and panel together, so the
+              pointer can travel from one to the other without the menu closing.
+              A click only ever opens: on touch screens a tap fires hover and click
+              together, which used to open the menu and shut it in the same instant. */}
+          <div
+            ref={booksRef}
+            className="relative group"
+            onMouseEnter={() => setBooksOpen(true)}
+            onMouseLeave={() => setBooksOpen(false)}
+          >
             <button
               type="button"
               className="font-display text-sm tracking-[0.2em] uppercase text-bone/70 hover:text-bone transition-colors flex items-center gap-1 py-3"
               aria-haspopup="true"
               aria-expanded={booksOpen}
-              onClick={() => setBooksOpen((v) => !v)}
-              onMouseEnter={() => setBooksOpen(true)}
-              onMouseLeave={() => setBooksOpen(false)}
+              onClick={() => setBooksOpen(true)}
             >
               Books
               <svg className="w-3 h-3 mt-px" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div
-              hidden={!booksOpen}
-              className="absolute top-full left-0 mt-2 w-56 bg-charcoal border border-ash/30 rounded-sm shadow-xl"
-              onMouseEnter={() => setBooksOpen(true)}
-              onMouseLeave={() => setBooksOpen(false)}
-            >
+            {/* The gap under the button is padding inside this box, not a margin
+                outside it, so there is no dead strip for the pointer to fall into. */}
+            <div hidden={!booksOpen} className="absolute top-full left-0 pt-2 w-56">
+              <div className="bg-charcoal border border-ash/30 rounded-sm shadow-xl">
               <Link
                 href="/the-re-membering"
                 className="block px-5 py-3 text-sm tracking-[0.18em] uppercase font-display text-bone/70 hover:text-glow hover:bg-night/40 transition-colors"
@@ -109,6 +130,7 @@ export default function Navigation() {
               >
                 The Book of Questions
               </Link>
+              </div>
             </div>
           </div>
 

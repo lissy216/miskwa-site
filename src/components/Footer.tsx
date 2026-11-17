@@ -48,6 +48,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <Link href="/about" className="text-caption text-bone/70 hover:text-bone transition-colors">About</Link>
               <Link href="/the-re-membering" className="text-caption text-bone/70 hover:text-bone transition-colors">The Re-Membering</Link>
+              <Link href="/forgiveness-as-freedom" className="text-caption text-bone/70 hover:text-bone transition-colors">Forgiveness as Freedom</Link>
               <Link href="/the-signal" className="text-caption text-bone/70 hover:text-bone transition-colors">The Signal</Link>
               <Link href="/red-rain" className="text-caption text-bone/70 hover:text-bone transition-colors">Red Rain</Link>
               <Link href="/book-of-questions" className="text-caption text-bone/70 hover:text-bone transition-colors">The Book of Questions</Link>

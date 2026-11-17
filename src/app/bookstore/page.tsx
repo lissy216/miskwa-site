@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Bookstore',
@@ -259,6 +260,7 @@ export default function Bookstore() {
           </Link>
         </div>
       </section>
+      <NewsletterSignup />
     </>
   )
 }

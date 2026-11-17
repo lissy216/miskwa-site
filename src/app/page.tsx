@@ -209,6 +209,9 @@ export default function Home() {
                 />
               </div>
               {/* The hyphen is the point of the title and must never become a line break. */}
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
+                Available Now
+              </p>
               <h3 className="font-serif text-subheading text-bone mb-2">The <span className="whitespace-nowrap">Re-Membering</span></h3>
               <p className="font-serif italic text-body text-bone/60 mb-4">Six Turns Back to the Part of You That Never Forgot</p>
               <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
@@ -254,6 +257,9 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
+                Available Now
+              </p>
               <h3 className="font-serif text-subheading text-bone mb-2">The Signal</h3>
               <p className="font-serif italic text-body text-bone/60 mb-4">Why Life and People Keep Happening to You</p>
               <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
@@ -275,6 +281,9 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
+                Available Now
+              </p>
               <h3 className="font-serif text-subheading text-bone mb-2">Red Rain</h3>
               <p className="font-serif italic text-body text-bone/60 mb-4">A Soul Shattered</p>
               <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
@@ -296,6 +305,9 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
+              <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-3">
+                Available Now
+              </p>
               <h3 className="font-serif text-subheading text-bone mb-2">The Book of Questions</h3>
               <p className="font-serif italic text-body text-bone/60 mb-4">The Socratic Year of the Soul</p>
               <p className="font-body text-caption text-bone/60 leading-relaxed max-w-sm">
@@ -304,6 +316,12 @@ export default function Home() {
               <p className="mt-6 font-display text-xs tracking-[0.2em] uppercase text-bridge group-hover:text-glow transition-colors">
                 Read More &rarr;
               </p>
+            </Link>
+          </div>
+
+          <div className="text-center mt-16">
+            <Link href="/bookstore" className="btn-primary">
+              Where to buy every book
             </Link>
           </div>
         </div>

@@ -1,10 +1,36 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'The Book of Questions: The Socratic Year of the Soul',
   description: '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you. In paperback, ebook, and now as an iPhone app — Season One is free.',
+  alternates: { canonical: '/book-of-questions' },
+  openGraph: {
+    type: 'book',
+    url: 'https://www.miskwakimiwan.com/book-of-questions',
+    siteName: 'Miskwa Kimiwan',
+    title: 'The Book of Questions: The Socratic Year of the Soul',
+    description:
+      '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you.',
+    images: [
+      {
+        url: '/images/book-of-questions-cover.png',
+        width: 1024,
+        height: 1536,
+        alt: 'The Book of Questions: The Socratic Year of the Soul, Front Cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Book of Questions: The Socratic Year of the Soul',
+    description:
+      '372 questions. Twelve months of territory. One full year of learning to trust what is already alive in you.',
+    images: ['/images/book-of-questions-cover.png'],
+  },
 }
 
 export default function BookOfQuestions() {
@@ -315,6 +341,52 @@ export default function BookOfQuestions() {
           </div>
         </div>
       </section>
+      {/* ============================================
+          READER REFLECTIONS
+          Excerpts from reader reviews on Amazon.ca, quoted word for word.
+          An ellipsis marks where a review was shortened.
+          ============================================ */}
+      <section className="bg-parchment py-section-sm md:py-section">
+        <div className="section-container">
+          <h2 className="font-serif text-heading text-night mb-12 text-center">
+            Readers Reflections
+          </h2>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;I have not experienced this kind of opening before with a book, ever. And I&rsquo;m only arriving at the first question. This book invites you to feel the words with the body rather than interact with it through the thinking mind, and it&rsquo;s written in such a way to allow that to happen.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                J.S.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;&hellip; this book is a valuable tool to keep track of your progress. Helps give you accountability to continue driving yourself to get on the track you want.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                Amazon reader
+              </footer>
+            </blockquote>
+          </div>
+
+          <p className="text-center mt-12">
+            <a
+              href="https://a.co/d/04ofbHp4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Read every review on Amazon &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <MoreBooks current="/book-of-questions" />
+      <NewsletterSignup />
     </>
   )
 }

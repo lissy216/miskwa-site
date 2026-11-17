@@ -1,9 +1,35 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Red Rain: A Soul Shattered',
   description: 'A story of a fall from grace, the shattering to pieces of a young soul, and the journey to find humanity in the dark places. Not a tale of easy redemption. A field guide for walking through darkness with dignity.',
+  alternates: { canonical: '/red-rain' },
+  openGraph: {
+    type: 'book',
+    url: 'https://www.miskwakimiwan.com/red-rain',
+    siteName: 'Miskwa Kimiwan',
+    title: 'Red Rain: A Soul Shattered',
+    description:
+      'Not a tale of easy redemption. A field guide for walking through darkness with dignity.',
+    images: [
+      {
+        url: '/images/red-rain-cover.png',
+        width: 430,
+        height: 645,
+        alt: 'Red Rain: A Soul Shattered, Front Cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Red Rain: A Soul Shattered',
+    description:
+      'Not a tale of easy redemption. A field guide for walking through darkness with dignity.',
+    images: ['/images/red-rain-cover.png'],
+  },
 }
 
 export default function RedRain() {
@@ -15,6 +41,7 @@ export default function RedRain() {
       <section className="mood-shadow py-section-sm md:py-section">
         <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 md:order-1">
+            <p className="text-label mb-4">Available Now</p>
             <h1 className="font-serif text-display-sm md:text-display text-bone mb-2">
               Red Rain
             </h1>
@@ -167,7 +194,86 @@ export default function RedRain() {
                 C.R.D.
               </footer>
             </blockquote>
+
+            {/* The five below are excerpts from verified-purchase reader reviews on
+                Amazon.ca, quoted word for word. An ellipsis marks where a review
+                was shortened. */}
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This book is devastatingly beautiful. &hellip; These pages will break you, but they will also build you back together again. This book is such a gift!&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                A.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This book artfully expresses what it means to alchemize pain and turn darkness into something beautiful in the most raw and human way.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                S.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;A beautiful read filled with depth, introspection and heartfelt storytelling. Red Rain invites the reader to hold pain in a sacred way.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                A.F.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;Red Rain reminds us of the importance of holding space for ourselves and others, and that healing is possible even in our darkest moments.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                T.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;Heartbreaking, beautiful and inspiring, this book will change you.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                I.
+              </footer>
+            </blockquote>
+
+            {/* From a verified reviewer on Chapters Indigo, quoted word for word. */}
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;Definitely an awesome read. I could not put it down.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                B.
+              </footer>
+            </blockquote>
           </div>
+
+          <p className="text-center mt-12">
+            <a
+              href="https://a.co/d/6qsyT4d"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Read every review on Amazon &rarr;
+            </a>
+          </p>
+          <p className="text-center mt-4">
+            <a
+              href="https://www.indigo.ca/products/red-rain-a-soul-shattered?variant=46701839024338"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Reviews on Chapters Indigo &rarr;
+            </a>
+          </p>
         </div>
       </section>
 
@@ -184,6 +290,8 @@ export default function RedRain() {
           </p>
         </div>
       </section>
+      <MoreBooks current="/red-rain" />
+      <NewsletterSignup />
     </>
   )
 }

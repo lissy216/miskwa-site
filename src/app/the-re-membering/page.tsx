@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'The Re-Membering',
@@ -241,6 +243,62 @@ export default function TheReMembering() {
           </Link>
         </div>
       </section>
+
+      {/* ============================================
+          READER REFLECTIONS
+          Excerpts from reader reviews on Amazon.ca, quoted word for word.
+          An ellipsis marks where a review was shortened.
+          ============================================ */}
+      <section className="bg-parchment py-section-sm md:py-section border-t border-night/10">
+        <div className="section-container">
+          <h2 className="font-serif text-heading text-night mb-12 text-center">
+            Readers Reflections
+          </h2>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This beautifully crafted little book leaves you with wanting more. The wisdom imparted, brings you full circle, to the place you began to forget and back to the remembering of who you are and the many facets that make you human.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                P.A.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;Another book by Miskwa with really powerful medicine. Received it and read slowly, in one sitting. Thank you for the seeds.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                J.S.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This book is an active guide to remembering your way back to you, to relationship, to presence. It gives words to what you may have been feeling below the surface. &hellip; This book is a beautiful gift.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                S.
+              </footer>
+            </blockquote>
+          </div>
+
+          <p className="text-center mt-12">
+            <a
+              href="https://www.amazon.ca/dp/1777747872"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Read every review on Amazon &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <MoreBooks current="/the-re-membering" />
+      <NewsletterSignup />
 
       {/* ============================================
           CLOSING

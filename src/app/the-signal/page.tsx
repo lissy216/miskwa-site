@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'The Signal',
@@ -239,6 +241,59 @@ export default function TheSignal() {
       </section>
 
       {/* ============================================
+          READER REFLECTIONS
+          Excerpts from verified-purchase reader reviews on Amazon.ca, quoted
+          word for word. An ellipsis marks where a review was shortened.
+          ============================================ */}
+      <section className="bg-parchment py-section-sm md:py-section border-t border-night/10">
+        <div className="section-container">
+          <h2 className="font-serif text-heading text-night mb-12 text-center">
+            Readers Reflections
+          </h2>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This book is exceptional. &hellip; It takes radical self honesty to identify. Having the guide leaves less room for lying to yourself.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                J.S.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;A drive to start tuning into that station or channel that is calling within. This book will help with perspective because you are ready and willing to listen to yourself.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                Amazon reader
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This is an incredibly important book. &hellip; I think this is one of the most fascinating books I have ever read.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                S.D.
+              </footer>
+            </blockquote>
+          </div>
+
+          <p className="text-center mt-12">
+            <a
+              href="https://www.amazon.ca/gp/product-reviews/B0H8KZ73L9/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Read every review on Amazon &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      {/* ============================================
           ORDER
           ============================================ */}
       <section className="bg-night py-section-sm md:py-section">
@@ -281,6 +336,8 @@ export default function TheSignal() {
           </div>
         </div>
       </section>
+      <MoreBooks current="/the-signal" />
+      <NewsletterSignup />
     </>
   )
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup, { NEWSLETTER_URL } from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Forgiveness as Freedom',
@@ -22,6 +24,13 @@ export const metadata: Metadata = {
         alt: 'Forgiveness as Freedom, Front Cover',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Forgiveness as Freedom: A Self Process for Release, Boundary, and Return',
+    description:
+      'A self process for release, boundary, and return. Forthcoming from Miskwa Kimiwan on the Winter Solstice, December 21, 2026.',
+    images: ['/images/forgiveness-as-freedom-cover.jpg'],
   },
 }
 
@@ -84,12 +93,17 @@ export default function ForgivenessAsFreedom() {
                 Not yet released. This page will carry the buying links the day it is
                 available.
               </p>
-              <Link
-                href="/contact"
+              <a
+                href={NEWSLETTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center gap-3 w-fit mt-2"
               >
-                Ask to be told when it lands
-              </Link>
+                Be told the day it lands
+              </a>
+              <p className="font-serif italic text-caption text-bone/70 max-w-md">
+                The release will be announced in The Rainfall Newsletter, on Substack.
+              </p>
             </div>
           </div>
 
@@ -197,6 +211,9 @@ export default function ForgivenessAsFreedom() {
           </Link>
         </div>
       </section>
+
+      <MoreBooks current="/forgiveness-as-freedom" />
+      <NewsletterSignup />
 
       {/* ============================================
           CLOSING

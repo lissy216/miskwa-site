@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     'Privacy policy for The Book of Questions app and MiskwaKimiwan.com. Your journal stays on your device — no accounts, no analytics, no tracking, nothing collected.',
 }
 
-const EFFECTIVE_DATE = 'September 25, 2026'
+const EFFECTIVE_DATE = 'November 20, 2026'
 
 function H2({ children }: { children: React.ReactNode }) {
   return <h2 className="font-serif text-heading text-night mt-12 mb-4">{children}</h2>
@@ -45,10 +45,10 @@ export default function Privacy() {
           <P>
             Two things, and they work differently. The app itself, which runs on your
             device and sends nothing to us. And this website, where writing to us by
-            email shares what you choose to send. Most of this policy is about the
-            app. The section headed <em>When you contact us</em> covers correspondence —
-            and it is the only place in this whole operation where we receive anything
-            about you at all.
+            email shares what you choose to send, and where Ella Rae, the website’s
+            AI chatbot, answers questions about the books. Most of this policy is
+            about the app. The sections headed <em>Ella Rae</em> and{' '}
+            <em>When you contact us</em> cover the website.
           </P>
 
           <H2>The short version</H2>
@@ -177,6 +177,26 @@ export default function Privacy() {
             have.
           </P>
 
+          <h2 id="ella-rae" className="font-serif text-heading text-night mt-12 mb-4 scroll-mt-28">
+            Ella Rae, the website chatbot
+          </h2>
+          <P>
+            Ella Rae is an AI chatbot, not a person. When you write to Ella Rae, your
+            messages in that conversation are sent through Vercel’s AI Gateway to
+            Anthropic, whose Claude model writes the replies. They process the text
+            to answer you, under their own privacy policies, and may keep it for a
+            limited time for safety and abuse monitoring. We do not save your
+            conversations, we do not read them, and they are gone from your screen
+            when you close or reload the page. Please do not share anything you
+            would not want a service provider to process.
+          </P>
+          <P>
+            If you ask Ella Rae to tell you when a book is released and tick the
+            permission box, the email address you type is sent to our inbox. We use
+            it once, for that release, and then delete it. It is not added to any
+            mailing list.
+          </P>
+
           <H2>When you contact us</H2>
           <P>
             Email is the one place we receive information about you, and only
@@ -252,6 +272,20 @@ export default function Privacy() {
             <LI>
               <strong className="text-night/80">Zoho Mail</strong> hosts our email
               inbox, under its own privacy policy.
+            </LI>
+            <LI>
+              <strong className="text-night/80">Vercel</strong> hosts this website
+              and carries Ella Rae’s messages through its AI Gateway, under its own
+              privacy policy.
+            </LI>
+            <LI>
+              <strong className="text-night/80">Anthropic</strong> provides the AI
+              model behind Ella Rae, under its own privacy policy.
+            </LI>
+            <LI>
+              <strong className="text-night/80">Resend</strong> delivers messages from
+              the website’s contact form and release sign-ups to our inbox, under its
+              own privacy policy.
             </LI>
           </ul>
           <P>

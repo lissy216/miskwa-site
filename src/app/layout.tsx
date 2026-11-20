@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Cinzel, Lora, Crimson_Pro } from 'next/font/google'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import EllaRae from '@/components/EllaRae'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -94,6 +95,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <EllaRae />
         <Analytics />
         <SpeedInsights />
       </body>

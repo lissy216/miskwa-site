@@ -7,9 +7,30 @@ export const metadata: Metadata = {
   description: 'Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory whose work bridges trauma, presence, and the unseen world.',
 }
 
+// Author details for search engines. Add an organisation to memberOf only once
+// membership is confirmed (paid, or a welcome letter in hand).
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Miskwa Kimiwan',
+  url: 'https://www.miskwakimiwan.com/about',
+  jobTitle: 'Author',
+  memberOf: [
+    {
+      '@type': 'Organization',
+      name: "The Writers' Union of Canada",
+      url: 'https://www.writersunion.ca',
+    },
+  ],
+}
+
 export default function About() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* ============================================
           HERO
           ============================================ */}
@@ -58,6 +79,17 @@ export default function About() {
               The published work began with <em>Red Rain: A Soul Shattered</em>, a memoir that readers describe not as something they read but as something that reads them. <em>The Book of Questions: The Socratic Year of the Soul</em> followed, 365 questions organized across twelve months of soul territory. Both books operate on the same principle: that the person holding the book already carries what they need. The work is never to install something new. The work is to sit with what is already there long enough for it to be heard.
             </p>
           </div>
+          <p className="mt-10 font-display text-xs tracking-[0.2em] uppercase text-glow/85">
+            Member,{' '}
+            <a
+              href="https://www.writersunion.ca"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-glow/40 underline-offset-4 hover:text-sun"
+            >
+              The Writers&rsquo; Union of Canada
+            </a>
+          </p>
         </div>
       </section>
 

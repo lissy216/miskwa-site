@@ -7,15 +7,23 @@ export const metadata: Metadata = {
   description: 'Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory whose work bridges trauma, presence, and the unseen world.',
 }
 
-// Author details for search engines. Add a memberOf list only once an
-// organisation has confirmed acceptance in writing. Paying dues is not enough:
-// The Writers' Union of Canada took dues on 2026-11-20 but acceptance is pending.
+// Author details for search engines. Add to memberOf only once an organisation
+// has confirmed membership in writing. Paying dues is not always enough: The
+// Writers' Union of Canada took dues on 2026-11-20 but acceptance is pending.
+// Canadian Authors: Full Membership purchased 2026-11-19 (open membership).
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Miskwa Kimiwan',
   url: 'https://www.miskwakimiwan.com/about',
   jobTitle: 'Author',
+  memberOf: [
+    {
+      '@type': 'Organization',
+      name: 'Canadian Authors',
+      url: 'https://www.canadianauthors.org',
+    },
+  ],
 }
 
 export default function About() {
@@ -73,6 +81,17 @@ export default function About() {
               The published work began with <em>Red Rain: A Soul Shattered</em>, a memoir that readers describe not as something they read but as something that reads them. <em>The Book of Questions: The Socratic Year of the Soul</em> followed, 365 questions organized across twelve months of soul territory. Both books operate on the same principle: that the person holding the book already carries what they need. The work is never to install something new. The work is to sit with what is already there long enough for it to be heard.
             </p>
           </div>
+          <p className="mt-10 font-display text-xs tracking-[0.2em] uppercase text-glow/85">
+            Member,{' '}
+            <a
+              href="https://www.canadianauthors.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline decoration-glow/40 underline-offset-4 hover:text-sun"
+            >
+              Canadian Authors
+            </a>
+          </p>
         </div>
       </section>
 

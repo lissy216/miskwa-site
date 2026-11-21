@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { SITE_URL, href } from '@/lib/i18n'
 
-// Every page in English, each paired with its Spanish twin at /es.
+// Every page in English, with its Spanish twin at /es and French twin at /fr.
 const PAGES: { path: string; priority: number }[] = [
   { path: '/', priority: 1.0 },
   { path: '/bookstore', priority: 0.9 },
@@ -21,10 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages = {
       en: `${SITE_URL}${path}`,
       es: `${SITE_URL}${href('es', path)}`,
+      fr: `${SITE_URL}${href('fr', path)}`,
     }
     return [
       { url: languages.en, lastModified: now, changeFrequency: 'monthly' as const, priority, alternates: { languages } },
       { url: languages.es, lastModified: now, changeFrequency: 'monthly' as const, priority: Math.round(priority * 8) / 10, alternates: { languages } },
+      { url: languages.fr, lastModified: now, changeFrequency: 'monthly' as const, priority: Math.round(priority * 8) / 10, alternates: { languages } },
     ]
   })
 }

@@ -6,7 +6,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 
 import type { Locale } from '@/lib/i18n'
 
-// Everything the window shows, in both languages. The model never sees the
+// Everything the window shows, in each language. The model never sees the
 // greeting, so the instructions file stays on the server and out of the browser.
 const COPY = {
   en: {
@@ -64,6 +64,34 @@ const COPY = {
     alertSending: 'Enviando',
     alertDone: 'Gracias. Recibirás un correo cuando salga Forgiveness as Freedom, el 21 de diciembre.',
     alertFail: 'No se pudo enviar.',
+  },
+  fr: {
+    greeting:
+      'Bonjour. Je suis Ella Rae, un agent conversationnel d’IA et le guide de lecture de ce site. Je peux vous aider à trouver le livre qui répond à ce que vous portez, vous dire où vous le procurer ou vous offrir une question à méditer. Je ne suis pas une personne, et je ne suis pas Miskwa Kimiwan. Les livres sont en anglais.',
+    starters: [
+      'Par quel livre commencer ?',
+      'Offrez-moi une question à méditer',
+      'Quand paraît Forgiveness as Freedom ?',
+    ],
+    role: 'Guide de lecture IA',
+    disclose: 'Un agent conversationnel d’IA, pas une personne. Il peut se tromper.',
+    newChat: 'Nouveau',
+    close: 'Fermer Ella Rae',
+    writing: 'Ella Rae écrit',
+    error: 'Impossible de joindre Ella Rae pour le moment. Veuillez réessayer dans un instant.',
+    inputLabel: 'Écrire à Ella Rae',
+    placeholder: 'Une question sur les livres',
+    send: 'Envoyer',
+    footnote: 'Pas un service d’aide en situation de crise. Au Canada ou aux États-Unis, appelez ou textez le 988. Les conversations ne sont pas conservées ici.',
+    privacy: 'Confidentialité',
+    privacyHref: '/fr/privacy#ella-rae',
+    alertLabel: 'Votre courriel, pour un seul message à la parution de Forgiveness as Freedom',
+    alertConsent: 'Oui, Miskwa Kimiwan peut m’écrire une fois au sujet de cette parution. Mon adresse n’est ajoutée à aucune liste. Voir la',
+    alertPolicy: 'politique de confidentialité',
+    alertSend: 'Prévenez-moi',
+    alertSending: 'Envoi',
+    alertDone: 'Merci. Vous recevrez un seul courriel à la parution de Forgiveness as Freedom, le 21 décembre.',
+    alertFail: 'L’envoi n’a pas abouti.',
   },
 }
 

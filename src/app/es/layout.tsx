@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_LA',
-    alternateLocale: ['en_CA'],
+    alternateLocale: ['en_CA', 'fr_FR'],
     siteName: 'Miskwa Kimiwan',
     title: 'Miskwa Kimiwan | Libros para el camino del alma',
     description: 'Libros que atraviesan la oscuridad con dignidad. Escritura de sanación que no esquiva lo oscuro.',

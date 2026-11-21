@@ -87,7 +87,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: MODEL,
-    instructions: ellaInstructions(locale === 'es' ? 'es' : 'en'),
+    instructions: ellaInstructions(locale === 'es' || locale === 'fr' ? locale : 'en'),
     messages: await convertToModelMessages(messages.slice(-MAX_HISTORY)),
     maxOutputTokens: 600,
     tools: {

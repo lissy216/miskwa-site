@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { href, localeOf, switchPath, UI } from '@/lib/i18n'
+import { href, LANGUAGE_NAMES, LOCALES, localeOf, switchPath, UI } from '@/lib/i18n'
 
 const BOOKS = [
   { path: '/the-re-membering', title: 'The Re-Membering' },
@@ -13,23 +13,36 @@ const BOOKS = [
   { path: '/book-of-questions', title: 'The Book of Questions' },
 ]
 
-// The EN / ES switch. It goes to the same page in the other language. A plain
-// <a>, not <Link>: the two languages have separate page frames (each with its own
-// <html lang>), so the switch is a full page load by design.
-function LanguageSwitch({ pathname, className }: { pathname: string; className?: string }) {
+// The language switch: the same page in each of the other two languages. Plain
+// <a>, not <Link>: each language has its own page frame (with its own
+// <html lang>), so switching is a full page load by design.
+function LanguageSwitch({ pathname, small }: { pathname: string; small?: boolean }) {
   const locale = localeOf(pathname)
-  const t = UI[locale]
+  const others = LOCALES.filter((l) => l !== locale)
   return (
-    <a
-      href={switchPath(pathname)}
-      hrefLang={locale === 'es' ? 'en' : 'es'}
-      lang={locale === 'es' ? 'en' : 'es'}
-      aria-label={t.langLabel}
-      title={t.langLabel}
-      className={`font-display tracking-[0.2em] uppercase border border-glow/50 text-glow hover:border-glow hover:bg-glow/10 transition-colors ${className ?? 'text-sm px-2.5 py-1'}`}
+    <div
+      role="group"
+      aria-label={UI[locale].languages}
+      className={`flex items-stretch border border-glow/50 font-display uppercase text-glow ${
+        small ? 'text-xs tracking-[0.12em]' : 'text-sm tracking-[0.2em]'
+      }`}
     >
-      {t.langShort}
-    </a>
+      {others.map((l, i) => (
+        <a
+          key={l}
+          href={switchPath(pathname, l)}
+          hrefLang={l}
+          lang={l}
+          aria-label={LANGUAGE_NAMES[l].read}
+          title={LANGUAGE_NAMES[l].read}
+          className={`hover:bg-glow/10 transition-colors ${i > 0 ? 'border-l border-glow/50' : ''} ${
+            small ? 'px-1.5 py-0.5' : 'px-2.5 py-1'
+          }`}
+        >
+          {LANGUAGE_NAMES[l].short}
+        </a>
+      ))}
+    </div>
   )
 }
 
@@ -88,7 +101,7 @@ export default function Navigation() {
         {/* shrink-0 keeps the tagline on one line beside the desktop menu. Only on the
             narrowest phones may it wrap, so the language switch and menu button fit. */}
         <div className="shrink-0 max-[419px]:shrink max-[419px]:min-w-0">
-          <Link href={to('/')} className="font-serif text-xl md:text-2xl text-bone tracking-wide block leading-tight">
+          <Link href={to('/')} className="font-serif max-[359px]:text-lg text-xl md:text-2xl text-bone tracking-wide block leading-tight whitespace-nowrap">
             Miskwa Kimiwan
           </Link>
           <p className="font-display text-[10px] tracking-[0.1em] min-[420px]:text-[11px] min-[420px]:tracking-[0.22em] md:text-sm uppercase text-glow mt-0.5">
@@ -153,7 +166,7 @@ export default function Navigation() {
 
         {/* Mobile: language switch and menu toggle */}
         <div className="xl:hidden flex items-center gap-1 shrink-0">
-          <LanguageSwitch pathname={pathname} className="text-xs px-1.5 py-0.5" />
+          <LanguageSwitch pathname={pathname} small />
           <button
             className="text-bone p-2.5 -mr-1"
             onClick={() => setIsOpen(!isOpen)}

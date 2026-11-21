@@ -16,6 +16,11 @@ const COPY = {
     body: 'Escritura sobre la redención, el cuerpo y la práctica de llegar a ser más que lo que te pasó. Se publica en inglés en Substack como The Rainfall Newsletter.',
     button: 'Suscribirse en Substack',
   },
+  fr: {
+    heading: 'Marchez avec moi dans la forêt',
+    body: 'Des textes sur la rédemption, le corps et la pratique de devenir plus que ce qui vous est arrivé. Publiés en anglais sur Substack sous le nom The Rainfall Newsletter.',
+    button: 'S’abonner sur Substack',
+  },
 }
 
 export default function NewsletterSignup({ locale = 'en' }: { locale?: Locale }) {

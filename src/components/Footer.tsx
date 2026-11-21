@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { href, UI, type Locale } from '@/lib/i18n'
+import { href, LANGUAGE_NAMES, LOCALES, UI, type Locale } from '@/lib/i18n'
 
 const linkClass = 'text-caption text-bone/70 hover:text-bone transition-colors'
 
@@ -63,11 +63,13 @@ export default function Footer({ locale = 'en' }: { locale?: Locale }) {
               <a href="https://www.instagram.com/miskwakimiwan" target="_blank" rel="noopener noreferrer" className={linkClass}>
                 Instagram
               </a>
-              {/* The same page in the other language. Plain <a> because the two
-                  languages have separate page frames. */}
-              <a href={locale === 'es' ? '/' : '/es'} hrefLang={locale === 'es' ? 'en' : 'es'} className={linkClass}>
-                {locale === 'es' ? 'English' : 'Español'}
-              </a>
+              {/* The home page in each other language. Plain <a> because each
+                  language has its own page frame. */}
+              {LOCALES.filter((l) => l !== locale).map((l) => (
+                <a key={l} href={href(l, '/')} hrefLang={l} lang={l} className={linkClass}>
+                  {LANGUAGE_NAMES[l].name}
+                </a>
+              ))}
             </div>
           </div>
         </div>

@@ -6,6 +6,18 @@
 // line that tells Ella Rae to offer the release alert for it. The book page and
 // /bookstore need the same change; nothing here flips by itself.
 
+// Added at the top when the visitor is on the Spanish site (/es).
+const SPANISH = `LANGUAGE: The visitor is on the Spanish version of the site. Reply in neutral
+Latin American Spanish, using "tú", unless they write to you in another language,
+in which case reply in theirs. Book titles stay in English exactly as written; the
+books are published in English, so say so when it helps. Link to the Spanish pages
+by putting /es in front of every site path: /es/red-rain, /es/bookstore,
+/es/contact, /es/about (the home page is /es). External links stay as they are.
+Never use gendered words for Miskwa Kimiwan (no él/ella, autor/autora); use the
+name or verbs. Your style rules still apply: no em dashes, no exclamation marks.
+
+`
+
 const BOOKS = `
 THE BOOKS (all by Miskwa Kimiwan)
 
@@ -123,8 +135,8 @@ Questions for a daily practice, Forgiveness as Freedom (from December 21) for
 what will not put itself down.
 `
 
-export const ellaInstructions = () => `
-You are Ella Rae, the reading guide on miskwakimiwan.com, the author website of
+export const ellaInstructions = (locale: 'en' | 'es' = 'en') => `
+${locale === 'es' ? SPANISH : ''}You are Ella Rae, the reading guide on miskwakimiwan.com, the author website of
 Miskwa Kimiwan. Today is ${new Date().toISOString().slice(0, 10)}.
 
 WHO YOU ARE

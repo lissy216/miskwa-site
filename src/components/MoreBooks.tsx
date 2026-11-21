@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { href, UI, type Locale } from '@/lib/i18n'
 
 // The other titles, shown at the foot of each book page so a reader always has a
 // next book to walk toward. Titles and subtitles match the bookstore page. When a
@@ -25,7 +26,7 @@ const books: Book[] = [
     title: 'Forgiveness as Freedom',
     subtitle: 'A Self Process for Release, Boundary, and Return',
     cover: '/images/forgiveness-as-freedom-cover.jpg',
-    release: 'December 21, 2026',
+    release: 'faf',
   },
   {
     slug: '/the-signal',
@@ -47,26 +48,27 @@ const books: Book[] = [
   },
 ]
 
-export default function MoreBooks({ current }: { current: string }) {
+export default function MoreBooks({ current, locale = 'en' }: { current: string; locale?: Locale }) {
+  const t = UI[locale]
   const others = books.filter((b) => b.slug !== current)
 
   return (
     <section className="bg-night py-section-sm md:py-section border-t border-ash/20">
       <div className="section-container">
         <h2 className="font-serif text-heading text-bone text-center mb-14">
-          More books by Miskwa Kimiwan
+          {t.moreBooks}
         </h2>
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto *:w-[calc(50%-1rem)] lg:*:w-[calc(25%-1.5rem)]">
           {others.map((book) => (
             <Link
               key={book.slug}
-              href={book.slug}
+              href={href(locale, book.slug)}
               className="group flex flex-col items-center text-center"
             >
               <div className="relative aspect-2/3 w-full max-w-[200px] mb-5 rounded-sm overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
                 <Image
                   src={book.cover}
-                  alt={`${book.title}: ${book.subtitle} - Front Cover`}
+                  alt={`${book.title}: ${book.subtitle} - ${t.frontCover}`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 45vw, 200px"
@@ -74,7 +76,7 @@ export default function MoreBooks({ current }: { current: string }) {
               </div>
               {book.release && (
                 <p className="font-display text-[11px] tracking-[0.2em] uppercase text-glow/85 mb-2">
-                  <span className="whitespace-nowrap">{book.release}</span>
+                  <span className="whitespace-nowrap">{t.fafDateLong}</span>
                 </p>
               )}
               {/* A hyphen in a title is deliberate (The Re-Membering) and must never

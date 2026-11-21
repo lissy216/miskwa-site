@@ -1,0 +1,312 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import MoreBooks from '@/components/MoreBooks'
+import NewsletterSignup from '@/components/NewsletterSignup'
+import { alternates } from '@/lib/i18n'
+
+export const metadata: Metadata = {
+  alternates: alternates('en', '/the-re-membering'),
+  title: 'The Re-Membering',
+  description:
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot. In paperback, ebook, and audiobook narrated by Omar Abou.',
+  openGraph: {
+    type: 'book',
+    url: 'https://www.miskwakimiwan.com/the-re-membering',
+    siteName: 'Miskwa Kimiwan',
+    title: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+    description:
+      'You have not been broken. You have been living. Six turns back to the part of you that never forgot. A new book by Miskwa Kimiwan.',
+    images: [
+      {
+        url: '/images/the-re-membering-cover.jpg',
+        width: 1600,
+        height: 2560,
+        alt: 'The Re-Membering — Front Cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+    description:
+      'You have not been broken. You have been living. A new book by Miskwa Kimiwan.',
+    images: ['/images/the-re-membering-cover.jpg'],
+  },
+}
+
+const bookJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+  author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
+  inLanguage: 'en-CA',
+  bookFormat: 'https://schema.org/Paperback',
+  image: 'https://www.miskwakimiwan.com/images/the-re-membering-cover.jpg',
+  description:
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot.',
+  url: 'https://www.miskwakimiwan.com/the-re-membering',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://www.amazon.ca/dp/1777747872',
+    priceCurrency: 'CAD',
+    availability: 'https://schema.org/InStock',
+  },
+}
+
+const audiobookJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Audiobook',
+  name: 'The Re-Membering: Six Turns Back to the Part of You That Never Forgot',
+  author: { '@type': 'Person', name: 'Miskwa Kimiwan' },
+  readBy: { '@type': 'Person', name: 'Omar Abou' },
+  publisher: { '@type': 'Organization', name: 'Red Rain Publishing' },
+  inLanguage: 'en-CA',
+  duration: 'PT2H30M',
+  image: 'https://www.miskwakimiwan.com/images/the-re-membering-audiobook-cover.jpg',
+  description:
+    'You have not been broken. You have been living. Six turns back to the part of you that never forgot.',
+  url: 'https://www.miskwakimiwan.com/the-re-membering',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://www.audible.ca/pd/B0HNC297KK',
+    priceCurrency: 'CAD',
+    availability: 'https://schema.org/InStock',
+  },
+}
+
+const places = [
+  'the body',
+  'the story you were handed',
+  'the people who came before you',
+  'the land',
+  'the sacred',
+  'the one in you who has been watching the whole time',
+]
+
+export default function TheReMembering() {
+  return (
+    <>
+      {/* Book schema for rich search results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookJsonLd) }}
+      />
+
+      {/* Audiobook schema, narrated by Omar Abou */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(audiobookJsonLd) }}
+      />
+
+      {/* ============================================
+          HERO - Shadow mood
+          ============================================ */}
+      <section className="mood-shadow py-section-sm md:py-section">
+        <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="order-2 md:order-1">
+            <p className="text-label mb-4">Now Available in Paperback, Ebook and Audiobook</p>
+            {/* The hyphen is the point of the title, so it must not become a line
+                break. Re-Membering is held on one line and "The" wraps instead.
+
+                That makes the word unbreakable, so it has to fit the column at every
+                width. It needs about 8.84px per pixel of font size, and the measured
+                columns are 324px at 375, 305px at 768, 374px at 1024 and 502px at
+                1280. The tightest point is 768, where the two column split starts
+                while the viewport is still narrow, which is why md steps down rather
+                than up. This title is longer than the other books, so it does not use
+                the full display size they do. */}
+            <h1 className="font-serif text-[2rem] md:text-[1.875rem] lg:text-[2.25rem] xl:text-display-sm text-bone mb-2">
+              The <span className="whitespace-nowrap">Re-Membering</span>
+            </h1>
+            <p className="font-serif italic text-subheading text-bone/60 mb-8">
+              Six Turns Back to the Part of You That Never Forgot
+            </p>
+            <div className="divider-warm mb-8" />
+            <p className="font-serif text-body-lg text-glow/80 leading-relaxed mb-8">
+              You have not been broken. You have been living.
+            </p>
+            <p className="font-body text-body-lg text-bone/70 leading-relaxed mb-6">
+              This book was written for the part of you that suspects it used to know
+              something, and cannot find it now. Not the dramatic version. The ordinary
+              one. A life that runs well and feels slightly far away. Being loved by
+              people who seem to be describing somebody else.
+            </p>
+            <p className="font-body text-body text-bone/70 leading-relaxed mb-10">
+              Most of what gets offered to that part of you is a system. Steps. Practices.
+              A better morning. <em>The Re-Membering</em> is not one.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <a
+                href="https://www.amazon.ca/dp/1777747872"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary inline-flex items-center gap-3 w-fit"
+              >
+                Buy on Amazon &mdash; Paperback and Ebook
+              </a>
+              <a
+                href="https://www.audible.ca/pd/B0HNC297KK"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center gap-3 w-fit"
+              >
+                Listen on Audible &mdash; Audiobook
+              </a>
+              <p className="font-serif italic text-caption text-bone/70 max-w-md">
+                Narrated by Omar Abou. Two hours and thirty minutes, unabridged.
+              </p>
+              <p className="font-serif italic text-caption text-bone/70 mt-3 max-w-md">
+                Not on your local bookstore&rsquo;s shelf? Ask them to order it. They can source it through IngramSpark.
+              </p>
+              <a
+                href="/wholesale"
+                className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 hover:text-glow transition-colors mt-2 inline-block"
+              >
+                Wholesale for 5+ copies &rarr;
+              </a>
+            </div>
+          </div>
+
+          {/* Book Cover */}
+          <div className="order-1 md:order-2 flex justify-center">
+            <div className="relative w-72 md:w-80 lg:w-96 aspect-2/3 rounded-sm overflow-hidden shadow-2xl">
+              <Image
+                src="/images/the-re-membering-cover.jpg"
+                alt="The Re-Membering: Six Turns Back to the Part of You That Never Forgot - Front Cover"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================
+          THE SIX PLACES
+          ============================================ */}
+      <section className="bg-night py-section-sm md:py-section">
+        <div className="section-narrow">
+          <h2 className="font-serif text-heading text-bone mb-10">
+            Where the Forgetting lives
+          </h2>
+          <p className="font-body text-body text-bone/60 leading-relaxed mb-10">
+            It walks with you through the six places where the Forgetting lives. In each
+            of them the question is the same. Then the asking does what asking does.
+          </p>
+          <ol className="flex flex-col gap-5">
+            {places.map((place, i) => (
+              <li key={place} className="flex items-baseline gap-5">
+                <span className="font-display text-caption text-glow/85 shrink-0">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="font-serif text-subheading text-bone/80">{place}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ============================================
+          PULL QUOTE
+          ============================================ */}
+      <section className="mood-threshold py-section-sm md:py-section border-t border-ash/20">
+        <div className="section-narrow">
+          <p className="pull-quote">You can drink the water without owing me the well.</p>
+        </div>
+      </section>
+
+      {/* ============================================
+          WHO IS WRITING
+          ============================================ */}
+      <section className="bg-parchment py-section-sm md:py-section">
+        <div className="section-narrow">
+          <h2 className="font-serif text-heading text-night mb-10">Written from inside it</h2>
+          <p className="font-body text-body-lg text-night/70 leading-relaxed mb-6">
+            Miskwa Kimiwan writes from inside the work: a hospital bed, a pharmacy counter,
+            an unfinished bridge on a farm, the night shift beside their mother&rsquo;s bed.
+            Never from above you.
+          </p>
+          <p className="font-body text-body text-night/75 leading-relaxed mb-10">
+            Nothing here asks to be believed. Check it against your own breath.
+          </p>
+          <Link
+            href="/about"
+            className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+          >
+            About the Author &rarr;
+          </Link>
+        </div>
+      </section>
+
+      {/* ============================================
+          READER REFLECTIONS
+          Excerpts from reader reviews on Amazon.ca, quoted word for word.
+          An ellipsis marks where a review was shortened.
+          ============================================ */}
+      <section className="bg-parchment py-section-sm md:py-section border-t border-night/10">
+        <div className="section-container">
+          <h2 className="font-serif text-heading text-night mb-12 text-center">
+            Readers Reflections
+          </h2>
+
+          <div className="space-y-8 max-w-3xl mx-auto">
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This beautifully crafted little book leaves you with wanting more. The wisdom imparted, brings you full circle, to the place you began to forget and back to the remembering of who you are and the many facets that make you human.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                P.A.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;Another book by Miskwa with really powerful medicine. Received it and read slowly, in one sitting. Thank you for the seeds.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                J.S.
+              </footer>
+            </blockquote>
+
+            <blockquote className="bg-white/40 p-8 rounded-sm">
+              <p className="font-serif italic text-body-lg text-night leading-relaxed mb-4">
+                &ldquo;This book is an active guide to remembering your way back to you, to relationship, to presence. It gives words to what you may have been feeling below the surface. &hellip; This book is a beautiful gift.&rdquo;
+              </p>
+              <footer className="font-display text-caption text-night/75 tracking-wide">
+                S.
+              </footer>
+            </blockquote>
+          </div>
+
+          <p className="text-center mt-12">
+            <a
+              href="https://www.amazon.ca/dp/1777747872"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display text-xs tracking-[0.2em] uppercase text-ember hover:text-heartfire transition-colors"
+            >
+              Read every review on Amazon &rarr;
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <MoreBooks current="/the-re-membering" />
+      <NewsletterSignup />
+
+      {/* ============================================
+          CLOSING
+          ============================================ */}
+      <section className="mood-shadow py-16 border-t border-ash/20">
+        <div className="section-narrow text-center">
+          <p className="font-serif italic text-subheading text-bone/60">Go gently.</p>
+        </div>
+      </section>
+    </>
+  )
+}

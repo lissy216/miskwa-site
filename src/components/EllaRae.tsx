@@ -4,16 +4,68 @@ import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
 
-// Shown in the window only. The model never sees it, so the instructions file stays
-// on the server and out of the browser.
-const ELLA_GREETING =
-  "Hello. I'm Ella Rae, an AI chatbot and the reading guide for this site. I can help you find the book that fits what you're carrying, tell you where to get it, or offer a question to sit with. I'm not a person, and I'm not Miskwa Kimiwan."
+import type { Locale } from '@/lib/i18n'
 
-const STARTERS = [
-  'Which book should I start with?',
-  'Offer me a question to sit with',
-  'When does Forgiveness as Freedom come out?',
-]
+// Everything the window shows, in both languages. The model never sees the
+// greeting, so the instructions file stays on the server and out of the browser.
+const COPY = {
+  en: {
+    greeting:
+      "Hello. I'm Ella Rae, an AI chatbot and the reading guide for this site. I can help you find the book that fits what you're carrying, tell you where to get it, or offer a question to sit with. I'm not a person, and I'm not Miskwa Kimiwan.",
+    starters: [
+      'Which book should I start with?',
+      'Offer me a question to sit with',
+      'When does Forgiveness as Freedom come out?',
+    ],
+    role: 'AI reading guide',
+    disclose: 'An AI chatbot, not a person. It can make mistakes.',
+    newChat: 'New',
+    close: 'Close Ella Rae',
+    writing: 'Ella Rae is writing',
+    error: 'Something went wrong reaching Ella Rae. Please try again in a moment.',
+    inputLabel: 'Message Ella Rae',
+    placeholder: 'Ask about the books',
+    send: 'Send',
+    footnote: 'Not for crisis support. In Canada or the US, call or text 988. Chats are not saved here.',
+    privacy: 'Privacy',
+    privacyHref: '/privacy#ella-rae',
+    alertLabel: 'Your email, for one note when Forgiveness as Freedom is released',
+    alertConsent: 'Yes, Miskwa Kimiwan may email me once about this release. My address is not added to any list. See the',
+    alertPolicy: 'privacy policy',
+    alertSend: 'Tell me',
+    alertSending: 'Sending',
+    alertDone: 'Thank you. One email will come to you when Forgiveness as Freedom is released on December 21.',
+    alertFail: 'That did not go through.',
+  },
+  es: {
+    greeting:
+      'Hola. Soy Ella Rae, un chatbot de IA y la guía de lectura de este sitio. Puedo ayudarte a encontrar el libro que corresponde a lo que cargas, decirte dónde conseguirlo u ofrecerte una pregunta para acompañarte. No soy una persona, y no soy Miskwa Kimiwan. Los libros están en inglés.',
+    starters: [
+      '¿Con qué libro debería empezar?',
+      'Ofréceme una pregunta para acompañarme',
+      '¿Cuándo sale Forgiveness as Freedom?',
+    ],
+    role: 'Guía de lectura con IA',
+    disclose: 'Un chatbot de IA, no una persona. Puede equivocarse.',
+    newChat: 'Nuevo',
+    close: 'Cerrar Ella Rae',
+    writing: 'Ella Rae está escribiendo',
+    error: 'Algo salió mal al conectar con Ella Rae. Inténtalo de nuevo en un momento.',
+    inputLabel: 'Escribe a Ella Rae',
+    placeholder: 'Pregunta sobre los libros',
+    send: 'Enviar',
+    footnote: 'No es un servicio de crisis. En Canadá o EE. UU., llama o escribe al 988. Las conversaciones no se guardan aquí.',
+    privacy: 'Privacidad',
+    privacyHref: '/es/privacy#ella-rae',
+    alertLabel: 'Tu correo, para un solo aviso cuando salga Forgiveness as Freedom',
+    alertConsent: 'Sí, Miskwa Kimiwan puede escribirme una vez sobre este lanzamiento. Mi dirección no se agrega a ninguna lista. Consulta la',
+    alertPolicy: 'política de privacidad',
+    alertSend: 'Avísame',
+    alertSending: 'Enviando',
+    alertDone: 'Gracias. Recibirás un correo cuando salga Forgiveness as Freedom, el 21 de diciembre.',
+    alertFail: 'No se pudo enviar.',
+  },
+}
 
 // Turns bare site paths (/red-rain) and full URLs into links.
 const LINK = /(https?:\/\/[^\s)]+[^\s).,;:!?'"]|(?<![\w/])\/[a-z][a-z0-9-]*(?:\/[a-z0-9-]+)*)/g
@@ -42,7 +94,7 @@ function linkify(text: string): ReactNode[] {
   return out
 }
 
-function ReleaseAlertForm() {
+function ReleaseAlertForm({ t }: { t: (typeof COPY)[Locale] }) {
   const [email, setEmail] = useState('')
   const [consent, setConsent] = useState(false)
   const [website, setWebsite] = useState('')
@@ -60,10 +112,10 @@ function ReleaseAlertForm() {
         body: JSON.stringify({ email, consent, website }),
       })
       const data = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(data.error ?? 'That did not go through.')
+      if (!res.ok) throw new Error(t.alertFail)
       setState('done')
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'That did not go through.')
+      setError(err instanceof Error ? err.message : t.alertFail)
       setState('error')
     }
   }
@@ -71,8 +123,7 @@ function ReleaseAlertForm() {
   if (state === 'done') {
     return (
       <p className="mt-3 border border-glow/30 px-4 py-3 text-caption text-bone/80">
-        Thank you. One email will come to you when Forgiveness as Freedom is released on
-        December 21.
+        {t.alertDone}
       </p>
     )
   }
@@ -80,7 +131,7 @@ function ReleaseAlertForm() {
   return (
     <form onSubmit={submit} className="mt-3 border border-glow/30 px-4 py-4 space-y-3">
       <label className="block text-caption text-bone/80" htmlFor="ella-email">
-        Your email, for one note when Forgiveness as Freedom is released
+        {t.alertLabel}
       </label>
       <input
         id="ella-email"
@@ -109,8 +160,7 @@ function ReleaseAlertForm() {
           className="mt-1.5 accent-glow"
         />
         <span>
-          Yes, Miskwa Kimiwan may email me once about this release. My address is not added
-          to any list. See the <a href="/privacy" className="underline text-glow">privacy policy</a>.
+          {t.alertConsent}{' '}<a href={t.privacyHref.split('#')[0]} className="underline text-glow">{t.alertPolicy}</a>.
         </span>
       </label>
       {error && <p className="text-caption text-heartfire">{error}</p>}
@@ -119,17 +169,18 @@ function ReleaseAlertForm() {
         disabled={state === 'sending'}
         className="font-display text-xs tracking-[0.2em] uppercase border border-glow text-glow px-5 py-2 hover:bg-glow/10 disabled:opacity-50"
       >
-        {state === 'sending' ? 'Sending' : 'Tell me'}
+        {state === 'sending' ? t.alertSending : t.alertSend}
       </button>
     </form>
   )
 }
 
-export default function EllaRae() {
+export default function EllaRae({ locale = 'en' }: { locale?: Locale }) {
+  const t = COPY[locale]
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
   const { messages, sendMessage, status, error, setMessages } = useChat({
-    transport: new DefaultChatTransport({ api: '/api/ella' }),
+    transport: new DefaultChatTransport({ api: '/api/ella', body: { locale } }),
   })
   const scroller = useRef<HTMLDivElement>(null)
   const field = useRef<HTMLTextAreaElement>(null)
@@ -154,9 +205,9 @@ export default function EllaRae() {
   }, [open])
 
   function send(text: string) {
-    const t = text.trim()
-    if (!t || busy) return
-    sendMessage({ text: t })
+    const msg = text.trim()
+    if (!msg || busy) return
+    sendMessage({ text: msg })
     setInput('')
   }
 
@@ -173,7 +224,7 @@ export default function EllaRae() {
           <span aria-hidden className="text-glow text-lg leading-none">&#10022;</span>
           <span className="flex flex-col">
             <span className="font-display text-sm tracking-[0.18em] uppercase text-bone">Ella Rae</span>
-            <span className="font-body text-xs text-bone/60">AI reading guide</span>
+            <span className="font-body text-xs text-bone/60">{t.role}</span>
           </span>
         </button>
       )}
@@ -191,7 +242,7 @@ export default function EllaRae() {
                 Ella Rae
               </p>
               <p className="font-body text-xs text-bone/60">
-                An AI chatbot, not a person. It can make mistakes.
+                {t.disclose}
               </p>
             </div>
             <div className="flex items-center gap-1">
@@ -201,7 +252,7 @@ export default function EllaRae() {
                   onClick={() => setMessages([])}
                   className="font-display text-[10px] tracking-[0.2em] uppercase text-bone/50 hover:text-glow px-2 py-1"
                 >
-                  New
+                  {t.newChat}
                 </button>
               )}
               <button
@@ -210,7 +261,7 @@ export default function EllaRae() {
                   setOpen(false)
                   setTimeout(() => launcher.current?.focus(), 0)
                 }}
-                aria-label="Close Ella Rae"
+                aria-label={t.close}
                 className="text-bone/60 hover:text-glow text-2xl leading-none px-2"
               >
                 &times;
@@ -219,11 +270,11 @@ export default function EllaRae() {
           </div>
 
           <div ref={scroller} className="flex-1 overflow-y-auto px-5 py-4 space-y-4 font-body text-base leading-relaxed" aria-live="polite">
-            <p className="text-bone/85">{ELLA_GREETING}</p>
+            <p className="text-bone/85">{t.greeting}</p>
 
             {messages.length === 0 && (
               <div className="flex flex-col gap-2 pt-1">
-                {STARTERS.map((s) => (
+                {t.starters.map((s) => (
                   <button
                     key={s}
                     type="button"
@@ -251,7 +302,7 @@ export default function EllaRae() {
                       return <span key={i}>{m.role === 'assistant' ? linkify(p.text) : p.text}</span>
                     }
                     if (p.type === 'tool-offerReleaseAlert' && 'state' in p && p.state === 'output-available') {
-                      return <ReleaseAlertForm key={i} />
+                      return <ReleaseAlertForm key={i} t={t} />
                     }
                     return null
                   })}
@@ -259,10 +310,10 @@ export default function EllaRae() {
               </div>
             ))}
 
-            {status === 'submitted' && <p className="text-bone/50 italic">Ella Rae is writing&hellip;</p>}
+            {status === 'submitted' && <p className="text-bone/50 italic">{t.writing}&hellip;</p>}
             {error && (
               <p className="text-caption text-heartfire">
-                Something went wrong reaching Ella Rae. Please try again in a moment.
+                {t.error}
               </p>
             )}
           </div>
@@ -275,7 +326,7 @@ export default function EllaRae() {
             className="border-t border-ash px-3 py-3 flex gap-2 items-end"
           >
             <label htmlFor="ella-input" className="sr-only">
-              Message Ella Rae
+              {t.inputLabel}
             </label>
             <textarea
               id="ella-input"
@@ -290,7 +341,7 @@ export default function EllaRae() {
                   send(input)
                 }
               }}
-              placeholder="Ask about the books"
+              placeholder={t.placeholder}
               className="flex-1 resize-none bg-night border border-ash px-3 py-2 text-bone font-body text-base placeholder:text-bone/50 focus:outline-none focus:border-glow max-h-32"
             />
             <button
@@ -298,12 +349,11 @@ export default function EllaRae() {
               disabled={busy || !input.trim()}
               className="font-display text-xs tracking-[0.2em] uppercase border border-glow text-glow px-4 py-2.5 hover:bg-glow/10 disabled:opacity-40"
             >
-              Send
+              {t.send}
             </button>
           </form>
           <p className="px-5 pb-3 font-body text-[11px] text-bone/60">
-            Not for crisis support. In Canada or the US, call or text 988. Chats are not saved
-            here. <a href="/privacy#ella-rae" className="underline">Privacy</a>
+            {t.footnote}{' '}<a href={t.privacyHref} className="underline">{t.privacy}</a>
           </p>
         </div>
       )}

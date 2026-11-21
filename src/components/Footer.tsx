@@ -1,26 +1,24 @@
 import Link from 'next/link'
+import { href, UI, type Locale } from '@/lib/i18n'
 
-const themes = [
-  'Shadow & Light',
-  'Wound & Wisdom',
-  'Question & Transformation',
-  'Journey & Return',
-  'Soul & Story',
-]
+const linkClass = 'text-caption text-bone/70 hover:text-bone transition-colors'
 
-export default function Footer() {
+export default function Footer({ locale = 'en' }: { locale?: Locale }) {
+  const t = UI[locale]
+  const to = (path: string) => href(locale, path)
+
   return (
     <footer className="bg-night text-bone/60 border-t border-ash/20">
       {/* Thematic strip from the brand mood board */}
       <div className="border-b border-ash/20">
         <div className="section-container py-6">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-center">
-            {themes.map((t, i) => (
-              <span key={t} className="flex items-center gap-x-6">
+            {t.themes.map((theme, i) => (
+              <span key={theme} className="flex items-center gap-x-6">
                 <span className="font-display text-[11px] tracking-[0.3em] uppercase text-glow/85">
-                  {t}
+                  {theme}
                 </span>
-                {i < themes.length - 1 && (
+                {i < t.themes.length - 1 && (
                   <span className="text-glow/85 text-xs select-none" aria-hidden>
                     &#10022;
                   </span>
@@ -36,47 +34,39 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <p className="font-serif text-xl text-bone mb-4">Miskwa Kimiwan</p>
-            <p className="text-caption leading-relaxed">
-              Author, healer, and teacher of spiritual healing and energy medicine.
-              Carrier of intergenerational memory and medicine.
-            </p>
+            <p className="text-caption leading-relaxed">{t.footerBio}</p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">Navigate</p>
+            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">{t.navigate}</p>
             <div className="flex flex-col gap-3">
-              <Link href="/about" className="text-caption text-bone/70 hover:text-bone transition-colors">About</Link>
-              <Link href="/the-re-membering" className="text-caption text-bone/70 hover:text-bone transition-colors">The Re-Membering</Link>
-              <Link href="/forgiveness-as-freedom" className="text-caption text-bone/70 hover:text-bone transition-colors">Forgiveness as Freedom</Link>
-              <Link href="/the-signal" className="text-caption text-bone/70 hover:text-bone transition-colors">The Signal</Link>
-              <Link href="/red-rain" className="text-caption text-bone/70 hover:text-bone transition-colors">Red Rain</Link>
-              <Link href="/book-of-questions" className="text-caption text-bone/70 hover:text-bone transition-colors">The Book of Questions</Link>
-              <Link href="/bookstore" className="text-caption text-bone/70 hover:text-bone transition-colors">Bookstore</Link>
-              <Link href="/wholesale" className="text-caption text-bone/70 hover:text-bone transition-colors">Wholesale for Retailers</Link>
-              <Link href="/contact" className="text-caption text-bone/70 hover:text-bone transition-colors">Contact</Link>
+              <Link href={to('/about')} className={linkClass}>{t.about}</Link>
+              <Link href={to('/the-re-membering')} className={linkClass}>The Re-Membering</Link>
+              <Link href={to('/forgiveness-as-freedom')} className={linkClass}>Forgiveness as Freedom</Link>
+              <Link href={to('/the-signal')} className={linkClass}>The Signal</Link>
+              <Link href={to('/red-rain')} className={linkClass}>Red Rain</Link>
+              <Link href={to('/book-of-questions')} className={linkClass}>The Book of Questions</Link>
+              <Link href={to('/bookstore')} className={linkClass}>{t.bookstore}</Link>
+              <Link href={to('/wholesale')} className={linkClass}>{t.wholesale}</Link>
+              <Link href={to('/contact')} className={linkClass}>{t.contact}</Link>
             </div>
           </div>
 
           {/* Connect */}
           <div>
-            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">Connect</p>
+            <p className="font-display text-xs tracking-[0.2em] uppercase text-glow/85 mb-5">{t.connect}</p>
             <div className="flex flex-col gap-3">
-              <a
-                href="https://www.facebook.com/MiskwaKimiwan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-caption text-bone/70 hover:text-bone transition-colors"
-              >
+              <a href="https://www.facebook.com/MiskwaKimiwan" target="_blank" rel="noopener noreferrer" className={linkClass}>
                 Facebook
               </a>
-              <a
-                href="https://www.instagram.com/miskwakimiwan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-caption text-bone/70 hover:text-bone transition-colors"
-              >
+              <a href="https://www.instagram.com/miskwakimiwan" target="_blank" rel="noopener noreferrer" className={linkClass}>
                 Instagram
+              </a>
+              {/* The same page in the other language. Plain <a> because the two
+                  languages have separate page frames. */}
+              <a href={locale === 'es' ? '/' : '/es'} hrefLang={locale === 'es' ? 'en' : 'es'} className={linkClass}>
+                {locale === 'es' ? 'English' : 'Español'}
               </a>
             </div>
           </div>
@@ -85,11 +75,9 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-ash/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-bone/70">
-            &copy; 2025&ndash;2026 Miskwa Kimiwan &middot; Red Rain Publishing &middot; All Rights Reserved
+            &copy; 2025&ndash;2026 Miskwa Kimiwan &middot; {t.rights}
           </p>
-          <p className="text-xs text-bone/70">
-            We all live in glass houses.
-          </p>
+          <p className="text-xs text-bone/70">{t.glass}</p>
         </div>
       </div>
     </footer>

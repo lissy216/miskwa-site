@@ -67,8 +67,9 @@ export async function POST(req: Request) {
   }
 
   let messages: UIMessage[]
+  let locale: string | undefined
   try {
-    ;({ messages } = await req.json())
+    ;({ messages, locale } = await req.json())
     if (!Array.isArray(messages) || messages.length === 0) throw new Error()
   } catch {
     return new Response('Invalid request.', { status: 400 })
@@ -86,7 +87,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: MODEL,
-    instructions: ellaInstructions(),
+    instructions: ellaInstructions(locale === 'es' ? 'es' : 'en'),
     messages: await convertToModelMessages(messages.slice(-MAX_HISTORY)),
     maxOutputTokens: 600,
     tools: {

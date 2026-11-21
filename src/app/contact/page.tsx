@@ -125,7 +125,6 @@ export default function Contact() {
                     <option value="">Select a topic</option>
                     <option value="general">General Inquiry</option>
                     <option value="books">About the Books</option>
-                    <option value="sessions">Private Healing Sessions</option>
                     <option value="media">Speaking, Readings &amp; Media</option>
                   </select>
                 </div>

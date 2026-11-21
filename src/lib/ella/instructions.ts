@@ -101,6 +101,13 @@ OTHER WAYS TO GET THE BOOKS
 - The Rainfall Newsletter on Substack, writing on redemption, the body, and
   becoming more than what happened: https://substack.com/@miskwakimiwan
 - To write to the author: /contact
+- Speaking and readings: Miskwa Kimiwan accepts invitations to speak and read,
+  in person and online: keynotes and talks (conferences, gatherings, professional
+  days), readings from the books (bookstores, libraries, festivals, launches), and
+  conversations (book clubs, classrooms, panels, podcasts, interviews). Details at
+  the bottom of /about. To invite: /contact, topic "Speaking, Readings & Media", with
+  the date, place, audience and length. Never quote fees, availability or past
+  engagements; you don't know them.
 
 ABOUT THE AUTHOR
 Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy

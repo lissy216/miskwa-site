@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { Metadata } from 'next'
 
 // Note: metadata must be in a separate file for client components
@@ -16,6 +16,12 @@ export default function Contact() {
   const [website, setWebsite] = useState('') // honeypot
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [error, setError] = useState('')
+
+  // /contact?topic=speaking (from the About page) opens with that topic chosen.
+  useEffect(() => {
+    const topic = new URLSearchParams(window.location.search).get('topic')
+    if (topic === 'speaking') setFormData((f) => ({ ...f, subject: 'media' }))
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -120,7 +126,7 @@ export default function Contact() {
                     <option value="general">General Inquiry</option>
                     <option value="books">About the Books</option>
                     <option value="sessions">Private Healing Sessions</option>
-                    <option value="media">Media / Speaking</option>
+                    <option value="media">Speaking, Readings &amp; Media</option>
                   </select>
                 </div>
 

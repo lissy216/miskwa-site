@@ -14,7 +14,7 @@ const SUBJECTS: Record<string, string> = {
   general: 'General Inquiry',
   books: 'About the Books',
   sessions: 'Private Healing Sessions',
-  media: 'Media / Speaking',
+  media: 'Speaking, Readings & Media',
 }
 
 export async function POST(request: Request) {

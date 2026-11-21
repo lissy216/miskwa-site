@@ -170,6 +170,58 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* ============================================
+          SPEAKING AND READINGS
+          ============================================ */}
+      <section id="speaking" className="bg-night py-section-sm md:py-section scroll-mt-24">
+        <div className="section-narrow">
+          <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-6">
+            Speaking &amp; Readings
+          </p>
+          <h2 className="font-serif text-heading text-bone mb-10">
+            Some of this work needs a room
+          </h2>
+          <div className="space-y-6 font-body text-body-lg text-bone/70 leading-relaxed">
+            <p>
+              A book is usually read alone. Some of what these books carry lands differently when it is spoken aloud, in a room full of people who came to hear it. Miskwa Kimiwan accepts invitations to speak and to read, in person and online.
+            </p>
+            <p>
+              Do not expect a stage show with answers handed down from it. A talk here is closer to sitting at a fire with people you have just met: a story, a silence that is allowed to last, and the question underneath every one of the books. What does it take to become more than what happened to you? People tend to leave still holding it.
+            </p>
+          </div>
+
+          <dl className="mt-12 space-y-8">
+            <div>
+              <dt className="font-display text-sm tracking-[0.2em] uppercase text-glow">Keynotes and talks</dt>
+              <dd className="mt-2 font-body text-body text-bone/70 leading-relaxed">
+                Conferences, gatherings and professional days. Trauma and what the body keeps, intergenerational memory, presence, and the slow work of coming back to yourself.
+              </dd>
+            </div>
+            <div>
+              <dt className="font-display text-sm tracking-[0.2em] uppercase text-glow">Readings</dt>
+              <dd className="mt-2 font-body text-body text-bone/70 leading-relaxed">
+                From any of the books, with time afterward for questions. Bookstores, libraries, festivals and launches.
+              </dd>
+            </div>
+            <div>
+              <dt className="font-display text-sm tracking-[0.2em] uppercase text-glow">Conversations</dt>
+              <dd className="mt-2 font-body text-body text-bone/70 leading-relaxed">
+                Book clubs, classrooms, panels, podcasts and interviews. Groups reading one of the books together are especially welcome.
+              </dd>
+            </div>
+          </dl>
+
+          <p className="mt-12 font-body text-body text-bone/70 leading-relaxed">
+            To extend an invitation, write with the date, the place, who will be in the room, and how much time there is. Every request is read.
+          </p>
+          <div className="mt-8">
+            <Link href="/contact?topic=speaking" className="btn-primary">
+              Send an Invitation
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

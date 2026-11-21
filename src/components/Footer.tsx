@@ -78,14 +78,6 @@ export default function Footer() {
               >
                 Instagram
               </a>
-              <a
-                href="https://calendly.com/the8thfire"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-caption text-bone/70 hover:text-bone transition-colors"
-              >
-                Book a Session
-              </a>
             </div>
           </div>
         </div>

@@ -202,27 +202,6 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* Book a Session */}
-            <div className="bg-white/10 border border-bridge rounded-sm p-8 mb-8">
-              <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/80 mb-4">
-                Private Sessions
-              </p>
-              <h3 className="font-serif text-subheading text-night mb-4">
-                Book a healing session
-              </h3>
-              <p className="font-body text-caption text-night/75 mb-6">
-                One-on-one, present, and honest. The work meets you wherever you are.
-              </p>
-              <a
-                href="https://calendly.com/the8thfire"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-light text-center block"
-              >
-                View Availability
-              </a>
-            </div>
-
             {/* Social */}
             <div className="bg-white/10 border border-bridge rounded-sm p-8">
               <p className="font-display text-xs tracking-[0.25em] uppercase text-glow/85 mb-4">

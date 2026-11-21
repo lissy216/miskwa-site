@@ -80,7 +80,13 @@ export default function About() {
               Miskwa Kimiwan is an author, healer, and teacher of spiritual healing and energy medicine. A carrier of intergenerational memory and medicine whose work bridges trauma, presence, and the unseen world.
             </p>
             <p>
-              The published work began with <em>Red Rain: A Soul Shattered</em>, a memoir that readers describe not as something they read but as something that reads them. <em>The Book of Questions: The Socratic Year of the Soul</em> followed, 365 questions organized across twelve months of soul territory. Both books operate on the same principle: that the person holding the book already carries what they need. The work is never to install something new. The work is to sit with what is already there long enough for it to be heard.
+              The published work began with <em>Red Rain: A Soul Shattered</em>, a memoir that readers describe not as something they read but as something that reads them. <em>The Book of Questions: The Socratic Year of the Soul</em> followed, a question for each day of a year across twelve months of soul territory. <em>The Signal</em> turned toward the patterns that keep arriving in a life under different names. <em>The Re-Membering</em> came on the Autumn Equinox of 2026, a short book for the part of you that suspects it used to know something.
+              {/* After December 21, 2026, change "arrives on" to "followed on". The
+                  Spanish page (src/app/es/about) has the same line. */}{' '}
+              <em>Forgiveness as Freedom</em> arrives on the Winter Solstice.
+            </p>
+            <p>
+              Every one of them works from the same principle: the person holding the book already carries what they need. The work is never to install something new. The work is to sit with what is already there long enough for it to be heard.
             </p>
           </div>
           <p className="mt-10 font-display text-xs tracking-[0.2em] uppercase text-glow/85">

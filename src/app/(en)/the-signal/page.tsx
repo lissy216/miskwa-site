@@ -202,7 +202,7 @@ export default function TheSignal() {
           </h2>
           <div className="space-y-6 font-body text-body-lg text-bone/70 leading-relaxed">
             <p>
-              The Signal is a frequency the body carries. It is not mystical. It is measurable. And it is the reason the same people, the same situations, and the same patterns keep arriving in your life no matter what you change on the outside.
+              The Signal is a frequency the body carries. It is not mystical. It lives in the body, and the people around you feel it before you say a word. And it is the reason the same people, the same situations, and the same patterns keep arriving in your life no matter what you change on the outside.
             </p>
             <p>
               The book teaches you to recognize the signal you have been broadcasting, to name what has been running you underneath your intentions, and to shift the frequency so what arrives can arrive differently.
@@ -247,7 +247,7 @@ export default function TheSignal() {
       <section className="bg-parchment py-section-sm md:py-section border-t border-night/10">
         <div className="section-container">
           <h2 className="font-serif text-heading text-night mb-12 text-center">
-            Readers Reflections
+            Readers&rsquo; Reflections
           </h2>
 
           <div className="space-y-8 max-w-3xl mx-auto">

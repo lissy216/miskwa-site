@@ -178,7 +178,7 @@ export default function TheSignal() {
           </h2>
           <div className="space-y-6 font-body text-body-lg text-bone/70 leading-relaxed">
             <p>
-              La señal es una frecuencia que el cuerpo lleva consigo. No es algo místico. Es medible. Y es la razón por la que las mismas personas, las mismas situaciones y los mismos patrones siguen llegando a tu vida, sin importar lo que cambies por fuera.
+              La señal es una frecuencia que el cuerpo lleva consigo. No es algo místico. Vive en el cuerpo, y las personas a tu alrededor la sienten antes de que digas una palabra. Y es la razón por la que las mismas personas, las mismas situaciones y los mismos patrones siguen llegando a tu vida, sin importar lo que cambies por fuera.
             </p>
             <p>
               El libro te enseña a reconocer la señal que has estado emitiendo, a nombrar lo que te ha estado moviendo por debajo de tus intenciones, y a cambiar la frecuencia para que lo que llega pueda llegar de otra manera.

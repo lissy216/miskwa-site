@@ -57,7 +57,12 @@ export default function About() {
               Miskwa Kimiwan escribe, sana y enseña sanación espiritual y medicina energética. Su obra carga memoria y medicina intergeneracionales, y tiende un puente entre el trauma, la presencia y el mundo invisible.
             </p>
             <p>
-              La obra publicada comenzó con <em>Red Rain: A Soul Shattered</em>, unas memorias que, según quienes las leen, no se leen: te leen. Después llegó <em>The Book of Questions: The Socratic Year of the Soul</em>, 365 preguntas organizadas a lo largo de doce meses de territorio del alma. Los dos libros parten del mismo principio: la persona que sostiene el libro ya lleva lo que necesita. El trabajo nunca es instalar algo nuevo. El trabajo es quedarse con lo que ya está ahí el tiempo suficiente para que se escuche.
+              La obra publicada comenzó con <em>Red Rain: A Soul Shattered</em>, unas memorias que, según quienes las leen, no se leen: te leen. Después llegó <em>The Book of Questions: The Socratic Year of the Soul</em>, una pregunta para cada día de un año, a lo largo de doce meses de territorio del alma. <em>The Signal</em> se volvió hacia los patrones que siguen llegando a una vida con otros nombres. <em>The Re-Membering</em> llegó en el equinoccio de otoño de 2026, un libro breve para la parte de ti que sospecha que alguna vez supo algo.
+              {/* Después del 21 de diciembre de 2026, cambiar "llega" por "llegó". */}{' '}
+              <em>Forgiveness as Freedom</em> llega en el solsticio de invierno.
+            </p>
+            <p>
+              Todos parten del mismo principio: la persona que sostiene el libro ya lleva lo que necesita. El trabajo nunca es instalar algo nuevo. El trabajo es quedarse con lo que ya está ahí el tiempo suficiente para que se escuche.
             </p>
           </div>
           <p className="mt-10 font-display text-xs tracking-[0.2em] uppercase text-glow/85">

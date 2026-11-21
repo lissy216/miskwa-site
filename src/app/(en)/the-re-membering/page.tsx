@@ -251,7 +251,7 @@ export default function TheReMembering() {
       <section className="bg-parchment py-section-sm md:py-section border-t border-night/10">
         <div className="section-container">
           <h2 className="font-serif text-heading text-night mb-12 text-center">
-            Readers Reflections
+            Readers&rsquo; Reflections
           </h2>
 
           <div className="space-y-8 max-w-3xl mx-auto">

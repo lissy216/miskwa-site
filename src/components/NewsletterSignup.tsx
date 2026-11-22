@@ -21,6 +21,11 @@ const COPY = {
     body: 'Des textes sur la rédemption, le corps et la pratique de devenir plus que ce qui vous est arrivé. Publiés en anglais sur Substack sous le nom The Rainfall Newsletter.',
     button: 'S’abonner sur Substack',
   },
+  de: {
+    heading: 'Gehen Sie mit mir durch den Wald',
+    body: 'Texte über Erlösung, den Körper und die Praxis, mehr zu werden als das, was geschehen ist. Erscheint auf Englisch auf Substack als The Rainfall Newsletter.',
+    button: 'Auf Substack abonnieren',
+  },
 }
 
 export default function NewsletterSignup({ locale = 'en' }: { locale?: Locale }) {

@@ -1,17 +1,17 @@
-// English, Spanish and French. English pages live at their usual addresses;
-// every Spanish page lives at the same address with /es in front and every French
-// page with /fr in front (/about -> /es/about, /fr/about). The three sites mirror
-// each other page for page, so the language switch always has a matching page to
-// go to. When you add or change a page, do all three.
+// English, Spanish, French and German. English pages live at their usual
+// addresses; every other language lives at the same address with its code in
+// front (/about -> /es/about, /fr/about, /de/about). The sites mirror each other
+// page for page, so the language switch always has a matching page to go to.
+// When you add or change a page, do all four.
 
-export type Locale = 'en' | 'es' | 'fr'
+export type Locale = 'en' | 'es' | 'fr' | 'de'
 
-export const LOCALES: Locale[] = ['en', 'es', 'fr']
+export const LOCALES: Locale[] = ['en', 'es', 'fr', 'de']
 
 export const SITE_URL = 'https://www.miskwakimiwan.com'
 
 export function localeOf(pathname: string): Locale {
-  for (const l of ['es', 'fr'] as const) {
+  for (const l of ['es', 'fr', 'de'] as const) {
     if (pathname === `/${l}` || pathname.startsWith(`/${l}/`)) return l
   }
   return 'en'
@@ -44,6 +44,7 @@ export function alternates(locale: Locale, path: string) {
       en: `${SITE_URL}${path}`,
       es: `${SITE_URL}${href('es', path)}`,
       fr: `${SITE_URL}${href('fr', path)}`,
+      de: `${SITE_URL}${href('de', path)}`,
       'x-default': `${SITE_URL}${path}`,
     },
   }
@@ -54,6 +55,7 @@ export const LANGUAGE_NAMES: Record<Locale, { short: string; name: string; read:
   en: { short: 'EN', name: 'English', read: 'Read in English' },
   es: { short: 'ES', name: 'Español', read: 'Leer en español' },
   fr: { short: 'FR', name: 'Français', read: 'Lire en français' },
+  de: { short: 'DE', name: 'Deutsch', read: 'Auf Deutsch lesen' },
 }
 
 export const UI = {
@@ -143,5 +145,34 @@ export const UI = {
     moreBooks: 'Autres livres de Miskwa Kimiwan',
     frontCover: 'Couverture',
     languages: 'Langues',
+  },
+  de: {
+    tagline: 'Schreiben für den Weg der Seele',
+    home: 'Start',
+    about: 'Biografie',
+    books: 'Bücher',
+    bookstore: 'Buchhandlung',
+    contact: 'Kontakt',
+    wholesale: 'Großhandel',
+    toggleMenu: 'Menü öffnen oder schließen',
+    fafDate: '21. Dezember',
+    fafDateLong: '21. Dezember 2026',
+    navigate: 'Navigation',
+    connect: 'Netzwerke',
+    footerBio:
+      'Schreibt, heilt und lehrt spirituelle Heilung und Energiemedizin. Trägt generationenübergreifendes Gedächtnis und Medizin weiter.',
+    rights: 'Red Rain Publishing · Alle Rechte vorbehalten',
+    glass: 'Wir alle sitzen im Glashaus.',
+    privacy: 'Datenschutz',
+    themes: [
+      'Schatten und Licht',
+      'Wunde und Weisheit',
+      'Frage und Wandlung',
+      'Weg und Rückkehr',
+      'Seele und Geschichte',
+    ],
+    moreBooks: 'Weitere Bücher von Miskwa Kimiwan',
+    frontCover: 'Vorderseite',
+    languages: 'Sprachen',
   },
 } as const

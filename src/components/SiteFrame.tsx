@@ -47,7 +47,7 @@ export default function SiteFrame({
     <html lang={locale} className={`${cinzel.variable} ${lora.variable} ${crimsonPro.variable}`}>
       <body className="min-h-screen flex flex-col">
         <a href="#main" className="skip-link font-display text-sm tracking-[0.2em] uppercase">
-          {{ en: 'Skip to content', es: 'Ir al contenido', fr: 'Aller au contenu' }[locale]}
+          {{ en: 'Skip to content', es: 'Ir al contenido', fr: 'Aller au contenu', de: 'Zum Inhalt springen' }[locale]}
         </a>
         <Navigation />
         <main id="main" className="flex-1 pt-16 md:pt-20">

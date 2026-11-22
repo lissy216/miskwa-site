@@ -93,6 +93,34 @@ const COPY = {
     alertDone: 'Merci. Vous recevrez un seul courriel à la parution de Forgiveness as Freedom, le 21 décembre.',
     alertFail: 'L’envoi n’a pas abouti.',
   },
+  de: {
+    greeting:
+      'Guten Tag. Ich bin Ella Rae, ein KI-Chatbot und die Leseführung dieser Website. Ich kann Ihnen helfen, das Buch zu finden, das zu dem passt, was Sie tragen, Ihnen sagen, wo es erhältlich ist, oder Ihnen eine Frage zum Nachdenken mitgeben. Ich bin kein Mensch, und ich bin nicht Miskwa Kimiwan. Die Bücher sind auf Englisch.',
+    starters: [
+      'Mit welchem Buch soll ich anfangen?',
+      'Geben Sie mir eine Frage zum Nachdenken',
+      'Wann erscheint Forgiveness as Freedom?',
+    ],
+    role: 'KI-Leseführung',
+    disclose: 'Ein KI-Chatbot, kein Mensch. Fehler sind möglich.',
+    newChat: 'Neu',
+    close: 'Ella Rae schließen',
+    writing: 'Ella Rae schreibt',
+    error: 'Ella Rae ist gerade nicht erreichbar. Bitte versuchen Sie es gleich noch einmal.',
+    inputLabel: 'Nachricht an Ella Rae',
+    placeholder: 'Fragen zu den Büchern',
+    send: 'Senden',
+    footnote: 'Keine Krisenhilfe. In Deutschland: TelefonSeelsorge 0800 111 0 111. In Kanada oder den USA: 988. Unterhaltungen werden hier nicht gespeichert.',
+    privacy: 'Datenschutz',
+    privacyHref: '/de/privacy#ella-rae',
+    alertLabel: 'Ihre E-Mail-Adresse, für eine einzige Nachricht, wenn Forgiveness as Freedom erscheint',
+    alertConsent: 'Ja, Miskwa Kimiwan darf mir einmal zu dieser Veröffentlichung schreiben. Meine Adresse kommt auf keine Liste. Siehe',
+    alertPolicy: 'Datenschutzerklärung',
+    alertSend: 'Benachrichtigen',
+    alertSending: 'Wird gesendet',
+    alertDone: 'Danke. Sie erhalten eine einzige E-Mail, wenn Forgiveness as Freedom am 21. Dezember erscheint.',
+    alertFail: 'Das hat nicht geklappt.',
+  },
 }
 
 // Turns bare site paths (/red-rain) and full URLs into links.

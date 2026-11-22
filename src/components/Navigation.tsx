@@ -13,35 +13,76 @@ const BOOKS = [
   { path: '/book-of-questions', title: 'The Book of Questions' },
 ]
 
-// The language switch: the same page in each of the other two languages. Plain
-// <a>, not <Link>: each language has its own page frame (with its own
-// <html lang>), so switching is a full page load by design.
+// The language switch: a small button showing the current language that opens
+// a list of all four. Each entry goes to the same page in that language. The
+// entries are plain <a>, not <Link>: each language has its own page frame (with
+// its own <html lang>), so switching is a full page load by design.
 function LanguageSwitch({ pathname, small }: { pathname: string; small?: boolean }) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
   const locale = localeOf(pathname)
-  const others = LOCALES.filter((l) => l !== locale)
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    const onPointer = (e: PointerEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.addEventListener('pointerdown', onPointer)
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.removeEventListener('pointerdown', onPointer)
+    }
+  }, [open])
+
   return (
-    <div
-      role="group"
-      aria-label={UI[locale].languages}
-      className={`flex items-stretch border border-glow/50 font-display uppercase text-glow ${
-        small ? 'text-xs tracking-[0.12em]' : 'text-sm tracking-[0.2em]'
-      }`}
-    >
-      {others.map((l, i) => (
-        <a
-          key={l}
-          href={switchPath(pathname, l)}
-          hrefLang={l}
-          lang={l}
-          aria-label={LANGUAGE_NAMES[l].read}
-          title={LANGUAGE_NAMES[l].read}
-          className={`hover:bg-glow/10 transition-colors ${i > 0 ? 'border-l border-glow/50' : ''} ${
-            small ? 'px-1.5 py-0.5' : 'px-2.5 py-1'
-          }`}
-        >
-          {LANGUAGE_NAMES[l].short}
-        </a>
-      ))}
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-haspopup="true"
+        aria-expanded={open}
+        aria-label={`${UI[locale].languages}: ${LANGUAGE_NAMES[locale].name}`}
+        className={`flex items-center gap-1 border border-glow/50 text-glow hover:border-glow hover:bg-glow/10 transition-colors font-display uppercase ${
+          small ? 'text-xs tracking-[0.12em] px-1.5 py-1' : 'text-sm tracking-[0.2em] px-2.5 py-1'
+        }`}
+      >
+        {LANGUAGE_NAMES[locale].short}
+        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div hidden={!open} className="absolute right-0 top-full pt-2 z-50">
+        <ul className="bg-charcoal border border-ash/30 rounded-sm shadow-xl min-w-40 py-1">
+          {LOCALES.map((l) => (
+            <li key={l}>
+              {l === locale ? (
+                <span
+                  aria-current="true"
+                  className="flex items-baseline justify-between gap-4 px-4 py-2.5 text-sm font-serif text-glow"
+                >
+                  {LANGUAGE_NAMES[l].name}
+                  <span className="font-display text-xs tracking-[0.15em]">{LANGUAGE_NAMES[l].short}</span>
+                </span>
+              ) : (
+                <a
+                  href={switchPath(pathname, l)}
+                  hrefLang={l}
+                  lang={l}
+                  title={LANGUAGE_NAMES[l].read}
+                  className="flex items-baseline justify-between gap-4 px-4 py-2.5 text-sm font-serif text-bone/80 hover:text-glow hover:bg-night/40 transition-colors"
+                >
+                  {LANGUAGE_NAMES[l].name}
+                  <span className="font-display text-xs tracking-[0.15em] text-bone/50">{LANGUAGE_NAMES[l].short}</span>
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

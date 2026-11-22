@@ -89,8 +89,12 @@ export async function POST(req: Request) {
     model: MODEL,
     instructions: ellaInstructions(locale === 'es' || locale === 'fr' || locale === 'de' ? locale : 'en'),
     messages: await convertToModelMessages(messages.slice(-MAX_HISTORY)),
-    // Room for German and French, which run longer than English; replies stay short by instruction.
-    maxOutputTokens: 900,
+    // The model thinks before it answers, and that thinking counts against this
+    // limit. Low reasoning suits a short chat; the limit is a safety net, and the
+    // replies stay short by instruction. At 600 with default reasoning, heavy
+    // questions were cut off mid-sentence.
+    reasoning: 'low',
+    maxOutputTokens: 2000,
     tools: {
       offerReleaseAlert: {
         description:

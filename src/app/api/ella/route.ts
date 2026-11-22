@@ -89,7 +89,8 @@ export async function POST(req: Request) {
     model: MODEL,
     instructions: ellaInstructions(locale === 'es' || locale === 'fr' || locale === 'de' ? locale : 'en'),
     messages: await convertToModelMessages(messages.slice(-MAX_HISTORY)),
-    maxOutputTokens: 600,
+    // Room for German and French, which run longer than English; replies stay short by instruction.
+    maxOutputTokens: 900,
     tools: {
       offerReleaseAlert: {
         description:

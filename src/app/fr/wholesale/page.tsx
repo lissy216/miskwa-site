@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 }
 
 const books = [
+  { title: 'The Re-Membering', subtitle: 'Six Turns Back to the Part of You That Never Forgot', retail: 13.99, wholesale: 6.3 },
   { title: 'The Signal', subtitle: 'Why Life and People Keep Happening to You', retail: 22.99, wholesale: 10.35 },
   { title: 'Red Rain', subtitle: 'A Soul Shattered', retail: 19.99, wholesale: 9.0 },
   { title: 'The Book of Questions', subtitle: 'The Socratic Year of the Soul', retail: 24.99, wholesale: 11.25 },
@@ -30,6 +31,7 @@ Courriel :
 Téléphone (facultatif) :
 
 Livres et quantités :
+    The Re-Membering :
     The Signal :
     Red Rain :
     The Book of Questions :
@@ -82,7 +84,7 @@ export default function Wholesale() {
             </p>
             <p>
               Un minimum de cinq exemplaires par commande est préférable, dans n&rsquo;importe
-              quelle combinaison des trois titres. Les frais d&rsquo;expédition sont calculés
+              quelle combinaison des quatre titres. Les frais d&rsquo;expédition sont calculés
               pour chaque commande selon la destination et la quantité, et facturés en plus
               du prix de gros. Les commandes plus importantes peuvent bénéficier d&rsquo;une
               remise supplémentaire, sur devis.
